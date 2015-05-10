@@ -9,3 +9,9 @@ h2	{
 	font-size:24px;
 	text-align:center;
 }
+
+#banner	{
+	text-align:center;
+	margin-left:calc(50vw - 225px);
+	padding-top:20px;
+}
