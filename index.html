@@ -1,5 +1,6 @@
 <html>
 <head>
+	<title>Watch This Space</title>
 	<style>	
 		body {
 			margin: 0px;
@@ -9,12 +10,54 @@
 		img {
 			position: absolute;
 			width: 75%;
-			top: 6vw;
+			top: 8vw;
 			left: 12.5%;
+			display: none;
+			transition: top 0.3s;
+		}
+
+		img:hover{
+			top: 7vw;
+		}
+		h1 {
+			margin: 40px;
+			font-family: Lucida Sans, sans-serif;
 		}
 	</style>
+	<script>
+		window.addEventListener("load", init, false);
+
+		function init(){
+			console.log("Initialising...")
+			window.images = ['patrick', 'darren', 'charlie'];
+			window.currentImage = 0;
+
+			document.getElementById(images[currentImage]).style.display = 'block';
+
+			document.addEventListener("click", switchImage, false);
+		}
+
+		function switchImage(){
+			currentImage++;
+			if (currentImage == window.images.length){
+				currentImage = 0;
+			}
+
+			for (var i = 0; i < images.length; i++){
+				if (i == currentImage){
+					document.getElementById(images[i]).style.display = 'block';
+				}else{
+					document.getElementById(images[i]).style.display = 'none';
+				}
+			}
+
+		}
+	</script>
 </head>
 <body>
-	<img src='http://s18.postimg.org/7tq8tq5ig/Mockup.jpg' />
+	<u><h1>ChaPaDa Design</h1></u>
+	<img  id='patrick' src='images/Patrick.jpg' />
+	<img id='darren' src='images/Darren.jpg' />
+	<img id='charlie' src='images/Charlie.png' />
 </body>
 </html>
