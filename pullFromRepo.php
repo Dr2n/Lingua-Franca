@@ -1,5 +1,5 @@
 <?php
-	$output = `rm -rf Lingua-Franca-Redesign-Repo`;
+	$output = `rm -rf *`;
 	echo "<br>".$output;
 	$output = `git clone https://github.com/Dr2n/Lingua-Franca-Redesign-Repo.git`;
 	echo "<br>".$output;
