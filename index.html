@@ -29,6 +29,15 @@
 			margin: 40px;
 			font-family: Lucida Sans, sans-serif;
 		}
+		#stocks{
+			padding: 0px;
+			margin: 0px;
+			height: 20px;
+			width: 100%;
+			position: absolute;
+			top: 0px;
+			background-color: black;
+		}
 	</style>
 	<script>
 		window.addEventListener("load", init, false);
@@ -61,8 +70,10 @@
 	</script>
 </head>
 <body>
-	<marquee><img id="marquee" src="marquee.png"/></marquee>
-	<img id="banner" src="chapada.png" />
+	<div id='stocks'>
+		<marquee><img id="marquee" src="images/marquee.png"/></marquee>
+	</div>
+	<img id="banner" src="images/chapada.png" />
 	<img  id='patrick' class="design" src='images/Patrick.jpg' />
 	<img id='darren' class="design" src='images/Darren.jpg' />
 	<img id='charlie' class="design" src='images/Charlie.png' />
