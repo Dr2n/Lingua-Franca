@@ -2,80 +2,38 @@
 <head>
 	<link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
 	<link rel="icon" href="favicon.ico" type="image/x-icon">
-	<title>CPD on Cloud 9</title>
-	<link rel="stylesheet" type="text/css" href="stylshe3t.css">
-	<style>	
-		body {
-			margin: 0px;
-			padding: 0px;
-			background-image: url('images/sky.jpg');
-			background-repeat: none;
-			background-attachment:fixed;
-		}
-		.design {
-			position: absolute;
-			width: 50%;
-			top: 8vw;
-			left: 25%;
-			display: none;
-			transition: top 0.2s;
-			padding-top:150px;
-		}
-
-		img:hover{
-			top: 6vw;
-		}
-		h1 {
-			margin: 40px;
-			font-family: Lucida Sans, sans-serif;
-		}
-		#stocks{
-			padding: 0px;
-			margin: 0px;
-			height: 20px;
-			width: 100%;
-			position: absolute;
-			top: 0px;
-			background-color: black;
-		}
-	</style>
-	<script>
-		window.addEventListener("load", init, false);
-
-		function init(){
-			console.log("Initialising...")
-			window.images = ['patrick', 'darren', 'charlie'];
-			window.currentImage = 0;
-
-			document.getElementById(images[currentImage]).style.display = 'block';
-
-			document.addEventListener("click", switchImage, false);
-		}
-
-		function switchImage(){
-			currentImage++;
-			if (currentImage == window.images.length){
-				currentImage = 0;
-			}
-
-			for (var i = 0; i < images.length; i++){
-				if (i == currentImage){
-					document.getElementById(images[i]).style.display = 'block';
-				}else{
-					document.getElementById(images[i]).style.display = 'none';
-				}
-			}
-
-		}
-	</script>
+	<title>Lingua Franca</title>
+	<link rel="stylesheet" type="text/css" href="css/mainStyle.css">
+	<script src='mainScript.js'></script>
 </head>
 <body>
-	<div id='stocks'>
-		<marquee><img id="marquee" src="images/marquee.png"/></marquee>
+	<div id='header'>
+		
+		<div id='headerContent'>
+			<img id='linguaFrancaLogo' src='images/linguaFrancaLogo.png'/>
+			<div id='links'>
+				<a href='#lessons'><span class='linkText'>Lessons</span></a>
+				<a href='#events'><span class='linkText'>Events</span></a>
+				<a href='#gifts'><span class='linkText'>Gifts</span></a>
+				<a href='#about'><span class='linkText'>About Us</span></a>
+				<a href='#contact'><span class='linkText'>Contact</span></a>
+			</div>
+		</div>
+
 	</div>
-	<img id="banner" src="images/chapada.png" />
-	<img  id='patrick' class="design" src='images/Patrick.jpg' />
-	<img id='darren' class="design" src='images/Darren.jpg' />
-	<img id='charlie' class="design" src='images/Charlie.jpg' />
+
+	<div id='landingDiv'>
+		<h1 id='titleText'>WE ARE LINGUA FRANCA</h1>
+		<h2 id='subtitleText'> We provide a unique learning experience for French at all Levels</h2>
+	</div>
+
+	<div id='content'>
+
+	<div id='lessons' class='contentDiv'>
+		<h1>Our Lessons</h1>
+	</div>
+
+	</div>
+
 </body>
 </html>
