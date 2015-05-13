@@ -42,7 +42,13 @@ a {
 	margin-right: 10px;
 	text-decoration: none;
 	color: white;
+	transition: color 0.2s;
 }
+
+.linkText:hover {
+	color: black;
+}
+
 /*Universal Styling*/
 .contentDiv {
 	padding: 50px calc(50vw - 480px) 50 calc(50vw - 480px);
