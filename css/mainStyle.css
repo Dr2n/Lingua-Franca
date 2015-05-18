@@ -8,11 +8,88 @@ body {
 	padding: 0px;
 	font-family: Lucida Sans, sans-serif;
 	overflow-x: hidden;
-	min-height: 300vh;
 }
 
 a {
 	text-decoration: none;
+}
+
+p {
+	margin: 50px 100px 50px 100px;
+
+}
+
+/*Universal Styling*/
+.wrapperDiv {
+	min-height: 20vh;
+	margin: 0px;
+}
+.contentDiv {
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+	padding-top: 50px;
+	padding-bottom: 50px;
+	width: 960px;
+}
+
+#content {
+	position: absolute;
+	top: 100vh;
+	width: 100vw;
+}
+
+#titleText, #subtitleText {
+	font-family: 'Sketch Serif';
+	font-weight: normal;
+	text-align: center;
+}
+
+#titleText {
+	font-size: 70px;
+}
+
+.largeButton {
+	left: 50%;
+	width: 768px;
+	margin-left: 96px;
+	height: 60px;
+	border-style: none;
+	border-radius: 20px;
+	font-size: 28px;
+	font-family: Sketch Serif;
+	transition: color 0.2s;
+}
+
+.largeButton:hover {
+	color: rgb(100,100,100);
+}
+
+#screen {
+	position: fixed;
+	top: 0px;
+	left: 0px;
+	z-index: 1001;
+	width: 100vw;
+	height: 100vh;
+	display: none;
+	background-color: rgba(0,0,0,0);
+	transition: background-color 0.4s;
+}
+
+/*Popup Styling*/
+#popup{
+	z-index: 1002;
+	position: fixed;
+	top: -50%;
+	left: 50%;
+	margin-left: calc(-1*960px/2);
+	margin-top: calc(-1*780px/2);
+	width: 960px;
+	height: 780px;
+	background-color: rgb(238, 229, 215);
+	display: none;
+	transition: top 0.5s ease-out, left 0.5s ease-out;
 }
 
 /*Header Styling*/
@@ -48,13 +125,8 @@ a {
 	text-decoration: none;
 	color: white;
 }
-/*Universal Styling*/
-.contentDiv {
-	padding: 50px calc(50vw - 480px) 50 calc(50vw - 480px);
-	width: 100vw;
-	height: 100vh;
-}
 
+/*Footer Sytling*/
 #footer {
 	padding: 50px calc(50vw - 480px) 50 calc(50vw - 480px);
 	height: 25vh;
@@ -74,44 +146,41 @@ a {
 	padding-top: 200px;
 }
 
-#content {
-	position: absolute;
-	top: 100vh;
-	width: 100vw;
-}
-
+/*Lessons Styling*/
 #lessons{
 	width: 100%;
 	background-color: rgb(238, 229, 215);
+	color: black;
 }
 
-#titleText, #subtitleText {
-	font-family: 'Sketch Serif';
-	font-weight: normal;
-	text-align: center;
-}
-
-#titleText {
-	font-size: 70px;
-}
+/*Echantillon Styling*/
 
 #echantillon {
 	background-color: rgb(162, 178, 182);
-	height: 20vh;
+	color: white;
+	min-height: 20vh;
 }
 
+#signUpButton {
+	color: rgb(100,100,100);
+}
+
+/*Events Styling*/
 #events {
 	background-color: rgb(205, 51, 60);
 }
 
+/*Gifts Styling*/
 #gifts {
 	background-color: rgb(238, 229, 215);
 }
 
+/*About  Styling*/
 #about {
 	background-color: rgb(94, 94, 94);
 }
 
+/*Contact Styling*/
 #contact {
 	background-color: rgb(255, 252, 239);
 	height: 25vh;

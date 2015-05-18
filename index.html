@@ -1,10 +1,12 @@
+<!DOCTYPE html>
+<meta charset='utf-8'>
 <html>
 <head>
 	<link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
 	<link rel="icon" href="favicon.ico" type="image/x-icon">
 	<title>Lingua Franca</title>
 	<link rel="stylesheet" type="text/css" href="css/mainStyle.css">
-	<script src='mainScript.js'></script>
+	<script src='script/mainScript.js'></script>
 </head>
 <body>
 	<div id='header'>
@@ -26,24 +28,42 @@
 		<h1 id='titleText'>WE ARE LINGUA FRANCA</h1>
 		<h2 id='subtitleText'> We provide a unique learning experience for French at all Levels</h2>
 	</div>
+	<div id='popup'></div>
+	<div id='screen'></div>
 
 	<div id='content'>
 
-		<div id='lessons' class='contentDiv'>
-			<h1>Our Lessons</h1>
+		<div id='lessons' class='wrapperDiv'>
+			<div id='lessonsContent' class='contentDiv'>
+				<h1>Our Lessons</h1>
+			</div>
 		</div>
-		<div id='echantillon' class='contentDiv'></div>
-		<div id='events' class='contentDiv'>
-			<h1>Events</h1>
+		<div id='echantillon' class='wrapperDiv'>
+			<div id='echantillonContent' class='contentDiv'>
+				<h1>Unsure? Try an  &#232;chantillon!</h1>
+				<p>We often hear from people who have been meaning to start or return to learning French and for one reason or another it hasn't happened. We decided, therefore, to give people the chance to come and try out one of our friendly and relaxed group lessons <em>free of charge</em>. Échantillon is the French word for 'sample' or 'test' and that's exactly what we'd like you to do.</p>
+				<input type='button' class='largeButton' value='SIGN UP NOW!' id='signUpButton' />
+			</div>
 		</div>
-		<div id='gifts' class='contentDiv'>
-			<h1>Gift Shop</h1>
+		<div id='events' class='wrapperDiv'>
+			<div id='eventsContent' class='contentDiv'>
+				<h1>Events</h1>
+			</div>
 		</div>
-		<div id='about' class='contentDiv'>
-			<h1>About</h1>
+		<div id='gifts' class='wrapperDiv'>
+			<div id='giftsContent' class='contentDiv'>
+				<h1>Gift Shop</h1>
+			</div>
 		</div>
-		<div id='contact' class='contentDiv'>
-			<h1>Contact</h1>
+		<div id='about' class='wrapperDiv'>
+			<div id='aboutContent' class='contentDiv'>
+				<h1>About</h1>
+			</div>
+		</div>
+		<div id='contact' class='wrapperDiv'>
+			<div id='contactContent' class='contentDiv'>
+				<h1>Contact</h1>
+			</div>
 		</div>
 
 		<div id='footer'></div>
