@@ -12,6 +12,7 @@ function echantillonSignUp(event){
 
 function showPopup(){
 	screenOn();
+	disableScrolling();
 	var popup = document.getElementById("popup");
 	popup.style.display = 'block';
 	setTimeout(function(){
@@ -22,15 +23,27 @@ function showPopup(){
 function hidePopup(){
 	var popup = document.getElementById("popup");
 	setTimeout(function(){
-		popup.style.top = '-50%';
+		popup.style.top = '-100vh';
 	}, 50);
 	setTimeout(function(){
 		popup.style.display = 'none';
 	}, 3000);
 	screenOff();
+	enableScrolling();
 }
 
+function scrollOff(event){
+	event.preventDefault();
+}
 
+function disableScrolling(){
+	window.addEventListener("DOMMouseScroll", scrollOff, false);
+
+}
+
+function enableScrolling(){
+	window.removeEventListener("DOMMouseScroll", scrollOff, false);
+}
 
 function screenOn(){
 	var screen = document.getElementById("screen");
