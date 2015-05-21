@@ -27,6 +27,11 @@ p {
 
 }
 
+h1 {
+	font-weight: normal;
+	font-size: 28px;
+}
+
 /*Universal Styling*/
 .wrapperDiv {
 	min-height: 20vh;
@@ -96,7 +101,6 @@ p {
 	width: 960px;
 	height: 780px;
 	background-color: rgb(238, 229, 215);
-	display: none;
 	transition: top 0.5s ease-out, left 0.5s ease-out;
 }
 
@@ -206,6 +210,15 @@ p {
 #contact {
 	background-color: rgb(255, 252, 239);
 	height: 25vh;
+}
+
+#fullShopButton	{
+	color: rgb(255, 252, 239);
+	background-color: rgb(162, 178, 182);
+}
+
+#giftsContent	{
+
 }
 
 
