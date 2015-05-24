@@ -23,17 +23,48 @@ a {
 }
 
 p {
-	margin: 50px 100px 50px 100px;
-
+	margin: 25px 100px 0px 100px;
+	font-size: 15px;
 }
 
 h1 {
 	font-weight: normal;
-	font-size: 28px;
+	font-size: 26px;
+}
+
+/*Parallax Styling*/
+#content {
+	perspective: 1px;
+	height: 100vh;
+	overflow-x: hidden;
+	overflow-y: auto;
+}
+
+.parallaxSection {
+	position: relative;
+	transform-style: preserve-3d;
+}
+
+.parallaxLayer {
+	position: absolute;
+	top: 0;
+	right: 0;
+	left: 0;
+	bottom: 0;
+}
+
+.depth0 {
+	transform: translateZ(0);
+	z-index: 0;
+}
+
+.depth2 {
+	transform: translateZ(-0.7px) scale(1.8);
+	z-index: -2;
 }
 
 /*Universal Styling*/
-.wrapperDiv {
+.parallaxSection {
 	min-height: 20vh;
 	margin: 0px;
 }
@@ -46,12 +77,6 @@ h1 {
 	width: 960px;
 }
 
-#content {
-	position: absolute;
-	top: 100vh;
-	width: 100vw;
-}
-
 #titleText, #subtitleText {
 	font-family: 'Sketch Serif';
 	font-weight: normal;
@@ -62,9 +87,15 @@ h1 {
 	font-size: 70px;
 }
 
+.largeSectionHeadingText {
+	font-family: 'Sketch Serif';
+	font-size: 4vw;
+}
+
 .largeButton {
 	left: 50%;
 	width: 768px;
+	margin-top: 5vh;
 	margin-left: 96px;
 	height: 60px;
 	border-style: none;
@@ -138,7 +169,7 @@ h1 {
 	color: white;
 }
 
-/*Footer Sytling*/
+/*Footer Styling*/
 #footer {
 	padding: 50px calc(50vw - 480px) 50 calc(50vw - 480px);
 	height: 25vh;
@@ -148,15 +179,17 @@ h1 {
 
 /*Landing Section Styling*/
 #landingDiv {
-	position: fixed;
-	top: 0px;
 	height: 100vh;
-	width: 100%;
-	background-image: url('../images/landing/landingBackground.jpg');
-	background-repeat: no-repeat;
-	background-size: 100vw;
-	padding-top: 200px;
+	z-index: 100;
+}
+#landingFrontLayer {
+	top: 0px;
+	padding-top: 20vh;
 	text-align: center;
+}
+
+#landingBackgroundLayer > img {
+	width: 100vw;
 }
 
 .smallTitleText {
@@ -193,7 +226,25 @@ h1 {
 
 /*Events Styling*/
 #events {
-	background-color: rgb(205, 51, 60);
+	height: 40vh;
+}
+
+#eventsHeadingFrontLayer{
+	margin-top: 10vh;
+	text-align: center;
+}
+
+#eventsHeadingBackLayer > img{
+	transform: translate(0,-15vh);
+}
+
+#eventsIntro{
+	background-color: rgb(205,51,60);
+	color: white;
+}
+
+#eventsIntroLayer {
+	position: static;
 }
 
 /*Gifts Styling*/
