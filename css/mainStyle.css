@@ -207,6 +207,7 @@ h1 {
 
 /*Lessons Styling*/
 #lessons{
+	z-index: 101;
 	width: 100%;
 	background-color: rgb(238, 229, 215);
 	color: black;
@@ -215,6 +216,7 @@ h1 {
 /*Echantillon Styling*/
 
 #echantillon {
+	z-index: 110;
 	background-color: rgb(162, 178, 182);
 	color: white;
 	min-height: 20vh;
