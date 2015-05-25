@@ -4,6 +4,20 @@ function init(){
 	console.log("Page Loaded.");
 	window.popupOpen = false;
 	document.getElementById('signUpButton').addEventListener("click", togglePopup, false);
+
+	window.addEventListener("scroll", offsetParallaxBackgrounds, false);
+}
+
+function offsetParallaxBackgrounds(){
+	var parallaxDivs = document.getElementsByClassName('parallax');
+
+	for (var i = 0; i < parallaxDivs.length; i++){
+		var viewportPos = parallaxDivs[i].getBoundingClientRect().top;
+		var neededOffset = -300 * (viewportPos/window.innerHeight);
+
+		parallaxDivs[i].style.backgroundPosition = "0px " + String(neededOffset) + "px";
+	}
+
 }
 
 function togglePopup(event){
