@@ -11,20 +11,24 @@
 
 }
 
+
+body::-webkit-scrollbar { width: 0 !important }
+
 body {
 	margin: 0px;
 	padding: 0px;
 	font-family: Lucida Sans, sans-serif;
+	-ms-overflow-style: none;
 	overflow-x: hidden;
 }
 
 a {
 	text-decoration: none;
+	user-select: none;
 }
 
 p {
-	margin: 50px 100px 50px 100px;
-
+	margin: 25px 100px 25px 100px;
 }
 
 h1 {
@@ -41,9 +45,10 @@ h1 {
 	display: block;
 	margin-left: auto;
 	margin-right: auto;
-	padding-top: 50px;
-	padding-bottom: 50px;
+	padding-top: 70px;
+	padding-bottom: 70px;
 	width: 960px;
+	text-justify: inter-word;
 }
 
 #content {
@@ -62,10 +67,16 @@ h1 {
 	font-size: 70px;
 }
 
+.largeSectionHeadingText {
+	font-family: 'Sketch Serif';
+	font-size: 4vw;
+}
+
 .largeButton {
 	left: 50%;
 	width: 768px;
 	margin-left: 96px;
+	margin-top: 40px;
 	height: 60px;
 	border-style: none;
 	border-radius: 20px;
@@ -136,6 +147,11 @@ h1 {
 	margin-right: 10px;
 	text-decoration: none;
 	color: white;
+	transition: color 0.15s;
+}
+
+.linkText:hover{
+	color: black;
 }
 
 /*Footer Sytling*/
@@ -148,7 +164,6 @@ h1 {
 
 /*Landing Section Styling*/
 #landingDiv {
-	position: fixed;
 	top: 0px;
 	height: 100vh;
 	width: 100%;
@@ -193,9 +208,133 @@ h1 {
 
 /*Events Styling*/
 #events {
-	background-color: rgb(205, 51, 60);
+	height: 40vh;
+	box-sizing: border-box;
+	padding-top: 10vh;
+	background-image: url('../images/events/eventsBackground.jpg');
+	background-size: 100vw;
+	text-align: center;
 }
 
+#eventsIntro{
+	background-color: rgb(205,51,60);
+	color: white;
+}
+
+.eventSeason {
+	color: white;
+	position: relative;
+	padding-bottom: 50px;
+	height: 280px;
+}
+
+.eventSeasonImage {
+	position: relative;
+	width: 260px;
+	margin-top: -130px;
+}
+
+.eventSeasonHeading {
+	font-size: 4vh;
+	line-height: 6vh;
+	font-family: 'Sketch Serif';
+	font-weight: normal;
+}
+
+.eventSeasonHeadingRight {
+	font-size: 4vh;
+	line-height: 6vh;
+	font-family: 'Sketch Serif';
+	font-weight: normal;
+	margin-top: 0px;
+}
+
+.eventsText {
+	float: right;
+	position: relative;
+	width: 525px;
+	margin-right: 100px;
+}
+
+.eventSeasonP {
+	margin-left: 0px;
+	margin-right: 0px;
+	clear: both;
+}
+
+.eventSeasonPRIght {
+	margin-left: 0px;
+	margin-right: 0px;
+	clear: both;
+	margin-top: 100px;
+
+}
+
+.seasonHeadingContainer {
+	width: 300px;
+	height: 6vh;
+	border-radius: 10px;
+	padding-left: 50px;
+	padding-right: 50px;
+}
+
+.seasonHeadingContainerRight {
+	width: 300px;
+	height: 6vh;
+	float: right;
+	border-radius: 10px;
+	padding-left: 50px;
+	padding-right: 50px;
+}
+
+.eventSeasonImageRight {
+	float: right;
+	position: relative;
+	width: 260px;
+	margin-top: -130px;
+}
+.eventsTextRight {
+	float: left;
+	position: relative;
+	width: 525px;
+	margin-left: 100px;
+}
+
+#eventsAutumn {
+	background-color: #C65A62;
+}
+
+#autumnHeadingContainer {
+	background-color: #FE632F;
+	text-align: left;
+}
+
+#eventsWinter {
+	background-color: #99cbcf;
+}
+
+#winterHeadingContainer {
+	background-color: #edc74a;
+	text-align: right;
+}
+
+#eventsSpring {
+	background-color: #81c1b8;
+}
+
+#springHeadingContainer {
+	background-color: #be3d3d;
+	text-align: left;
+}
+
+#eventsSummer {
+	background-color: #f8c850;
+}
+
+#summerHeadingContainer {
+	background-color: #16c1a0;
+	text-align: right;
+}
 /*Gifts Styling*/
 #gifts {
 	background-color: rgb(238, 229, 215);

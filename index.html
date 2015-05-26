@@ -7,12 +7,25 @@
 	<title>Lingua Franca | French Lessons Brisbane</title>
 	<link rel="stylesheet" type="text/css" href="css/mainStyle.css">
 	<script src='script/mainScript.js'></script>
+	<script src='script/jquery.js'></script>
+	<script>
+		$(document).ready(function(){
+			$('a').click(function(){
+	    		$('html, body').animate({
+			        scrollTop: $( $(this).attr('href') ).offset().top + -60
+		    	}, 500);
+		    	return false;
+			});
+			
+		})
+
+	</script>
 </head>
 <body>
 	<div id='header'>
 		
 		<div id='headerContent'>
-			<a href='#'><img id='linguaFrancaLogo' src='images/linguaFrancaLogo.png'/></a>
+			<a href='#landingDiv'><img id='linguaFrancaLogo' src='images/linguaFrancaLogo.png'/></a>
 			<div id='links'>
 				<a href='#lessons'><span class='linkText'>Lessons</span></a>
 				<a href='#events'><span class='linkText'>Events</span></a>
@@ -23,7 +36,7 @@
 		</div>
 
 	</div>
-	<div id='landingDiv'>
+	<div id='landingDiv' class='parallax'>
 		<h1 id='titleText'>WE ARE LINGUA FRANCA</h1>
 		<h2 id='subtitleText'> We provide a unique learning experience for French at all Levels</h2>
 
@@ -52,11 +65,78 @@
 				<input type='button' class='largeButton' value='SIGN UP NOW!' id='signUpButton' />
 			</div>
 		</div>
-		<div id='events' class='wrapperDiv'>
-			<div id='eventsContent' class='contentDiv'>
-				<h1>Events</h1>
+
+		<div id='events' class='wrapperDiv parallax'>
+			<h1 class='largeSectionHeadingText'>Our Events</h1>
+		</div>
+
+		<div id='eventsIntro' class='wrapperDiv'>
+			<div id='eventsIntroContent' class='contentDiv'>
+				<p>Often with a love of the French language comes a love of French culture and an interest in the way the French-speaking world does things differently to us.</p> 
+
+				<p>Our seasonal events are designed to bring together like-minded people in a social situation while enjoying the best food, wine, film, fashion (and much more) the French have to offer.</p>
+
+				<p>For all levels and interests - there’s be something for everybody...even a trip to Nouméa in April 2015, too. There will also be a three-day trip to a secret destination for a French Festival in October 2015. Let us know if you'd like to be kept in the loop.</p>
 			</div>
 		</div>
+
+		<div class='eventSeason' id='eventsAutumn' class='wrapperDiv'>
+			<div class='contentDiv seasonSectionWrap'>
+				<img src='images/events/autumn.png' class='eventSeasonImage' id='eventAutumnImage'/>
+				<div class='eventsText'>
+					<div class='seasonHeadingContainer' id='autumnHeadingContainer'>
+						<h2 class='eventSeasonHeading'>Autumn</h2>
+					</div>
+					<p class='eventSeasonP'>
+						Come and join us for a pre-dinner apéro before wandering down to James St for the French Film Festival.
+					</p>
+				</div>
+			</div>
+		</div>
+
+		<div class='eventSeason' id='eventsWinter' class='wrapperDiv'>
+			<div class='contentDiv seasonSectionWrap'>
+				<img src='images/events/winter.png' class='eventSeasonImageRight' id='eventWinterImage'/>
+				<div class='eventsTextRight'>
+					<div class='seasonHeadingContainerRight' id='winterHeadingContainer'>
+						<h2 class='eventSeasonHeadingRight'>Winter</h2>
+					</div>
+					<p class='eventSeasonPRIght'>
+						Warm up with a delicious raclette dinner. Melted cheese and good wine: what better?
+					</p>
+				</div>
+			</div>
+		</div>
+
+		<div class='eventSeason' id='eventsSpring' class='wrapperDiv'>
+			<div class='contentDiv seasonSectionWrap'>
+				<img src='images/events/spring.png' class='eventSeasonImage' id='eventSpringImage'/>
+				<div class='eventsText'>
+					<div class='seasonHeadingContainer' id='springHeadingContainer'>
+						<h2 class='eventSeasonHeading'>Spring</h2>
+					</div>
+					<p class='eventSeasonP'>
+						Come and learn how to make the traditional French version of pizza: la pissaladière.
+					</p>
+				</div>
+			</div>
+		</div>
+
+		<div class='eventSeason' id='eventsSummer' class='wrapperDiv'>
+			<div class='contentDiv seasonSectionWrap'>
+				<img src='images/events/summer.png' class='eventSeasonImageRight' id='eventSummerImage'/>
+				<div class='eventsTextRight'>
+					<div class='seasonHeadingContainerRight' id='summerHeadingContainer'>
+						<h2 class='eventSeasonHeadingRight'>Summer</h2>
+					</div>
+					<p class='eventSeasonPRIght'>
+						Un pique-nique under the stars. Beaujolais, anyone?
+					</p>
+				</div>
+			</div>
+		</div>
+		
+
 		<div id='gifts' class='wrapperDiv'>
 			<div id='giftsContent' class='contentDiv'>
 				<h1>Gift Shop</h1>
