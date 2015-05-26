@@ -27,11 +27,11 @@
 		<div id='headerContent'>
 			<a href='#landingDiv'><img id='linguaFrancaLogo' src='images/linguaFrancaLogo.png'/></a>
 			<div id='links'>
-				<a href='#lessons'><span class='linkText'>Lessons</span></a>
-				<a href='#events'><span class='linkText'>Events</span></a>
-				<a href='#gifts'><span class='linkText'>Gifts</span></a>
-				<a href='#about'><span class='linkText'>About Us</span></a>
-				<a href='#contact'><span class='linkText'>Contact</span></a>
+				<a href='#lessons' id='lessonsLink' class='linkText'>Lessons</a>
+				<a href='#events' id='eventsLink' class='linkText'>Events</a>
+				<a href='#gifts' id='giftsLink' class='linkText'>Gifts</a>
+				<a href='#about' id='aboutLink' class='linkText'>About Us</a>
+				<a href='#contact' id='contactLink' class='linkText'>Contact</a>
 			</div>
 		</div>
 
@@ -53,8 +53,13 @@
 
 	<div id='content'>
 
-		<div id='lessons' class='wrapperDiv'>
-			<div id='lessonsContent' class='contentDiv'>
+		<div id='lessons' class='wrapperDiv parallax'>
+			<div class='largeHeadingContainer'>
+				<h1 class='largeSectionHeadingText'>Our Lessons</h1>
+			</div>
+		</div>
+		<div id='lessonsContent' class='wrapperDiv'>
+			<div class='contentDiv'>
 				<h1>Our Lessons</h1>
 			</div>
 		</div>
@@ -67,7 +72,9 @@
 		</div>
 
 		<div id='events' class='wrapperDiv parallax'>
-			<h1 class='largeSectionHeadingText'>Our Events</h1>
+			<div class='largeHeadingContainer'>
+				<h1 class='largeSectionHeadingText'>Our Events</h1>
+			</div>
 		</div>
 
 		<div id='eventsIntro' class='wrapperDiv'>
@@ -136,10 +143,14 @@
 			</div>
 		</div>
 		
+		<div id='gifts' class='wrapperDiv parallax'>
+			<div class='largeHeadingContainer'>
+				<h1 class='largeSectionHeadingText'>Gift Shop</h1>
+			</div>
+		</div>
 
-		<div id='gifts' class='wrapperDiv'>
-			<div id='giftsContent' class='contentDiv'>
-				<h1>Gift Shop</h1>
+		<div id='giftsContent' class='wrapperDiv'>
+			<div class='contentDiv'>
 				<a href='http://www.google.com'><input type='button' class='largeButton' value='VISIT THE FULL STORE!' id='fullShopButton'></a>
 			</div>
 		</div>
@@ -148,9 +159,10 @@
 				<h1>About</h1>
 			</div>
 		</div>
-		<div id='contact' class='wrapperDiv'>
-			<div id='contactContent' class='contentDiv'>
-				<h1>Contact</h1>
+
+		<div id='contact' class='wrapperDiv parallax'>
+			<div class='largeHeadingContainer'>
+				<h1 class='largeSectionHeadingText'>Contact Us</h1>
 			</div>
 		</div>
 
