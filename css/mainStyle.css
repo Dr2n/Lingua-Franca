@@ -24,6 +24,7 @@ body {
 
 a {
 	text-decoration: none;
+	user-select: none;
 }
 
 p {
@@ -223,6 +224,8 @@ h1 {
 .eventSeason {
 	color: white;
 	position: relative;
+	padding-bottom: 50px;
+	height: 280px;
 }
 
 .eventSeasonImage {
@@ -235,6 +238,15 @@ h1 {
 	font-size: 4vh;
 	line-height: 6vh;
 	font-family: 'Sketch Serif';
+	font-weight: normal;
+}
+
+.eventSeasonHeadingRight {
+	font-size: 4vh;
+	line-height: 6vh;
+	font-family: 'Sketch Serif';
+	font-weight: normal;
+	margin-top: 0px;
 }
 
 .eventsText {
@@ -247,6 +259,15 @@ h1 {
 .eventSeasonP {
 	margin-left: 0px;
 	margin-right: 0px;
+	clear: both;
+}
+
+.eventSeasonPRIght {
+	margin-left: 0px;
+	margin-right: 0px;
+	clear: both;
+	margin-top: 100px;
+
 }
 
 .seasonHeadingContainer {
@@ -257,7 +278,17 @@ h1 {
 	padding-right: 50px;
 }
 
+.seasonHeadingContainerRight {
+	width: 300px;
+	height: 6vh;
+	float: right;
+	border-radius: 10px;
+	padding-left: 50px;
+	padding-right: 50px;
+}
+
 .eventSeasonImageRight {
+	float: right;
 	position: relative;
 	width: 260px;
 	margin-top: -130px;
@@ -266,7 +297,7 @@ h1 {
 	float: left;
 	position: relative;
 	width: 525px;
-	margin-right: 100px;
+	margin-left: 100px;
 }
 
 #eventsAutumn {
