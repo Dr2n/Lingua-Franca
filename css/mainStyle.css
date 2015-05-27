@@ -1,3 +1,19 @@
+/*------------------------------------------------------
+		   ________          ____        ____           
+		  / ____/ /_  ____ _/ __ \____ _/ __ \____ _    
+		 / /   / __ \/ __ `/ /_/ / __ `/ / / / __ `/    
+		/ /___/ / / / /_/ / ____/ /_/ / /_/ / /_/ /     
+		\_______ /_/\__,_/_/_   \__,_/_____/\__,_/      
+		   / __ \___  _____(_)___ _____                 
+		  / / / / _ \/ ___/ / __ `/ __ \                
+		 / /_/ /  __(__  ) / /_/ / / / /                
+		/_____/\___/____/_/\__, /_/ /_/                 
+		                  /____/         
+
+	  Charlie Hou, Patrick Kim & Darren Fu 2015
+----------------------------------------------------*/
+
+/*Page Wide Styling*/
 @font-face {
     font-family: 'Sketch Serif';
     src: url('../fonts/Sketch/sketchserif-webfont.eot');
@@ -11,6 +27,13 @@
 
 }
 
+.noselect {
+	-webkit-user-select: none;  /* Chrome all / Safari all */
+	-moz-user-select: none;     /* Firefox all */
+	-ms-user-select: none;      /* IE 10+ */
+	-o-user-select: none;
+	user-select: none; 
+}
 
 body::-webkit-scrollbar { width: 0 !important }
 
@@ -25,6 +48,7 @@ body {
 a {
 	text-decoration: none;
 	user-select: none;
+	outline: 0;
 }
 
 p {
@@ -36,19 +60,14 @@ h1 {
 	font-size: 28px;
 }
 
-/*Universal Styling*/
-.wrapperDiv {
-	min-height: 20vh;
-	margin: 0px;
-}
+
+/*Common Element Styling*/
 .contentDiv {
-	display: block;
 	margin-left: auto;
 	margin-right: auto;
 	padding-top: 70px;
 	padding-bottom: 70px;
 	width: 960px;
-	text-justify: inter-word;
 }
 
 #content {
@@ -57,19 +76,26 @@ h1 {
 	width: 100vw;
 }
 
-#titleText, #subtitleText {
+.titleText {
+	line-height: 125px;
+	font-size: 70px;
+}
+
+.titleText, .subTitleText {
 	font-family: 'Sketch Serif';
 	font-weight: normal;
 	text-align: center;
 }
 
-#titleText {
-	font-size: 70px;
-}
-
-.largeSectionHeadingText {
-	font-family: 'Sketch Serif';
-	font-size: 4vw;
+.largeHeadingContainer {
+	margin-left: auto;
+	margin-right: auto;
+	width: 700px;
+	height: 125px;
+	margin-top: 0px;
+	background-color: rgba(0,0,0,0.7);
+	color: white;
+	border-radius: 40px;
 }
 
 .largeButton {
@@ -89,16 +115,22 @@ h1 {
 	color: rgb(100,100,100);
 }
 
-#screen {
-	position: fixed;
-	top: 0px;
-	left: 0px;
-	z-index: 1001;
-	width: 100vw;
-	height: 100vh;
-	display: none;
-	background-color: rgba(0,0,0,0);
-	transition: background-color 0.4s;
+.parallax {
+	height: 300px;
+	box-sizing: border-box;
+	padding-top: 40px;
+	background-size: 100vw;
+	text-align: center;
+	background-repeat: no-repeat;
+	-webkit-user-select: none;  /* Chrome all / Safari all */
+	-moz-user-select: none;     /* Firefox all */
+	-ms-user-select: none;      /* IE 10+ */
+	-o-user-select: none;
+	user-select: none; 
+}
+
+.right {
+	float: right;
 }
 
 /*Popup Styling*/
@@ -115,13 +147,25 @@ h1 {
 	transition: top 0.5s ease-out, left 0.5s ease-out;
 }
 
+#screen {
+	position: fixed;
+	top: 0px;
+	left: 0px;
+	z-index: 1001;
+	width: 100vw;
+	height: 100vh;
+	display: none;
+	background-color: rgba(0,0,0,0);
+	transition: background-color 0.4s;
+}
+
 /*Header Styling*/
-#header {
+header {
 	position: fixed;
 	top: 0px;
 	width: 100%;
 	height: 60px;
-	background-color: rgba(94, 94, 94, 0.7);
+	background-color: rgba(0,0,0,0.7);
 	z-index: 1000;
 }
 
@@ -133,11 +177,19 @@ h1 {
 
 #linguaFrancaLogo {
 	float: left;
-	height: 45px;
-	margin-top: 5px;
+	height: 40px;
+	width: 109px;
+	margin-top: 7px;
+	background-image: url('../images/linguaFrancaLogo.png');
+	background-size: auto 40px;
+	transition: transform 0.1s;
 }
 
-#links {
+#linguaFrancaLogo:hover{
+	transform: scale(0.97);
+}
+
+#navLinks {
 	float: right;
 	height: 100%;
 }
@@ -147,19 +199,7 @@ h1 {
 	margin-right: 10px;
 	text-decoration: none;
 	color: white;
-	transition: color 0.15s;
-}
-
-.linkText:hover{
-	color: black;
-}
-
-/*Footer Sytling*/
-#footer {
-	padding: 50px calc(50vw - 480px) 50 calc(50vw - 480px);
-	height: 25vh;
-	width: 100vw;
-	background-color: black;	
+	transition: color 0.3s;
 }
 
 /*Landing Section Styling*/
@@ -170,7 +210,7 @@ h1 {
 	background-image: url('../images/landing/landingBackground.jpg');
 	background-repeat: no-repeat;
 	background-size: 100vw;
-	padding-top: 200px;
+	padding-top: 18vh;
 	text-align: center;
 }
 
@@ -183,37 +223,32 @@ h1 {
 	display: inline;
 }
 
-#landingDownDiv {
+#landingLearnMore {
 	margin-top: 20vh;
 }
 
 /*Lessons Styling*/
-#lessons{
-	width: 100%;
-	background-color: rgb(238, 229, 215);
-	color: black;
+#lessonsBanner {
+	background-image: url('../images/lessons/lessonsBackground.jpg');
 }
 
-/*Echantillon Styling*/
+#lessonsContent {
+	background-color: rgb(238, 229, 215);
+}
 
-#echantillon {
+#lessonsEchantillon {
 	background-color: rgb(162, 178, 182);
 	color: white;
 	min-height: 20vh;
 }
 
-#signUpButton {
+#echantillonSignButton {
 	color: rgb(100,100,100);
 }
 
 /*Events Styling*/
-#events {
-	height: 40vh;
-	box-sizing: border-box;
-	padding-top: 10vh;
+#eventsBanner {
 	background-image: url('../images/events/eventsBackground.jpg');
-	background-size: 100vw;
-	text-align: center;
 }
 
 #eventsIntro{
@@ -225,80 +260,57 @@ h1 {
 	color: white;
 	position: relative;
 	padding-bottom: 50px;
-	height: 280px;
+	height: 220px;
 }
 
-.eventSeasonImage {
-	position: relative;
+.eventSeason img {
 	width: 260px;
-	margin-top: -130px;
+	transform: translate(0, -100px);
+	transition: transform 0.3s;
+}
+
+.eventSeason img:hover{
+	transform: translate(0, -100px) scale(0.95) ;
+}
+
+.eventsText {
+	float: right;
+	width: 525px;
+	margin-right: 100px;
+}
+
+.eventsTextRight {
+	float: left;
+	width: 525px;
+	margin-left: 100px;
 }
 
 .eventSeasonHeading {
-	font-size: 4vh;
-	line-height: 6vh;
-	font-family: 'Sketch Serif';
-	font-weight: normal;
-}
-
-.eventSeasonHeadingRight {
-	font-size: 4vh;
-	line-height: 6vh;
+	font-size: 36px;
+	line-height: 60px;
 	font-family: 'Sketch Serif';
 	font-weight: normal;
 	margin-top: 0px;
 }
 
-.eventsText {
+.seasonHeadingContainer {
+	width: 300px;
+	height: 60px;
+	border-radius: 10px;
+	padding-left: 50px;
+	padding-right: 50px;
+	margin-top: 0px;
+}
+
+.seasonHeadingContainerRight {
 	float: right;
-	position: relative;
-	width: 525px;
-	margin-right: 100px;
 }
 
 .eventSeasonP {
 	margin-left: 0px;
 	margin-right: 0px;
-	clear: both;
 }
 
-.eventSeasonPRIght {
-	margin-left: 0px;
-	margin-right: 0px;
-	clear: both;
-	margin-top: 100px;
-
-}
-
-.seasonHeadingContainer {
-	width: 300px;
-	height: 6vh;
-	border-radius: 10px;
-	padding-left: 50px;
-	padding-right: 50px;
-}
-
-.seasonHeadingContainerRight {
-	width: 300px;
-	height: 6vh;
-	float: right;
-	border-radius: 10px;
-	padding-left: 50px;
-	padding-right: 50px;
-}
-
-.eventSeasonImageRight {
-	float: right;
-	position: relative;
-	width: 260px;
-	margin-top: -130px;
-}
-.eventsTextRight {
-	float: left;
-	position: relative;
-	width: 525px;
-	margin-left: 100px;
-}
 
 #eventsAutumn {
 	background-color: #C65A62;
@@ -335,20 +347,15 @@ h1 {
 	background-color: #16c1a0;
 	text-align: right;
 }
+
+
 /*Gifts Styling*/
-#gifts {
-	background-color: rgb(238, 229, 215);
+#giftsBanner {
+	background-image: url('../images/giftShop/giftBackground.jpg');
 }
 
-/*About  Styling*/
-#about {
-	background-color: rgb(94, 94, 94);
-}
-
-/*Contact Styling*/
-#contact {
-	background-color: rgb(255, 252, 239);
-	height: 25vh;
+#giftsContent {
+	background-color: rgb(238,229,215	)
 }
 
 #fullShopButton	{
@@ -356,9 +363,136 @@ h1 {
 	background-color: rgb(162, 178, 182);
 }
 
-#giftsContent	{
+/*About  Styling*/
+#aboutBanner {
+	background-image: url('../images/about/aboutBackground.jpg');
+}
+
+#aboutContent {
+	background-color: rgb(94, 94, 94);
+}
+
+
+/*Contact Styling*/
+#contactBanner {
+	background-image: url('../images/contact/contactBackground.jpg');
+	height: 400px;
+}
+
+#contactContentWrapper {
+	background-color: rgb(238,229,215);
+}
+
+#contactContent {
+	color: white;
+	box-sizing: border-box;
+	background-color: rgb(205,51,60);
+	transform: translate(0, -100px);
+	padding-left: 100px;
+	padding-right: 100px;
+}
+
+#emailForm {
+	margin-top: 25px;
+	margin-left: 100px;
+}
+
+#formWrapper {
+	margin-top: 40px;
+}
+
+#emailForm input, #emailForm textarea{
+	margin-bottom: 15px;
+	background-color: #c7000c;
+	color: white;
+	border-style: none;
+	border-radius: 20px;
+}
+
+#formWrapper input{
+	height: 40px;
+	width: 300px;
+	font-size: 16px;
+	box-sizing: border-box;
+	padding-left: 20px;
+	padding-right: 20px;
+}
+
+#newsCheck {
+	float: left;
+	transform: scale(1.5);
+	margin-left: 20px;
+	margin-top: 10px;
+}
+
+#newsCheckText {
+	margin-right: 0px;
+	margin-left: 0px;
+	margin-top: 0px;
+	padding-top: 0px;
+	padding-left: 0px;
+	width: 400px;
+	float: right;
+}
+
+#emailForm {
+	margin-left: auto;
+	margin-right: auto;
+	width: 450px;
+}
+
+#emailForm textarea {
+	box-sizing: border-box;
+	padding-top: 25px;
+	padding-bottom: 25px;
+	padding-left: 30px;
+	padding-right: 30px;
+	font-family: Lucida Sans;
+	font-size: 16px;
+	width: 450px;
+	height: 150px;
+}
+
+#emailForm button {
+	width: 100px;
+	height: 40px;
+	color: white;
+	background-color: black;
+	border-style: none;
+	font-size: 16px;
+	transform: translate(175px, -70%);
+	transition: background-color 0.2s;
+}
+
+#emailForm button:hover {
+	background-color: rgb(50,50,50);
+}
+
+#phoneNumbers {
+	margin-left: auto;
+	margin-right: auto;
+}
+
+.placeCol {
+	width: 100px;
+}
+
+#contactMapWrapper {
+	background-color: rgb(162,178,182);
+	transform: translate(0, -100px);
 
 }
 
 
 
+
+
+
+
+/*Footer Styling*/
+#footer {
+	padding: 50px calc(50vw - 480px) 50 calc(50vw - 480px);
+	height: 25vh;
+	width: 100vw;
+	background-color: black;	
+}

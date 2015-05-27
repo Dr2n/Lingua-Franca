@@ -1,77 +1,104 @@
+<!------------------------------------------------------
+		   ________          ____        ____           
+		  / ____/ /_  ____ _/ __ \____ _/ __ \____ _    
+		 / /   / __ \/ __ `/ /_/ / __ `/ / / / __ `/    
+		/ /___/ / / / /_/ / ____/ /_/ / /_/ / /_/ /     
+		\_______ /_/\__,_/_/_   \__,_/_____/\__,_/      
+		   / __ \___  _____(_)___ _____                 
+		  / / / / _ \/ ___/ / __ `/ __ \                
+		 / /_/ /  __(__  ) / /_/ / / / /                
+		/_____/\___/____/_/\__, /_/ /_/                 
+		                  /____/         
+
+	  Charlie Hou, Patrick Kim & Darren Fu 2015
+----------------------------------------------------!-->
+
 <!DOCTYPE html>
 <meta charset='utf-8'>
 <html>
 <head>
-	<link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
-	<link rel="icon" href="favicon.ico" type="image/x-icon">
-	<title>Lingua Franca | French Lessons Brisbane</title>
+	<link rel="shortcut icon" href="favicon.png" type="image/x-icon">
+	<link rel="icon" href="favicon.png" type="image/x-icon">
+	<title>Lingua Franca Brisbane</title>
+	
 	<link rel="stylesheet" type="text/css" href="css/mainStyle.css">
-	<script src='script/mainScript.js'></script>
-	<script src='script/jquery.js'></script>
-	<script>
-		$(document).ready(function(){
-			$('a').click(function(){
-	    		$('html, body').animate({
-			        scrollTop: $( $(this).attr('href') ).offset().top + -60
-		    	}, 500);
-		    	return false;
-			});
-			
-		})
 
+	<script src='script/jquery.js'></script>
+	<script src='script/mainScript.js'></script>
+	
+	<script>
+		
 	</script>
 </head>
+
 <body>
-	<div id='header'>
-		
+	<!-- Navigation Bar !-->
+	<header>
 		<div id='headerContent'>
-			<a href='#landingDiv'><img id='linguaFrancaLogo' src='images/linguaFrancaLogo.png'/></a>
-			<div id='links'>
-				<a href='#lessons'><span class='linkText'>Lessons</span></a>
-				<a href='#events'><span class='linkText'>Events</span></a>
-				<a href='#gifts'><span class='linkText'>Gifts</span></a>
-				<a href='#about'><span class='linkText'>About Us</span></a>
-				<a href='#contact'><span class='linkText'>Contact</span></a>
+			<a href='#landingDiv' id='linguaFrancaLogo'></a>
+
+			<div id='navLinks' class='noselect'>
+				<a href='#lessonsBanner' id='lessonsBannerLink' class='linkText'>Lessons</a>
+				<a href='#eventsBanner' id='eventsBannerLink' class='linkText'>Events</a>
+				<a href='#giftsBanner' id='giftsBannerLink' class='linkText'>Gifts</a>
+				<a href='#aboutBanner' id='aboutBannerLink' class='linkText'>About Us</a>
+				<a href='#contactBanner' id='contactBannerLink' class='linkText'>Contact</a>
 			</div>
+
 		</div>
 
-	</div>
-	<div id='landingDiv' class='parallax'>
-		<h1 id='titleText'>WE ARE LINGUA FRANCA</h1>
-		<h2 id='subtitleText'> We provide a unique learning experience for French at all Levels</h2>
-
-		<div id='landingDownDiv'>
-			<h1 id='learnMore' class='smallTitleText'>LEARN MORE</h1>
-			<a  href='#lessons'>
-				<img id='learnMoreButton' src='images/landing/downButton.png' />
-			</a>
-		</div>
-
-	</div>
+	</header>
+	
+	<!-- Popup Screen !-->
 	<div id='popup'></div>
 	<div id='screen'></div>
 
-	<div id='content'>
+	<!-- Actual Page Content !-->
+	
+		<!-- Landing Banner !-->
+		<div id='landingDiv' class='parallax'>
+			<h1 class='titleText'>WE ARE LINGUA FRANCA</h1>
+			<h2 class='subTitleText'> We provide a unique learning experience for French at all Levels</h2>
 
-		<div id='lessons' class='wrapperDiv'>
-			<div id='lessonsContent' class='contentDiv'>
-				<h1>Our Lessons</h1>
+			<div id='landingLearnMore'>
+				<h1 class='subTitleText'>LEARN MORE</h1>
+				<a href='#lessonsBanner'><img id='learnMoreButton' src='images/landing/downButton.png' /></a>
 			</div>
 		</div>
-		<div id='echantillon' class='wrapperDiv'>
+
+
+		<!-- Lessons !-->
+		<div id='lessonsBanner' class='parallax'>
+			<div class='largeHeadingContainer'>
+				<h1 class='titleText'>Our Lessons</h1>
+			</div>
+		</div>
+
+		<div id='lessonsContent'>
+			<div class='contentDiv'>
+			</div>
+		</div>
+
+		<div id='lessonsEchantillon'>
 			<div id='echantillonContent' class='contentDiv'>
 				<h1>Unsure? Try an  &#232;chantillon!</h1>
+
 				<p>We often hear from people who have been meaning to start or return to learning French and for one reason or another it hasn't happened. We decided, therefore, to give people the chance to come and try out one of our friendly and relaxed group lessons <em>free of charge</em>. Échantillon is the French word for 'sample' or 'test' and that's exactly what we'd like you to do.</p>
-				<input type='button' class='largeButton' value='SIGN UP NOW!' id='signUpButton' />
+
+				<input type='button' class='largeButton' value='SIGN UP NOW!' id='echantillonSignButton' />
 			</div>
 		</div>
 
-		<div id='events' class='wrapperDiv parallax'>
-			<h1 class='largeSectionHeadingText'>Our Events</h1>
+
+		<!-- Events !-->
+		<div id='eventsBanner' class='parallax'>
+			<div class='largeHeadingContainer'>
+				<h1 class='titleText'>Our Events</h1>
+			</div>
 		</div>
 
-		<div id='eventsIntro' class='wrapperDiv'>
-			<div id='eventsIntroContent' class='contentDiv'>
+		<div id='eventsIntro' titleText>
+			<div class='contentDiv'>
 				<p>Often with a love of the French language comes a love of French culture and an interest in the way the French-speaking world does things differently to us.</p> 
 
 				<p>Our seasonal events are designed to bring together like-minded people in a social situation while enjoying the best food, wine, film, fashion (and much more) the French have to offer.</p>
@@ -80,9 +107,11 @@
 			</div>
 		</div>
 
-		<div class='eventSeason' id='eventsAutumn' class='wrapperDiv'>
+		<div class='eventSeason noselect' id='eventsAutumn'>
 			<div class='contentDiv seasonSectionWrap'>
+
 				<img src='images/events/autumn.png' class='eventSeasonImage' id='eventAutumnImage'/>
+
 				<div class='eventsText'>
 					<div class='seasonHeadingContainer' id='autumnHeadingContainer'>
 						<h2 class='eventSeasonHeading'>Autumn</h2>
@@ -91,26 +120,30 @@
 						Come and join us for a pre-dinner apéro before wandering down to James St for the French Film Festival.
 					</p>
 				</div>
+
 			</div>
 		</div>
 
-		<div class='eventSeason' id='eventsWinter' class='wrapperDiv'>
+		<div class='eventSeason noselect' id='eventsWinter'>
 			<div class='contentDiv seasonSectionWrap'>
-				<img src='images/events/winter.png' class='eventSeasonImageRight' id='eventWinterImage'/>
+
+				<img src='images/events/winter.png' class='right' id='eventWinterImage'/>
 				<div class='eventsTextRight'>
-					<div class='seasonHeadingContainerRight' id='winterHeadingContainer'>
-						<h2 class='eventSeasonHeadingRight'>Winter</h2>
+					<div class='seasonHeadingContainer seasonHeadingContainerRight' id='winterHeadingContainer'>
+						<h2 class='eventSeasonHeading'>Winter</h2>
 					</div>
-					<p class='eventSeasonPRIght'>
+					<p class='eventSeasonP right'>
 						Warm up with a delicious raclette dinner. Melted cheese and good wine: what better?
 					</p>
 				</div>
+
 			</div>
 		</div>
 
-		<div class='eventSeason' id='eventsSpring' class='wrapperDiv'>
+		<div class='eventSeason noselect' id='eventsSpring'>
 			<div class='contentDiv seasonSectionWrap'>
-				<img src='images/events/spring.png' class='eventSeasonImage' id='eventSpringImage'/>
+
+				<img src='images/events/spring.png' id='eventSpringImage'/>
 				<div class='eventsText'>
 					<div class='seasonHeadingContainer' id='springHeadingContainer'>
 						<h2 class='eventSeasonHeading'>Spring</h2>
@@ -119,44 +152,112 @@
 						Come and learn how to make the traditional French version of pizza: la pissaladière.
 					</p>
 				</div>
+
 			</div>
 		</div>
 
-		<div class='eventSeason' id='eventsSummer' class='wrapperDiv'>
+		<div class='eventSeason noselect' id='eventsSummer'>
 			<div class='contentDiv seasonSectionWrap'>
-				<img src='images/events/summer.png' class='eventSeasonImageRight' id='eventSummerImage'/>
+
+				<img src='images/events/summer.png' class='right' id='eventSummerImage'/>
 				<div class='eventsTextRight'>
-					<div class='seasonHeadingContainerRight' id='summerHeadingContainer'>
-						<h2 class='eventSeasonHeadingRight'>Summer</h2>
+					<div class='seasonHeadingContainer seasonHeadingContainerRight' id='summerHeadingContainer'>
+						<h2 class='eventSeasonHeading'>Summer</h2>
 					</div>
-					<p class='eventSeasonPRIght'>
+					<p class='eventSeasonP right'>
 						Un pique-nique under the stars. Beaujolais, anyone?
 					</p>
 				</div>
+
 			</div>
 		</div>
-		
 
-		<div id='gifts' class='wrapperDiv'>
-			<div id='giftsContent' class='contentDiv'>
-				<h1>Gift Shop</h1>
+
+		<!-- Gifts !-->
+		<div id='giftsBanner' class='parallax'>
+			<div class='largeHeadingContainer'>
+				<h1 class='titleText'>Gift Shop</h1>
+			</div>
+		</div>
+
+		<div id='giftsContent'>
+			<div class='contentDiv'>
 				<a href='http://www.google.com'><input type='button' class='largeButton' value='VISIT THE FULL STORE!' id='fullShopButton'></a>
 			</div>
 		</div>
-		<div id='about' class='wrapperDiv'>
-			<div id='aboutContent' class='contentDiv'>
-				<h1>About</h1>
-			</div>
-		</div>
-		<div id='contact' class='wrapperDiv'>
-			<div id='contactContent' class='contentDiv'>
-				<h1>Contact</h1>
+
+
+		<!-- About !-->
+		<div id='aboutBanner' class='parallax'>
+			<div class='largeHeadingContainer'>
+				<h1 class='titleText'>About</h1>
 			</div>
 		</div>
 
+		<div id='aboutContent'>
+			<div class='contentDiv'>
+			</div>
+		</div>
+
+
+		<!-- Contact !-->
+		<div id='contactBanner' class='parallax'>
+			<div class='largeHeadingContainer'>
+				<h1 class='titleText'>Contact</h1>
+			</div>
+		</div>
+		
+		<div id='contactContentWrapper'>
+			<div class='contentDiv' id='contactContent'>
+				<h2>Message Us</h2>
+				<p>We'd love to help you find the right solution to your language requirements so please feel free to get in touch with us. If you'd rather talk to us please include your phone number and the best times to call and we'll get back to you as soon as we can.</p>
+				<form id='emailForm' action='script/sendEmail.php' method='post'>
+					<div id='formWrapper'>
+					<input type='text' name='senderName' class='formInput' value='Name'><br>
+
+					<input type='text' name='senderEmail' class='formInput' value='Email'><br>
+
+					<input type='text' name='senderSubject' class='formInput' value='Subject'><br>
+					</div>
+
+					<input id='newsCheck' type='checkBox' name='newsletterCheck' class='formInput'><p id='newsCheckText'>Yes, keep me up to date with your courses and events via your periodical newsletters.</p><br>
+
+					<textarea name='senderMessage' id='messageBox'>Message</textarea><br>
+
+					<button type='submit' form='emailForm' value='SEND'>SEND</button>
+				</form>
+
+				<h2>Phone Us</h2>
+				
+				<table id='phoneNumbers'>
+					<tr>
+						<td class='placeCol'>Work</td>
+						<td class='phoneCol'>(07) 3162 4199</td>
+					</tr>
+					<tr>
+						<td class='placeCol'>Mobile</td>
+						<td class='phoneCol'>0405 381 972</td>
+					</tr>
+				</table>
+			</div>
+				<div id='contactMapWrapper' class='contentDiv'>
+					<div id='contactLocations'>
+						<h3>Locations</h3>
+						<ul>
+							<li>Newstead</li>
+							<li>Bulimba</li>
+							<li>Paddington <span id='new'>NEW!</span></li>
+						</ul>
+					</div>
+					<div id='contactMapWidget'>
+					</div>
+				</div>
+		</div>
+
+
+
+		<!-- Footer !-->
 		<div id='footer'></div>
-	</div>
-
 
 </body>
 </html>
