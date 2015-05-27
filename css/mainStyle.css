@@ -234,6 +234,12 @@ header {
 
 #lessonsContent {
 	background-color: rgb(238, 229, 215);
+	position: relative;
+	height: 160px;
+	overflow: hidden;
+	transition: height ease 1s;
+	-webkit-transition: height ease 1s;
+	-moz-transition: height ease 1s;
 }
 
 #lessonsEchantillon {
@@ -244,6 +250,15 @@ header {
 
 #echantillonSignButton {
 	color: rgb(100,100,100);
+}
+
+.subContent{
+	position: absolute;
+	opacity:0;
+	width: 960px;
+	transition: opacity ease 1s;
+	-webkit-transition: opacity ease 1s;
+	-moz-transition: opacity ease 1s;
 }
 
 /*Events Styling*/

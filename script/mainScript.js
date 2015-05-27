@@ -27,11 +27,14 @@ function init(){
 		links[i].addEventListener("mouseout", linkMouseOut, false);
 	}
 
+	textInitialise();
+	document.getElementById("lessonSelect").value="initial";
+
 	/*Event Listeners*/
 	window.addEventListener("scroll", offsetParallaxBackgrounds, false);
 	window.addEventListener("scroll", highlightCurrentSection, false);
 	document.getElementById('echantillonSignButton').addEventListener("click", togglePopup, false);
-
+	document.getElementById("lessonSelect").addEventListener("change",lessonUpdate,false);
 }
 
 /*Functions*/
@@ -139,13 +142,49 @@ function init(){
 	}
 
 
-/*Smooth Link Scrolling*/
-	$(document).ready(function(){
-		$('a').click(function(){
-    		$('html, body').animate({
-		        scrollTop: $( $(this).attr('href') ).offset().top + -60
-	    	}, 500);
-	    	return false;
-		});
-		
-	})
+	/*Smooth Link Scrolling*/
+		$(document).ready(function(){
+			$('a').click(function(){
+	    		$('html, body').animate({
+			        scrollTop: $( $(this).attr('href') ).offset().top + -60
+		    	}, 500);
+		    	return false;
+			});
+			
+		})
+
+	/*Lessons Content Updating*/
+	function lessonUpdate(){
+		if(document.getElementById("lessonSelect").value=="private"){
+			zUpdate(1,0,0);
+			opacityUpdate(1,0,0);
+			document.getElementById("lessonsContent").style.height=String(document.getElementById("private").offsetHeight+140)+"px";
+		} else if(document.getElementById("lessonSelect").value=="group"){
+			zUpdate(0,1,0);
+			opacityUpdate(0,1,0);
+			document.getElementById("lessonsContent").style.height=String(document.getElementById("group").offsetHeight+140)+"px";
+		} else if(document.getElementById("lessonSelect").value=="delf"){
+			zUpdate(0,0,1);
+			opacityUpdate(0,0,1);
+			document.getElementById("lessonsContent").style.height=String(document.getElementById("delf").offsetHeight+140)+"px";
+		}
+	}
+	
+	function textInitialise(){
+		document.getElementById("private").style.opacity="0";
+		document.getElementById("group").style.opacity="0";
+		document.getElementById("delf").style.opacity="0";
+	}
+	
+	function zUpdate(x,y,z){
+		document.getElementById("private").style.zIndex=x;
+		document.getElementById("group").style.zIndex=y;
+		document.getElementById("delf").style.zIndex=z;
+	}
+	
+	
+	function opacityUpdate(x,y,z){
+		document.getElementById("private").style.opacity=x;
+		document.getElementById("group").style.opacity=y;
+		document.getElementById("delf").style.opacity=z;
+	}	
