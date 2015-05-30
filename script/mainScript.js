@@ -35,6 +35,36 @@ function init(){
 	window.addEventListener("scroll", highlightCurrentSection, false);
 	document.getElementById('echantillonSignButton').addEventListener("click", togglePopup, false);
 	document.getElementById("lessonSelect").addEventListener("change",lessonUpdate,false);
+
+	/*Random Gift Shop Images*/
+	var images = [
+		["hatGift.png", 'this woman - 100 rupees'], 
+		["bracelet.png", 'this woman - 100 rupees'],
+		["necklaces.png", 'this woman - 100 rupees'],
+		["soapGift.png", 'this woman - 100 rupees'], 
+		["pencilCaseGift.png", "this pencil case - 5x + 3 where x = darren's age"], 
+	];
+
+	var usedImages = [];
+
+
+
+	var imageWrapper = document.getElementById('imageContainer');
+
+	for (var i = 0; i < 3; i++){
+		
+		var randomNumber = parseInt(Math.random() * images.length);
+		
+		while(usedImages.indexOf(randomNumber) != -1){
+			randomNumber = parseInt(Math.random() * images.length);	
+		}
+
+		usedImages.push(randomNumber);
+
+		var pictureHTML = '<a href="http://google.com" class="randomGift" id="hat"><img src="images/giftShop/' + images[randomNumber][0] + '"><span>' + images[randomNumber][1] + '</span></a>';
+		imageWrapper.innerHTML += pictureHTML;
+		
+	}
 }
 
 /*Functions*/
