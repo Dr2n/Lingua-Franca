@@ -278,18 +278,4 @@ function init(){
 		document.getElementById("private").style.opacity=x;
 		document.getElementById("group").style.opacity=y;
 		document.getElementById("delf").style.opacity=z;
-<<<<<<< HEAD
 	}
-
-
-/*Trimming*/
-if(typeof(String.prototype.trim) === "undefined")
-{
-    String.prototype.trim = function() 
-    {
-        return String(this).replace(/^\s+|\s+$/g, '');
-    };
-}
-=======
-	}
->>>>>>> master
