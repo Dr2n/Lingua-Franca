@@ -378,6 +378,66 @@ header {
 	background-color: rgb(162, 178, 182);
 }
 
+a.randomGift {
+    display: inline-block;
+    background: black;
+    padding: 0;
+    position: relative;
+}
+
+a.randomGift img {
+    display: block;
+    
+    -webkit-transition: all 0.125s linear;
+       -moz-transition: all 0.125s linear;
+        -ms-transition: all 0.125s linear;
+         -o-transition: all 0.125s linear;
+            transition: all 0.125s linear;
+}
+
+a.randomGift:hover img {
+    opacity: 0.75;
+            
+}
+
+a.randomGift span
+{
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    color: rgba(255, 255, 255, 0);
+     -webkit-transition: all 0.125s linear;
+       -moz-transition: all 0.125s linear;
+        -ms-transition: all 0.125s linear;
+         -o-transition: all 0.125s linear;
+            transition: all 0.125s linear;
+}
+
+a.randomGift:hover span
+{
+    color: rgba(255, 255, 255, 1);
+     -webkit-transition: all 0.125s linear;
+       -moz-transition: all 0.125s linear;
+        -ms-transition: all 0.125s linear;
+         -o-transition: all 0.125s linear;
+            transition: all 0.125s linear;
+}
+
+
+#hatGift	{
+	margin-left: calc(33vw - 265px);
+	background-image:;
+}
+
+#pencilCaseGift	{
+
+}
+
+#soapGift	{
+
+}
+
+
 /*About  Styling*/
 #aboutBanner {
 	background-image: url('../images/about/aboutBackground.jpg');
