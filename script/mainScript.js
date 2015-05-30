@@ -30,6 +30,23 @@ function init(){
 	textInitialise();
 	document.getElementById("lessonSelect").value="initial";
 
+	window.contactForms = document.getElementsByClassName('formInput');
+	for (var i = 0; i < contactForms.length; i++){
+		contactForms[i].addEventListener('focus', formInHandler, false);
+		contactForms[i].addEventListener('blur', formOutHandler, false);
+
+		if (contactForms[i].name == "senderName" && contactForms[i].value != 'Name' || contactForms[i].name == 'senderEmail' && contactForms[i].value != 'Email' || contactForms[i].name == "senderSubject" && contactForms[i].value != 'Subject'){
+			contactForms[i].style.color = 'white';
+		}
+	}
+
+	document.getElementById('messageBox').addEventListener('focus', messageBoxIn, false);
+	document.getElementById('messageBox').addEventListener('blur', messageBoxOut, false);
+
+	if (document.getElementById('messageBox').value != 'Message'){
+		document.getElementById('messageBox').style.color = 'white';
+	}
+
 	/*Event Listeners*/
 	window.addEventListener("scroll", offsetParallaxBackgrounds, false);
 	window.addEventListener("scroll", highlightCurrentSection, false);
@@ -46,8 +63,6 @@ function init(){
 	];
 
 	var usedImages = [];
-
-
 
 	var imageWrapper = document.getElementById('imageContainer');
 
@@ -69,9 +84,54 @@ function init(){
 
 /*Functions*/
 
+	/*Forms Handling*/
+
+	function formInHandler(event){
+		if ((event.target.name == "senderName" && event.target.value == "Name") || (event.target.name == "senderEmail" && event.target.value == "Email") || (event.target.name == "senderSubject" && event.target.value == "Subject")){
+			event.target.value = '';
+		}
+
+		event.target.style.color = "#FFF";
+	}
+
+	function formOutHandler(event){
+
+		if (event.target.value != ''){
+			return;
+		}
+
+		if (event.target.name == 'senderName'){
+			event.target.value = 'Name';
+			event.target.style.color = '#FF9EA4';
+		}
+		if (event.target.name == 'senderEmail'){
+			event.target.value = 'Email';
+			event.target.style.color = '#FF9EA4';
+		}
+		if (event.target.name == 'senderSubject'){
+			event.target.value = 'Subject';
+			event.target.style.color = '#FF9EA4';
+		}
+	}
+
+	function messageBoxIn(event){
+		event.target.style.color = '#FFF';
+		if (event.target.value == "Message"){
+			event.target.value = '';
+		}
+	}
+
+	function messageBoxOut(event){
+		if (event.target.value == ''){
+			event.target.value = 'Message';
+			event.target.style.color = '#FF9EA4'
+		}
+	}
+
 	/*Parallax*/
 
 	function offsetParallaxBackgrounds(){
+		console.log('focusout');
 		var parallaxDivs = document.getElementsByClassName('parallax');
 
 		for (var i = 0; i < parallaxDivs.length; i++){
@@ -217,4 +277,14 @@ function init(){
 		document.getElementById("private").style.opacity=x;
 		document.getElementById("group").style.opacity=y;
 		document.getElementById("delf").style.opacity=z;
-	}	
+	}
+
+
+/*Trimming*/
+if(typeof(String.prototype.trim) === "undefined")
+{
+    String.prototype.trim = function() 
+    {
+        return String(this).replace(/^\s+|\s+$/g, '');
+    };
+}
