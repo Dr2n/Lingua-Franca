@@ -24,13 +24,8 @@
 	<link rel="stylesheet" type="text/css" href="css/mainStyle.css">
 
 	<script src='script/jquery.js'></script>
+	<script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?"></script>
 	<script src='script/mainScript.js'></script>
-	<script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyC2oKiU1CrKJqY0vS98-hWa4VMzYWXNuqk"></script>
-
-	
-	<script>
-		
-	</script>
 </head>
 
 <body>
@@ -335,9 +330,9 @@
 					<div id='contactLocations'>
 						<h2>Locations</h2>
 						<ul class='noselect'>
-							<li>Newstead</li>
-							<li>Bulimba</li>
-							<li>Paddington <span id='new'>NEW!</span></li>
+							<li id='newstead' class='locationButton'>Newstead</li>
+							<li id='bulimba' class='locationButton'>Bulimba</li>
+							<li id='paddington' class='locationButton'>Paddington <span id='new'>NEW!</span></li>
 						</ul>
 					</div>
 					<div id='contactMapWidget'>
