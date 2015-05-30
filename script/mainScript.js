@@ -39,10 +39,10 @@ function init(){
 	/*Random Gift Shop Images*/
 	var images = [
 		["raffia.png", 'Wide-brimmed raffia hat'], 
-		["braceletpurple", 'Reversible purple magnetic bracelet'],
+		["purplebracelet.png", 'Reversible purple magnetic bracelet'],
 		["necklaces.png", 'Lightweight citrus bead necklaces'],
 		["soap.png", '<i>Savon de Marseille</i> soap cubes'], 
-		["trucs.png", "Trucs de Fille - <i>Girl stuff</i> pencil case"], 
+		["truvs.png", "Trucs de Fille - <i>Girl stuff</i> pencil case"], 
 	];
 
 	var usedImages = [];
