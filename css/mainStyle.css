@@ -370,12 +370,16 @@ header {
 }
 
 #giftsContent {
-	background-color: rgb(238,229,215	)
+	background-color: rgb(238,229,215);
 }
 
 #fullShopButton	{
 	color: rgb(255, 252, 239);
 	background-color: rgb(162, 178, 182);
+}
+
+#imageContainer	{
+	text-align:center;
 }
 
 a.randomGift {
@@ -422,21 +426,6 @@ a.randomGift:hover span
          -o-transition: all 0.125s linear;
             transition: all 0.125s linear;
 }
-
-
-#hatGift	{
-	margin-left: calc(33vw - 265px);
-	background-image:;
-}
-
-#pencilCaseGift	{
-
-}
-
-#soapGift	{
-
-}
-
 
 /*About  Styling*/
 #aboutBanner {
