@@ -112,11 +112,7 @@ h1 {
 	border-radius: 20px;
 	font-size: 28px;
 	font-family: Sketch Serif;
-	transition: color 0.2s;
-}
-
-.largeButton:hover {
-	color: rgb(100,100,100);
+	transition: background-color 0.2s, color 0.2s;
 }
 
 .parallax {
@@ -254,8 +250,16 @@ header {
 }
 
 #echantillonSignButton {
-	color: rgb(100,100,100);
+	background-color: #62899C;
+	color: #FFF;
 }
+
+
+#echantillonSignButton:hover {
+	background-color: #415B68;
+	color: #FFF;
+}
+
 
 .subContent{
 	position: absolute;
@@ -477,10 +481,11 @@ a.randomGift:hover span
 
 #emailForm input, #emailForm textarea{
 	margin-bottom: 15px;
-	background-color: #c7000c;
+	background-color: #AA000B;
 	color: white;
 	border-style: none;
 	border-radius: 20px;
+	color: #FF9EA4;
 }
 
 #formWrapper input{
@@ -553,10 +558,58 @@ a.randomGift:hover span
 }
 
 #contactMapWrapper {
-	background-color: rgb(162,178,182);
-	transform: translate(0, -100px);
-	-webkit-transform: translate(0, -100px);
+	padding: 0 0;
+	height: 450px;
+	background-color: white;
+	transform: translate(0, -120px);
+	-webkit-transform: translate(0, -120px);
 
+}
+
+#contactLocations {
+	background-color: rgb(162,178,182);
+	width: 300px;
+	height: 100%;
+	color: #FFF;
+
+}
+
+#contactLocations h2{
+	padding-left: 40px;
+	padding-top: 40px;
+	padding-bottom: 20px;
+}
+
+#contactLocations ul {
+	padding-left: 0px;
+}
+
+#contactLocations li {
+	background-color: #62899C;
+	display: block;
+	width: 100%;
+	height: 55px;
+	box-sizing: border-box;
+	margin-left: 0px;
+	padding-left: 60px;
+	line-height: 55px;
+}
+
+#contactLocations li:hover {
+	background-color: #415B68;
+	
+}
+
+#contactMapWidget {
+	background-color: white;
+}
+
+#new {
+	font-size: 11px;
+	color: rgb(162,178,182);
+	position: relative;
+	top: -5px;
+	left: 5px;
 }
 
 
