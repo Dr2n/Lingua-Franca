@@ -187,6 +187,7 @@ header {
 
 #linguaFrancaLogo:hover{
 	transform: scale(0.97);
+	-webkit-transform: scale(0.97);
 }
 
 #navLinks {
@@ -281,11 +282,15 @@ header {
 .eventSeason img {
 	width: 260px;
 	transform: translate(0, -100px);
+	-webkit-transform: translate(0, -100px);
 	transition: transform 0.3s;
+	transition: -webkit-transform 0.3s;
+
 }
 
 .eventSeason img:hover{
-	transform: translate(0, -100px) scale(0.95) ;
+	transform: translate(0, -100px) scale(0.95);
+	-webkit-transform: translate(0, -100px) scale(0.95);
 }
 
 .eventsText {
@@ -403,6 +408,7 @@ header {
 	box-sizing: border-box;
 	background-color: rgb(205,51,60);
 	transform: translate(0, -100px);
+	-webkit-transform: translate(0, -100px);
 	padding-left: 100px;
 	padding-right: 100px;
 }
@@ -476,6 +482,7 @@ header {
 	border-style: none;
 	font-size: 16px;
 	transform: translate(175px, -70%);
+	-webkit-transform: translate(175px, -70%);
 	transition: background-color 0.2s;
 }
 
@@ -495,6 +502,7 @@ header {
 #contactMapWrapper {
 	background-color: rgb(162,178,182);
 	transform: translate(0, -100px);
+	-webkit-transform: translate(0, -100px);
 
 }
 
