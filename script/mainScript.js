@@ -245,6 +245,7 @@ function init(){
 
 	/*Lessons Content Updating*/
 	function lessonUpdate(){
+		console.log(document.getElementById("lessonSelect").value);
 		if(document.getElementById("lessonSelect").value=="private"){
 			zUpdate(1,0,0);
 			opacityUpdate(1,0,0);
@@ -254,29 +255,30 @@ function init(){
 			opacityUpdate(0,1,0);
 			document.getElementById("lessonsContent").style.height=String(document.getElementById("group").offsetHeight+140)+"px";
 		} else if(document.getElementById("lessonSelect").value=="delf"){
+			console.log("registered");
 			zUpdate(0,0,1);
 			opacityUpdate(0,0,1);
 			document.getElementById("lessonsContent").style.height=String(document.getElementById("delf").offsetHeight+140)+"px";
 		}
 	}
-	
+
 	function textInitialise(){
 		document.getElementById("private").style.opacity="0";
 		document.getElementById("group").style.opacity="0";
 		document.getElementById("delf").style.opacity="0";
 	}
-	
+
 	function zUpdate(x,y,z){
 		document.getElementById("private").style.zIndex=x;
 		document.getElementById("group").style.zIndex=y;
 		document.getElementById("delf").style.zIndex=z;
 	}
-	
-	
+
 	function opacityUpdate(x,y,z){
 		document.getElementById("private").style.opacity=x;
 		document.getElementById("group").style.opacity=y;
 		document.getElementById("delf").style.opacity=z;
+<<<<<<< HEAD
 	}
 
 
@@ -288,3 +290,6 @@ if(typeof(String.prototype.trim) === "undefined")
         return String(this).replace(/^\s+|\s+$/g, '');
     };
 }
+=======
+	}
+>>>>>>> master
