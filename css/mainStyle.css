@@ -555,7 +555,7 @@ a.randomGift:hover span
 
 #contactMapWrapper {
 	padding: 0 0;
-	height: 450px;
+	height: 500px;
 	background-color: white;
 	transform: translate(0, -120px);
 	-webkit-transform: translate(0, -120px);
@@ -568,6 +568,7 @@ a.randomGift:hover span
 	height: 100%;
 	color: #FFF;
 	padding-left: 0px;
+	float: left;
 
 }
 
@@ -601,6 +602,9 @@ a.randomGift:hover span
 
 #contactMapWidget {
 	background-color: white;
+	width: 660px;
+	height: 500px;
+	float: left;
 }
 
 #new {

@@ -48,13 +48,15 @@ function init(){
 		document.getElementById('messageBox').style.color = 'white';
 	}
 
+	var locationButtons = document.getElementsByClassName('locationButton');
+	for (var i = 0; i < locationButtons.length; i++){
+		locationButtons[i].addEventListener('click', locationClickHandler, false);
+	}
 	/*Event Listeners*/
 	window.addEventListener("scroll", offsetParallaxBackgrounds, false);
 	window.addEventListener("scroll", highlightCurrentSection, false);
 	document.getElementById('echantillonSignButton').addEventListener("click", togglePopup, false);
 	document.getElementById("lessonSelect").addEventListener("change",lessonUpdate,false);
-
-	/*Map Creation*/
 
 
 	/*Random Gift Shop Images*/
@@ -86,17 +88,50 @@ function init(){
 	}
 }
 
-function initMap(event){
-	var mapOptions = {
-		zoom: 11,
-		center: new google.maps.LatLng(40.6700, -73.9400),
-		styles: [{"featureType":"administrative","elementType":"labels.text.fill","stylers":[{"color":"#444444"}]},{"featureType":"landscape","elementType":"all","stylers":[{"color":"#f2f2f2"}]},{"featureType":"poi","elementType":"all","stylers":[{"visibility":"off"}]},{"featureType":"road","elementType":"all","stylers":[{"saturation":-100},{"lightness":45}]},{"featureType":"road.highway","elementType":"all","stylers":[{"visibility":"simplified"}]},{"featureType":"road.arterial","elementType":"labels.icon","stylers":[{"visibility":"off"}]},{"featureType":"transit","elementType":"all","stylers":[{"visibility":"off"}]},{"featureType":"water","elementType":"all","stylers":[{"color":"#46bcec"},{"visibility":"on"}]}];
-	}
-
-	var map = new google.maps.Map(document.getElementById('contactMapWidget'), mapOptions)
-}
 
 /*Functions*/
+
+	/*Mapping*/
+	function initMap(event){
+		window.positions = {
+			start: new google.maps.LatLng(-27.4635818844069, 153.0309306163025),
+			newstead: new google.maps.LatLng(-27.45211, 153.04417),
+			bulimba:  new google.maps.LatLng(-27.45109, 153.05620),
+			paddington: new google.maps.LatLng(-27.45914, 153.00061)
+		}
+
+		var mapOptions = {
+			zoom: 13,
+			center: positions.start,
+			styles: [{"featureType":"administrative","elementType":"labels.text.fill","stylers":[{"color":"#444444"}]},{"featureType":"landscape","elementType":"all","stylers":[{"color":"#f2f2f2"}]},{"featureType":"poi","elementType":"all","stylers":[{"visibility":"off"}]},{"featureType":"road","elementType":"all","stylers":[{"saturation":-100},{"lightness":45}]},{"featureType":"road.highway","elementType":"all","stylers":[{"visibility":"simplified"}]},{"featureType":"road.arterial","elementType":"labels.icon","stylers":[{"visibility":"off"}]},{"featureType":"transit","elementType":"all","stylers":[{"visibility":"off"}]},{"featureType":"water","elementType":"all","stylers":[{"color":"#46bcec"},{"visibility":"on"}]}]
+		
+		}
+
+		window.map = new google.maps.Map(document.getElementById('contactMapWidget'), mapOptions);
+
+		window.newsteadMarker = new google.maps.Marker({
+			position: positions.newstead,
+			map: map,
+			title: 'Lingua Franca Newstead'
+		});
+
+		window.bulimbaMarker = new google.maps.Marker({
+			position: positions.bulimba,
+			map: map,
+			title: 'Lingua Franca Bulimba'
+		})
+
+		window.paddingtonAddress = new google.maps.Marker({
+			position: positions.paddington,
+			map: map,
+			title: 'Lingua Franca Paddington'
+		});
+	}
+
+	function locationClickHandler(event){
+		map.panTo(positions[String(event.target.id)]);
+		map.setZoom(18);
+	}
 
 	/*Forms Handling*/
 
