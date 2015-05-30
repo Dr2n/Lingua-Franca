@@ -15,6 +15,7 @@
 
 
 window.addEventListener("load", init, false);
+google.maps.event.addDomListener(window, 'load', initMap);
 
 function init(){
 
@@ -54,6 +55,9 @@ function init(){
 	document.getElementById('FAQbutton').addEventListener("click", togglePopup, false);
 	document.getElementById("lessonSelect").addEventListener("change",lessonUpdate,false);
 
+	/*Map Creation*/
+
+
 	/*Random Gift Shop Images*/
 	var images = [
 		["hatGift.png", 'this woman - 100 rupees'], 
@@ -81,6 +85,16 @@ function init(){
 		imageWrapper.innerHTML += pictureHTML;
 		
 	}
+}
+
+function initMap(event){
+	var mapOptions = {
+		zoom: 11,
+		center: new google.maps.LatLng(40.6700, -73.9400),
+		styles: [{"featureType":"administrative","elementType":"labels.text.fill","stylers":[{"color":"#444444"}]},{"featureType":"landscape","elementType":"all","stylers":[{"color":"#f2f2f2"}]},{"featureType":"poi","elementType":"all","stylers":[{"visibility":"off"}]},{"featureType":"road","elementType":"all","stylers":[{"saturation":-100},{"lightness":45}]},{"featureType":"road.highway","elementType":"all","stylers":[{"visibility":"simplified"}]},{"featureType":"road.arterial","elementType":"labels.icon","stylers":[{"visibility":"off"}]},{"featureType":"transit","elementType":"all","stylers":[{"visibility":"off"}]},{"featureType":"water","elementType":"all","stylers":[{"color":"#46bcec"},{"visibility":"on"}]}];
+	}
+
+	var map = new google.maps.Map(document.getElementById('contactMapWidget'), mapOptions)
 }
 
 /*Functions*/
