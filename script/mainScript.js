@@ -51,6 +51,7 @@ function init(){
 	window.addEventListener("scroll", offsetParallaxBackgrounds, false);
 	window.addEventListener("scroll", highlightCurrentSection, false);
 	document.getElementById('echantillonSignButton').addEventListener("click", togglePopup, false);
+	document.getElementById('FAQbutton').addEventListener("click", togglePopup, false);
 	document.getElementById("lessonSelect").addEventListener("change",lessonUpdate,false);
 
 	/*Random Gift Shop Images*/
@@ -185,15 +186,25 @@ function init(){
 			hidePopup();
 			popupOpen = false;
 		}else {
-			showPopup();
-			popupOpen = true;
+			if(event.target.id=="echantillonSignButton"){
+				showPopup("echantillon");
+				popupOpen = true;
+			} else if (event.target.id="FAQbutton"){
+				showPopup("delf");
+				popupOpen = true;
+			}
 		}
 	}
 
 
-	function showPopup(){
+	function showPopup(type){
 		var popup = document.getElementById("popup");
 		var screen = document.getElementById("screen");
+
+		if(type=="delf"){
+			popup.innerHTML = "<p>Here are some commonly asked questions about the DELF training. If you have a question that is not covered here, please do not hesitate to <a href='#contact'>contact us</a>.</p>\n<h3>How long is the training?</h3>\n<p>You can choose between a 30-week program starting in early February or a 15-week program that kicks off in mid-June.&nbsp;</p>\n<br>\n<h3>What is the difference between the two programs?</h3>\n<p>The 15-week program is suitable for students who already have a good level of French for the DELF level they have chosen. The 15-weeks is therefore ample time to learn about both the exam format and the content and to hone your skills in time for the exam. The 30-week exam is a better choice for people who are newer to French and/or undertaking the test for the first time. It is also the best way to move from one DELF level to another (for example from A1 to A2).</p>\n<br>\n<h3>What is the duration of the lessons?</h3>\n<p>One hour per week.</p>\n<br>\n<h3>Am I expected to do homework?</h3>\n<p>In a word, yes! The DELF training is a commitment and tends to attract motivated students so we find we don\'t need to rap any knuckles in this area. Also, since the classes are so small (max. 4 students), it impacts the rest of the class if you're not prepared.</p>\n<br>\n<h3>How big are the classes?</h3>\n<p>A maximum of 4 students, plus your tutor. We find the small size optimises learning and creates a focused environment.</p>\n<br>\n<h3>I really hate exams. Do I have to sit the actual exam or can I just do the training?</h3>\n<p>Yes, you can. Sitting the exam is optional. Many students find a looming exam date motivating and enjoy receiving the results, but exams are not for everyone. You will see a huge improvement in your French whether you choose to sit the exam or not.&nbsp;</p>\n<br>\n<h3>Where are the classes held?</h3>\n<p>At our office (22 Masters St, Newstead, Brisbane)</p>\n<br>\n<h3>If I am unable to sit the November exam, is there another option?</h3>\n<p>Yes, there is also an exam held in March of each year.</p>\n<br>\n<h3>What is the cost?</h3>\n<p>&nbsp;</p>\n<ul>\n<li><strong>30-week program:</strong> $1950</li>\n<li><strong>15-week program:</strong> $1050</li>\n</ul>\n<br>\n<h3>What is included in the cost?&nbsp;</h3>\n<ul>\n<li>All training (30 or 15 weeks)</li>\n<li>Guaranteed maximum class size of 4 students</li>\n<li>Official training textbook</li>\n<li>Exam registration fee</li>\n<li>Access to past papers</li>\n<li>Mock exams</li>\n<li>Other support material</li>\n<li>Tutor attendance at exam</li>\n</ul>\n<p>If you have any other questions, please <a href='#contact'>contact us</a> here or call Katrina on 0405 381 972.</p>";
+		}
+
 
 		screen.style.display = 'block';
 
@@ -210,6 +221,8 @@ function init(){
 	function hidePopup(){
 		var popup = document.getElementById("popup");
 		var screen = document.getElementById("screen");
+
+		popup.innerHTML=""
 		
 		popup.style.top = '-785px';
 		screen.style.backgroundColor = 'rgba(0,0,0,0)'
@@ -240,12 +253,10 @@ function init(){
 		    	}, 500);
 		    	return false;
 			});
-			
 		})
 
 	/*Lessons Content Updating*/
 	function lessonUpdate(){
-		console.log(document.getElementById("lessonSelect").value);
 		if(document.getElementById("lessonSelect").value=="private"){
 			zUpdate(1,0,0);
 			opacityUpdate(1,0,0);
@@ -255,7 +266,6 @@ function init(){
 			opacityUpdate(0,1,0);
 			document.getElementById("lessonsContent").style.height=String(document.getElementById("group").offsetHeight+140)+"px";
 		} else if(document.getElementById("lessonSelect").value=="delf"){
-			console.log("registered");
 			zUpdate(0,0,1);
 			opacityUpdate(0,0,1);
 			document.getElementById("lessonsContent").style.height=String(document.getElementById("delf").offsetHeight+140)+"px";

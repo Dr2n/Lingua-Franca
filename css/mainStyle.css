@@ -145,6 +145,7 @@ h1 {
 	height: 780px;
 	background-color: rgb(238, 229, 215);
 	transition: top 0.5s ease-out, left 0.5s ease-out;
+	overflow: scroll;
 }
 
 #screen {
