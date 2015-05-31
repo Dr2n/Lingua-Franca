@@ -3,7 +3,7 @@
 	echo "Name: " . $_POST["senderName"] . "<br>";
 	echo "Email: " . $_POST["senderEmail"] . "<br>";
 	echo "Subject: " . $_POST["senderSubject"] . "<br>";
-	echo "Messsge: " . $_POST["senderMessage"];
+	echo "Messsge: " . $_POST["senderMessage"] . "<br>";
 
-	echo mail("bob'syouruncle@outlook.com", $_POST["senderSubject"], $_POST["senderMessage"]);
+	echo mail('darrenfu@outlook.com', 'Email for testing', 'Record of interview');
 ?>
