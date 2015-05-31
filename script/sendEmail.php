@@ -5,5 +5,5 @@
 	echo "Subject: " . $_POST["senderSubject"] . "<br>";
 	echo "Messsge: " . $_POST["senderMessage"] . "<br>";
 
-	echo mail('darrenfu@outlook.com', 'Email for testing', 'Record of interview');
+	echo mail('darrenfu@outlook.com', 'Email for testing', 'Record of interview', 'From : ' . $_POST['senderEmail']);
 ?>
