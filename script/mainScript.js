@@ -330,3 +330,5 @@ function init(){
 		document.getElementById("group").style.opacity=y;
 		document.getElementById("delf").style.opacity=z;
 	}
+
+	/*Timetable Update*/
