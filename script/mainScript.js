@@ -30,6 +30,8 @@ function init(){
 
 	textInitialise();
 	document.getElementById("lessonSelect").value="initial";
+	document.getElementById("termSelect").value="initial";
+	document.getElementById("locationSelect").value="initial";
 
 	window.contactForms = document.getElementsByClassName('formInput');
 	for (var i = 0; i < contactForms.length; i++){
@@ -58,6 +60,10 @@ function init(){
 	document.getElementById('echantillonSignButton').addEventListener("click", togglePopup, false);
 	document.getElementById('FAQbutton').addEventListener("click", togglePopup, false);
 	document.getElementById("lessonSelect").addEventListener("change",lessonUpdate,false);
+	document.getElementById("termSelect").addEventListener("change",tableUpdate,false);
+	document.getElementById("locationSelect").addEventListener("change",tableUpdate,false);
+	document.getElementById("wtermSelect").addEventListener("change",workUpdate,false);
+	document.getElementById("wlocationSelect").addEventListener("change",workUpdate,false);
 
 
 	/*Random Gift Shop Images*/
@@ -271,7 +277,7 @@ function init(){
 
 		popup.innerHTML=""
 		
-		popup.style.top = '-785px';
+		popup.style.top = '-90%';
 		screen.style.backgroundColor = 'rgba(0,0,0,0)'
 		screen.style.display = 'none';
 
@@ -332,3 +338,107 @@ function init(){
 	}
 
 	/*Timetable Update*/
+	function tableUpdate(){
+		var term = document.getElementById("termSelect").value;
+		var location = document.getElementById("locationSelect").value;
+		var set = "";
+
+		if(location=="newstead"){
+			if(term=="t1"){
+				set = "n1";
+			} else if(term=="t2"){
+				set = "n2";
+			} else if(term=="t3"){
+				set = "n3";
+			} else if(term=="t4"){
+				set = "n4";
+			}
+		} else if(location=="bulimba"){
+			if(term=="t1"){
+				set = "b1";
+			} else if(term=="t2"){
+				set = "b2";
+			} else if(term=="t3"){
+				set = "b3";
+			} else if(term=="t4"){
+				set = "b4";
+			}
+		} else if(location=="paddington"){
+			if(term=="t1"){
+				set = "p1";
+			} else if(term=="t2"){
+				set = "p2";
+			} else if(term=="t3"){
+				set = "p3";
+			} else if(term=="t4"){
+				set = "p4";
+			}
+		}
+
+		tcontentUpdate(set);
+		document.getElementById("lessonsContent").style.height=String(document.getElementById("group").offsetHeight+140)+"px";
+	}
+
+	function tcontentUpdate(set){
+		if (set=="n1"){
+			document.getElementById("tableArea").innerHTML = "<p>Lorem Ipsum</p>";
+		} else if (set=="n2"){
+			document.getElementById("tableArea").innerHTML = "<p>*Due to the Queen's Birthday public holiday on Monday 8th June, there will be no classes on this day. Catch up classes are scheduled for Friday 5th June.</p>\n<table>\n<tr>\n<td></td>\n<td colspan=\"2\"><p><strong>key course</strong> (6 weeks) from. 20/04 to 30/05</p></td>\n<td><p><strong>speaking practice</strong> (4 weeks) from 01/06 to 27/06</p></td>\n</tr>\n<tr>\n<td><div>1</div></td>\n<td><p>Thursday 6.15PM</p></td>\n<td><p>from 23/04</p></td>\n<td><p>from 04/06</p></td>\n</tr>\n<tr>\n<td><div>1</div></td>\n<td><p>Saturday 8.45AM</p></td>\n<td><p>from 25/04</p></td>\n<td><p>from 06/06</p></td>\n</tr>\n<tr>\n<td><div>2</div></td>\n<td><p>Tuesday 6.15PM</p></td>\n<td><p>from 21/04</p></td>\n<td><p>from 02/06</p></td>\n</tr>\n<tr>\n<td><div>2</div></td>\n<td><p>Saturday 10AM</p></td>\n<td><p>from 25/04</p></td>\n<td><p>from 06/06</p></td>\n</tr>\n<tr>\n<td><div>3</div></td>\n<td><p>Tuesday 7.30PM</p></td>\n<td><p>from 21/04</p></td>\n<td><p>from 02/06</p></td>\n</tr>\n<tr>\n<td><div>1</div></td>\n<td><p>Tuesday 7.30PM</p></td>\n<td><p>from 21/04</p></td>\n<td><p>from 02/06</p></td>\n</tr>\n<tr>\n<td><div>2</div></td>\n<td><p>Wednesday 6.15PM</p></td>\n<td><p>from 22/04</p></td>\n<td><p>from 03/06</p></td>\n</tr>\n<tr>\n<td><div>1</div></td>\n<td><p>Tuesday 6.15PM</p></td>\n<td><p>from 21/04</p></td>\n<td><p>from 02/06</p></td>\n</tr>\n<tr>\n<td><div>2</div></td>\n<td><p>Thursday 10AM</p></td>\n<td><p>from 23/04</p></td>\n<td><p>from 04/06</p></td>\n</tr>\n<tr>\n<td><div>1</div></td>\n<td><p>Thursday 7.30PM</p></td>\n<td><p>from 21/04</p></td>\n<td><p>from 04/06</p></td>\n</tr>\n<tr>\n<td></td>\n<td colspan=\"2\"><p>Thursday 6.15PM : Conversation</p></td>\n<td><p>from 23/04</p></td>\n</tr>\n<tr>\n<td></td>\n<td></td>\n<td></td>\n</tr>\n<tr>\n<td></td>\n<td colspan=\"3\"><p><strong>consolidation course</strong> (10 weeks) <br> from 20/04 to 27/06</p></td>\n</tr>\n<tr>\n<td><div>C</div></td>\n<td colspan=\"2\"><p>Monday 7.30PM</p></td>\n<td><p>from 20/04</p></td>\n</tr>\n<tr>\n<td><div>C</div></td>\n<td colspan=\"2\"><p>Monday 7.30PM</p></td>\n<td><p>from 20/04</p></td>\n</tr>\n</table>";
+		} else if (set=="n3"){
+			document.getElementById("tableArea").innerHTML = "<p>*Due to the EKKA Day public holiday on Wednesday 12th August, there will be no classes on this day. Catch up classes are scheduled for Friday 14th August.</p>\n<table>\n<tr>\n<td></td>\n<td colspan=\"2\"><p><strong>key course</strong> (6 weeks) from. 13/07 to 22/08</p></td>\n<td><p><strong>speaking practice</strong> (4 weeks) from 24/08 to 19/09</p></td>\n</tr>\n<tr>\n<td><div>1</div></td>\n<td><p>Wednesday 7.30PM</p></td>\n<td><p>from 15/07</p></td>\n<td><p>from 26/08</p></td>\n</tr>\n<tr>\n<td><div>1</div></td>\n<td><p>Thursday 6.15PM</p></td>\n<td><p>from 16/07</p></td>\n<td><p>from 27/08</p></td>\n</tr>\n<tr>\n<td><div>1</div></td>\n<td><p>Saturday 10AM</p></td>\n<td><p>from 18/07</p></td>\n<td><p>from 29/08</p></td>\n</tr>\n<tr>\n<td><div>2</div></td>\n<td><p>Saturday 8.45AMPM</p></td>\n<td><p>from 18/07</p></td>\n<td><p>from 29/08</p></td>\n</tr>\n<tr>\n<td><div>3</div></td>\n<td><p>Tuesday 6.15PM</p></td>\n<td><p>from 1r/07</p></td>\n<td><p>from 25/08</p></td>\n</tr>\n<tr>\n<td><div>R</div></td>\n<td><p>Tuesday 7.30PM</p></td>\n<td><p>from 14/07</p></td>\n<td><p>from 25/08</p></td>\n</tr>\n<tr>\n<td><div>2</div></td>\n<td><p>Tuesday 7.30PM</p></td>\n<td><p>from 14/07</p></td>\n<td><p>from 25/08</p></td>\n</tr>\n<tr>\n<td><div>3</div></td>\n<td><p>Wednesday 6.15PM</p></td>\n<td><p>from 15/07</p></td>\n<td><p>from 26/08</p></td>\n</tr>\n<tr>\n<td><div>2</div></td>\n<td><p>Tuesday 6.15PM</p></td>\n<td><p>from 14/07</p></td>\n<td><p>from 25/08</p></td>\n</tr>\n<tr>\n<td><div>3</div></td>\n<td><p>Thursday 10AM</p></td>\n<td><p>from 16/07</p></td>\n<td><p>from 27/08</p></td>\n</tr>\n<tr>\n<td><div>2</div></td>\n<td><p>Thursday 7.30PM</p></td>\n<td><p>from 16/07</p></td>\n<td><p>from 27/08</p></td>\n</tr>\n<tr>\n<td><div></div></td>\n<td colspan=\"2\"><p>Thursday 6.15PM : Conversation</p></td>\n<td><p>from 16/07</p></td>\n</tr>\n<tr>\n<td></td>\n<td colspan=\"3\"><p><strong>consolidation course</strong> (10 weeks) <br> from 13/07 to 19/09</p></td>\n</tr>\n<tr>\n<td><div>C</div></td>\n<td colspan=\"2\"><p>Monday 6.15PM</p></td>\n<td><p>from 13/07</p></td>\n</tr>\n<tr>\n<td><div>C</div></td>\n<td colspan=\"2\"><p>Monday 7.30PM</p></td>\n<td><p>from 13/07</p></td>\n</tr>\n<tr>\n<td><div>C</div></td>\n<td colspan=\"2\"><p>Monday 6.15PM</p></td>\n<td><p>from 13/07</p></td>\n</tr>\n</table>";
+		} else if (set=="n4"){
+			document.getElementById("tableArea").innerHTML = "<p>*Due to the Labour Day on Monday 5th October, there will be no classes on this day. Catch up classes are scheduled for Friday 9th October.</p>\n<table>\n<tr>\n<td></td>\n<td colspan=\"2\"><p><strong>key course</strong> (6 weeks) from. 05/10 to 14/11</p></td>\n<td><p><strong>speaking practice</strong> (4 weeks) from 16/11 to 12/12</p></td>\n</tr>\n<tr>\n<td><div>1</div></td>\n<td><p>Tuesday 6.15PM</p></td>\n<td><p>from 06/10</p></td>\n<td><p>from 17/11</p></td>\n</tr>\n<tr>\n<td><div>1</div></td>\n<td><p>Thursday 7.30PM</p></td>\n<td><p>from 08/10</p></td>\n<td><p>from 19/11</p></td>\n</tr>\n<tr>\n<td><div>1</div></td>\n<td><p>Saturday 8.45AM</p></td>\n<td><p>from 10/10</p></td>\n<td><p>from 21/11</p></td>\n</tr>\n<tr>\n<td><div>2</div></td>\n<td><p>Tuesday 7.30PM</p></td>\n<td><p>from 06/10</p></td>\n<td><p>from 17/11</p></td>\n</tr>\n<tr>\n<td><div>2</div></td>\n<td><p>Thursday 6.15PM</p></td>\n<td><p>from 08/10</p></td>\n<td><p>from 19/11</p></td>\n</tr>\n<tr>\n<td><div>2</div></td>\n<td><p>Saturday 10AM</p></td>\n<td><p>from 10/10</p></td>\n<td><p>from 21/11</p></td>\n</tr>\n<tr>\n<td><div>3</div></td>\n<td><p>Wednesday 7.30PM</p></td>\n<td><p>from 07/10</p></td>\n<td><p>from 18/11</p></td>\n</tr>\n<tr>\n<td><div>R</div></td>\n<td><p>Tuesday 10AM</p></td>\n<td><p>from 06/10</p></td>\n<td><p>from 17/11</p></td>\n</tr>\n<tr>\n<td><div>R</div></td>\n<td><p>Tuesday 6.15PM</p></td>\n<td><p>from 06/10</p></td>\n<td><p>from 17/11</p></td>\n</tr>\n<tr>\n<td><div>R</div></td>\n<td><p>Wednesday 7.30PM</p></td>\n<td><p>from 07/10</p></td>\n<td><p>from 18/11</p></td>\n</tr>\n<tr>\n<td><div>1</div></td>\n<td><p>Tuesday 7.30PM</p></td>\n<td><p>from 06/10</p></td>\n<td><p>from 17/11</p></td>\n</tr>\n<tr>\n<td><div>2</div></td>\n<td><p>Tuesday 7.30PM</p></td>\n<td><p>from 06/10</p></td>\n<td><p>from 17/11</p></td>\n</tr>\n<tr>\n<td><div>3</div></td>\n<td><p>Thursday 7.30PM</p></td>\n<td><p>from 08/10</p></td>\n<td><p>from 19/11</p></td>\n</tr>\n<tr>\n<td><div>R</div></td>\n<td><p>Wednesday 6.15PM</p></td>\n<td><p>from 07/10</p></td>\n<td><p>from 18/11</p></td>\n</tr>\n<tr>\n<td><div>1</div></td>\n<td><p>Wednesday 7.30PM</p></td>\n<td><p>from 07/10</p></td>\n<td><p>from 18/11</p></td>\n</tr>\n<tr>\n<td><div>3</div></td>\n<td><p>Tuesday 6.15PM</p></td>\n<td><p>from 06/10</p></td>\n<td><p>from 17/11</p></td>\n</tr>\n<tr>\n<td><div>R</div></td>\n<td><p>Thursday 10AM</p></td>\n<td><p>from 08/10</p></td>\n<td><p>from 19/11</p></td>\n</tr>\n<tr>\n<td><div>2</div></td>\n<td><p>Wednesday 6.15PM</p></td>\n<td><p>from 07/10</p></td>\n<td><p>from 18/11</p></td>\n</tr>\n<tr>\n<td><div>3</div></td>\n<td><p>Thursday 7.30PM</p></td>\n<td><p>from 08/10</p></td>\n<td><p>from 19/11</p></td>\n</tr>\n<tr>\n<td><div></div></td>\n<td colspan=\"3\"><p>Thursday 6.15PM : Conversation</p></td>\n</tr>\n<tr>\n<td><div>C</div></td>\n<td colspan=\"2\"><p>Monday 6.15PM*</p></td>\n<td><p>from 05/10*</p></td>\n</tr>\n<tr>\n<td><div>C</div></td>\n<td colspan=\"2\"><p>Monday 7.30PM*</p></td>\n<td><p>from 05/10*</p></td>\n</tr>\n<tr>\n<td><div>C</div></td>\n<td colspan=\"2\"><p>Monday 6.15PM*</p></td>\n<td><p>from 05/10*</p></td>\n</tr>\n</table>";
+		} else if (set=="b1"){
+			document.getElementById("tableArea").innerHTML ="<p>Lorem Ipsum</p>";
+		} else if (set=="b2"){
+			document.getElementById("tableArea").innerHTML = "<table>\n<tr>\n<td></td>\n<td colspan=\"2\"><p><strong>key course</strong> (6 weeks) from. 20/04 to 30/05</p></td>\n<td><p><strong>speaking practice</strong> (4 weeks) from 01/06 to 27/06</p></td>\n</tr>\n<tr>\n<td><div>3</div></td>\n<td><p>Thursday 6.15PM</p></td>\n<td><p>from 23/04</p></td>\n<td><p>from 04/06</p></td>\n</tr>\n<tr>\n<td><div>1</div></td>\n<td><p>Thursday 7.30PM</p></td>\n<td><p>from 23/04</p></td>\n<td><p>from 04/06</p></td>\n</tr>\n</table>";
+		} else if (set=="b3"){
+			document.getElementById("tableArea").innerHTML = "<table>\n<tr>\n<td></td>\n<td colspan=\"2\"><p><strong>key course</strong> (6 weeks) from. 13/07 to 21/08</p></td>\n<td><p><strong>speaking practice</strong> (4 weeks) from 24/08 to 19/09</p></td>\n</tr>\n<tr>\n<td><div>1</div></td>\n<td><p>Thursday 6.15PM</p></td>\n<td><p>from 16/07</p></td>\n<td><p>from 27/08</p></td>\n</tr>\n<tr>\n<td><div>R</div></td>\n<td><p>Thursday 6.15PM</p></td>\n<td><p>from 16/07</p></td>\n<td><p>from 27/08</p></td>\n</tr>\n<tr>\n<td><div>2</div></td>\n<td><p>Thursday 7.30PM</p></td>\n<td><p>from 16/07</p></td>\n<td><p>from 27/08</p></td>\n</tr>\n</table>";
+		} else if (set=="b4"){
+			document.getElementById("tableArea").innerHTML = "<table>\n<tr>\n<td></td>\n<td colspan=\"2\"><p><strong>key course</strong> (6 weeks) from. 05/10 to 14/11</p></td>\n<td><p><strong>speaking practice</strong> (4 weeks) from 16/11 to 12/12</p></td>\n</tr>\n<tr>\n<td><div>1</div></td>\n<td><p>Thursday 6.15PM</p></td>\n<td><p>from 08/10</p></td>\n<td><p>from 19/11</p></td>\n</tr>\n<tr>\n<td><div>1</div></td>\n<td><p>Thursday 7.30PM</p></td>\n<td><p>from 08/10</p></td>\n<td><p>from 19/11</p></td>\n</tr>\n<tr>\n<td><div>1</div></td>\n<td><p>Thursday 6.15PM</p></td>\n<td><p>from 08/10</p></td>\n<td><p>from 19/11</p></td>\n</tr>\n<tr>\n<td><div>1</div></td>\n<td><p>Thursday 7.30PM</p></td>\n<td><p>from 08/10</p></td>\n<td><p>from 19/11</p></td>\n</tr>\n</table>";
+		} else if (set=="p1"){
+			document.getElementById("tableArea").innerHTML="<p>Lorem Ipsum</p>";
+		} else if (set=="p2"){
+			document.getElementById("tableArea").innerHTML = "<table>\n<tr>\n<td></td>\n<td colspan=\"2\"><p><strong>key course</strong> (6 weeks) from. 20/04 to 30/05</p></td>\n<td><p><strong>speaking practice</strong> (4 weeks) from 01/06 to 27/06</p></td>\n</tr>\n<tr>\n<td><div>1</div></td>\n<td><p>Wednesday 6.15PM</p></td>\n<td><p>from 22/04</p></td>\n<td><p>from 03/06</p></td>\n</tr>\n</table>";
+		} else if (set=="p3"){
+			document.getElementById("tableArea").innerHTML = "<table>\n<tr>\n<td></td>\n<td colspan=\"2\"><p><strong>key course</strong> (6 weeks) from. 13/07 to 21/08</p></td>\n<td><p><strong>speaking practice</strong> (4 weeks) from 24/08 to 19/09</p></td>\n</tr>\n<tr>\n<td><div>2</div></td>\n<td><p>Wednesday 6.15PM</p></td>\n<td><p>from 15/07</p></td>\n<td><p>from 26/08</p></td>\n</tr>\n<tr>\n<td><div>1</div></td>\n<td><p>Wednesday 7.30PM</p></td>\n<td><p>from 15/07</p></td>\n<td><p>from 26/08</p></td>\n</tr>\n</table>";
+		} else if (set=="p4"){
+			document.getElementById("tableArea").innerHTML = "<p>No lessons.</p>";
+		}
+	}
+
+	/*Workshop Update*/
+	function workUpdate(){
+		var term = document.getElementById("wtermSelect").value;
+		var location = document.getElementById("wlocationSelect").value;
+		var set = "";
+
+		if(location=="newstead"){
+			if(term=="jul"){
+				set = "nj";
+			} else if(term=="sep"){
+				set = "ns";
+			}
+		} else if(location=="bulimba"){
+			if(term=="jul"){
+				set = "bj";
+			} else if(term=="sep"){
+				set = "bs";
+			}
+		}
+
+		wcontentUpdate(set);
+		document.getElementById("lessonsContent").style.height=String(document.getElementById("group").offsetHeight+140)+"px";
+	}
+
+	function wcontentUpdate(set){
+		if (set=="nj"){
+			document.getElementById("workArea").innerHTML = "<table>\n<tr>\n<td colspan=\"2\"><strong>workshops</strong> (2 weeks)</td>\n</tr>\n<tr>\n<td>pronunciation</td>\n<td>Tuesday 6.15PM - 8.15PM 30/06 - 07/07</td>\n</tr>\n<tr>\n<td>travel</td>\n<td>Wednesay 6.15PM - 8.15PM 01/07 - 07/07</td>\n</tr>\n</table>";
+		} else if (set=="ns"){
+			document.getElementById("workArea").innerHTML = "<table>\n<tr>\n<td colspan=\"2\"><strong>workshops</strong> (2 weeks)</td>\n</tr>\n<tr>\n<td>film</td>\n<td>Thursday 6.15PM - 8.15PM 02/06 - 09/07</td>\n</tr>\n</table>";
+		} else if (set=="bj"){
+			document.getElementById("workArea").innerHTML = "<table>\n<tr>\n<td colspan=\"2\"><strong>workshops</strong> (2 weeks)</td>\n</tr>\n<tr>\n<td>travel</td>\n<td>Tuesday 6.15PM - 8.15PM 22/09 - 29/09</td>\n</tr>\n<tr>\n<td>little words</td>\n<td>Wednesay 6.15PM - 8.15PM 23/09 - 30/09</td>\n</tr>\n</table>";
+		} else if (set=="bs"){
+			document.getElementById("workArea").innerHTML = "<table>\n<tr>\n<td colspan=\n2\n><strong>workshops</strong> (2 weeks)</td>\n</tr>\n<tr>\n<td>little words</td>\n<td>Thursday 6.15PM - 8.15PM 24/09 - 01/10</td>\n</tr>\n</table>";
+		}
+	}
