@@ -5,5 +5,9 @@
 	echo "Subject: " . $_POST["senderSubject"] . "<br>";
 	echo "Messsge: " . $_POST["senderMessage"] . "<br>";
 
-	echo mail('darrenfuoutlook.com', 'Email for testing', 'Record of interview', 'From : ' . $_POST['senderEmail']);
+	if(mail('darrenfu@outlook.com', 'Email for testing', 'Record of interview', 'From : Darren <dyxf75@gmail.com>'){
+		echo 'MAIL SENT';
+	}else{
+		echo 'FAILURE TO SEND MAIL';
+	}
 ?>
