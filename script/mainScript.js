@@ -33,6 +33,17 @@ function init(){
 	document.getElementById("termSelect").value="initial";
 	document.getElementById("locationSelect").value="initial";
 
+
+	if (document.getElementById('messageBox').value != 'Message'){
+		document.getElementById('messageBox').style.color = 'white';
+	}
+
+	/*Event Listeners*/
+	window.addEventListener("scroll", offsetParallaxBackgrounds, false);
+	window.addEventListener("scroll", highlightCurrentSection, false);
+	document.getElementById('echantillonSignButton').addEventListener("click", togglePopup, false);
+	document.getElementById("lessonSelect").addEventListener("change",lessonUpdate,false);
+	
 	window.contactForms = document.getElementsByClassName('formInput');
 	for (var i = 0; i < contactForms.length; i++){
 		contactForms[i].addEventListener('focus', formInHandler, false);
@@ -46,14 +57,11 @@ function init(){
 	document.getElementById('messageBox').addEventListener('focus', messageBoxIn, false);
 	document.getElementById('messageBox').addEventListener('blur', messageBoxOut, false);
 
-	if (document.getElementById('messageBox').value != 'Message'){
-		document.getElementById('messageBox').style.color = 'white';
-	}
-
 	var locationButtons = document.getElementsByClassName('locationButton');
 	for (var i = 0; i < locationButtons.length; i++){
 		locationButtons[i].addEventListener('click', locationClickHandler, false);
 	}
+
 	/*Event Listeners*/
 	window.addEventListener("scroll", offsetParallaxBackgrounds, false);
 	window.addEventListener("scroll", highlightCurrentSection, false);
@@ -64,7 +72,6 @@ function init(){
 	document.getElementById("locationSelect").addEventListener("change",tableUpdate,false);
 	document.getElementById("wtermSelect").addEventListener("change",workUpdate,false);
 	document.getElementById("wlocationSelect").addEventListener("change",workUpdate,false);
-
 
 	/*Random Gift Shop Images*/
 	var images = [
@@ -133,6 +140,19 @@ function init(){
 			map: map,
 			title: 'Lingua Franca Paddington'
 		});
+
+		map.setOptions({scrollwheel: false});
+		document.getElementById('contactMapWidget').addEventListener('click', enableMapScrolling, false);
+		document.getElementById('contactMapWidget').addEventListener('mouseout', disableMapScrolling, false);
+	}
+
+	function disableMapScrolling (event){
+		window.map.setOptions({scrollwheel: false});
+	}
+
+	function enableMapScrolling(event){
+		console.log('enable map scrolling');
+		window.map.setOptions({scrollwheel: true});
 	}
 
 	function locationClickHandler(event){
@@ -151,23 +171,38 @@ function init(){
 	}
 
 	function formOutHandler(event){
+		var emailTest = /\S+@\S+\.\S+/;
+
 
 		if (event.target.value != ''){
-			return;
+			if(event.target.name == 'senderName'){
+				document.getElementById('nameError').innerHTML = '';
+			}else if (event.target.name == 'senderSubject'){
+				document.getElementById('subjectError').innerHTML = '';
+			}else if(event.target.name == 'senderEmail'){
+				if (emailTest.test(event.target.value)){
+					document.getElementById('emailError').innerHTML = '';
+				}else{
+					document.getElementById('emailError').innerHTML = 'Invalid Email.';
+				}
+			}	
+		}else{
+			if (event.target.name == 'senderName'){
+				event.target.value = 'Name';
+				event.target.style.color = '#FF9EA4';
+				document.getElementById('nameError').innerHTML = 'Enter your name.';
+			}else if (event.target.name == 'senderEmail'){
+				event.target.value = 'Email';
+				event.target.style.color = '#FF9EA4';
+				document.getElementById('emailError').innerHTML = 'Enter your email.'
+			}else if (event.target.name == 'senderSubject'){
+				event.target.value = 'Subject';
+				event.target.style.color = '#FF9EA4';
+				document.getElementById('subjectError').innerHTML = 'Enter a subject.'
+			}
+			
 		}
 
-		if (event.target.name == 'senderName'){
-			event.target.value = 'Name';
-			event.target.style.color = '#FF9EA4';
-		}
-		if (event.target.name == 'senderEmail'){
-			event.target.value = 'Email';
-			event.target.style.color = '#FF9EA4';
-		}
-		if (event.target.name == 'senderSubject'){
-			event.target.value = 'Subject';
-			event.target.style.color = '#FF9EA4';
-		}
 	}
 
 	function messageBoxIn(event){
@@ -181,6 +216,9 @@ function init(){
 		if (event.target.value == ''){
 			event.target.value = 'Message';
 			event.target.style.color = '#FF9EA4'
+			document.getElementById('messageError').innerHTML = 'Enter a message.'
+		}else{
+			document.getElementById('messageError').innerHTML = '';
 		}
 	}
 
@@ -193,6 +231,9 @@ function init(){
 		for (var i = 0; i < parallaxDivs.length; i++){
 			var viewportPos = parallaxDivs[i].getBoundingClientRect().top;
 			var neededOffset = -350 * (viewportPos/window.innerHeight);
+			if(parallaxDivs[i].id =='landingDiv'){
+				neededOffset = -600 * (viewportPos/window.innerHeight);
+			}
 
 			parallaxDivs[i].style.backgroundPosition = "0px " + String(neededOffset) + "px";
 		}
