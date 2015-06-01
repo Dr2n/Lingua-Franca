@@ -258,6 +258,39 @@ header {
 	color: #FFF;
 }
 
+#tabsWrapper{
+	width: 100%;
+	height: 100px;
+
+}
+
+	/*Tabs*/
+	.lessonSelect{
+		width: 33%;
+		height: 100px;
+		color: white;
+		float: left;
+		text-align: center;
+		vertical-align: middle;
+	}
+
+	#privateSelect{
+		background-color: #62899C;
+	}
+
+	#groupSelect{
+		background-color: #CD333C;
+		width: 34%;
+	}
+
+	#delfSelect{
+		background-color: #81C1B8;
+	}
+
+	.innerText{
+		margin: 0;
+	}
+
 .subContent{
 	position: absolute;
 	opacity:0;
@@ -266,6 +299,19 @@ header {
 	-webkit-transition: opacity ease 1s;
 	-moz-transition: opacity ease 1s;
 }
+
+	/*Tables*/
+	table{
+		margin: 0px auto;
+		text-align: center
+	}
+	#privateFees{
+
+	}
+
+	#delfSchedule{
+
+	}
 
 /*Events Styling*/
 #eventsBanner {

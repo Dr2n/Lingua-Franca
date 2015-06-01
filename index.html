@@ -71,14 +71,29 @@
 			</div>
 		</div>
 
+		<div id="tabsWrapper">
+			<div id="privateSelect" class="lessonSelect">
+				<p class="innerText">Private Lessons</p>
+			</div>
+			<div id="groupSelect" class="lessonSelect">
+				<p class="innerText">Group Lessons</p>
+			</div>
+			<div id="delfSelect" class="lessonSelect">
+				<p class="innerText">DELF Lessons</p>
+			</div>
+		</div>
+
 		<div id='lessonsContent'>
 			<div class='contentDiv'>
+
 				<select id="lessonSelect">
 					<option value="initial" selected="selected" disabled="disabled">Pick a lesson type</option>
 					<option value="private">Private Lessons</option>
 					<option value="group">Group Lessons</option>
 					<option value="delf">DELF Lessons</option>
 				</select>
+
+				<!--Private Content-->
 				<div id="private" class="subContent">
 					<h2>How they work</h2>
 					<p>If you are really motivated to improve your French quickly, Lingua Franca’s private lessons may be the right choice for you.</p>
@@ -88,8 +103,8 @@
 					<h2>Fees</h2>
 					<table id="privateFees">
 						<tr>
-							<td>#Students</td>
-							<td>Price</td>
+							<td><strong>#Students</strong></td>
+							<td><strong>Price</strong></td>
 						</tr>
 						<tr>
 							<td>1</td>
@@ -114,6 +129,8 @@
 					<p>A travel fee may apply for off-site lessons. Please <a href="#contactBanner">contact us </a>to discuss.</p>
 					<p>*Please read our <a href="t&c.html">terms and conditions</a> for further information.</p>
 				</div>
+
+				<!--Group Content-->
 				<div id="group" class="subContent">
 					<h2>How they work</h2>
 					<p>Our group lessons take place in Newstead, Paddington and Bulimba.</p>
@@ -270,6 +287,8 @@
 					<p><img src="/storage/2015/Fees%20%206%20and%2012%20months%20graphic%20%20French%20lessons%20Brisbane.png?__SQUARESPACE_CACHEVERSION=1431682277854" alt=""></p>
 					<p>*Please note:  no other discounts apply. </p>
 				</div>
+
+				<!--DELF Content-->
 				<div id="delf" class="subContent">
 					<ul>
 						<li>Do you like a challenge?</li>
@@ -289,7 +308,7 @@
 					<p>Our brave students have achieved have an average score of 90.72% between them.</p>
 					<p>While delighted with their results of course, all agree that the major benefit in preparing for and sitting the exam was the <strong>extreme improvement they saw in their French, particularly their confidence when speaking. </strong></p>
 					<h2>Proposed Schedule</h2>
-					<table>
+					<table id="delfSchedule">
 						<tr>
 							<td></td>
 							<td>TUES</td>
