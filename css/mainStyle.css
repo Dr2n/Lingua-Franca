@@ -43,6 +43,7 @@ body {
 	font-family: Lucida Sans, sans-serif;
 	-ms-overflow-style: none;
 	overflow-x: hidden;
+	background-color: black;
 }
 
 a {
@@ -62,6 +63,10 @@ ul {
 h1 {
 	font-weight: normal;
 	font-size: 28px;
+}
+
+textarea {
+	resize: vertical;
 }
 
 
@@ -97,7 +102,7 @@ h1 {
 	width: 700px;
 	height: 125px;
 	margin-top: 0px;
-	background-color: rgba(0,0,0,0.7);
+	background-color: rgba(0,0,0,0.9);
 	color: white;
 	border-radius: 40px;
 }
@@ -207,6 +212,44 @@ header {
 	transition: color 0.3s;
 }
 
+#weAre {
+	font-size: 28px;
+	font-family: 'Sketch Serif';
+	float: left;
+}
+
+#titleContainer {
+	background-color: rgba(205, 51, 60, 0.9);
+	height: 200px;
+	width: 800px;
+	padding: 60px 60px;
+}
+
+#titleWrapper {
+	margin-left: auto;
+	margin-right: auto;
+	width: 740px;
+}
+
+#titleContainer h1{
+	margin-top: 0px;
+	font-size: 120px;
+	padding: 0 0;
+	margin-bottom: 0px;
+	margin-left:  0px;
+	clear: left;
+	float: left;
+}
+
+#titleContainer h2 {
+	padding-top: 30px;
+	margin-top: 0px;
+	margin-bottom: 0px;
+	width: 100%;
+	float: left;
+}
+
+
 /*Landing Section Styling*/
 #landingDiv {
 	top: 0px;
@@ -226,10 +269,42 @@ header {
 
 #learnMoreButton {
 	display: inline;
+	float: right;
+	height: 32px;
+	width: 32px;
 }
 
 #landingLearnMore {
-	margin-top: 20vh;
+	position: absolute;
+	bottom: 18vh;
+	left: 50%;
+	transform: translate(-50%, 0px);
+	-webkit-transform: translate(-50%, 0px);
+	box-sizing: border-box;
+	padding: 20px 40px;
+	background-color: rgba(0,0,0,0.9);
+	width: 315px;
+	height: 70px;
+	transition: background-color 0.3s;
+}
+
+#landingLearnMore:hover{
+	background-color: rgba(205,51,60,0.95);
+}
+
+#learnMoreWrapper{
+	margin-left: auto;
+	margin-right: auto;
+	width: 230px;
+}
+
+#learnMoreText {
+	padding: 0px 0px;
+	margin: 0px 0px;
+	display: inline;
+	color: white;
+	float: left;
+	font-size: 30px;
 }
 
 /*Lessons Styling*/
@@ -457,6 +532,8 @@ a.randomGift:hover span
 }
 
 #contactContent {
+	z-index: 20;
+	box-shadow: -3px -8px 30px -7px rgba(0,0,0,0.75);
 	color: white;
 	box-sizing: border-box;
 	background-color: rgb(205,51,60);
@@ -493,17 +570,22 @@ a.randomGift:hover span
 	padding-right: 20px;
 }
 
-#newsCheck {
+.check {
 	float: left;
 	transform: scale(1.5);
 	margin-left: 20px;
 	margin-top: 10px;
 }
 
-#newsCheckText {
-	margin-right: 0px;
-	margin-left: 0px;
-	margin-top: 0px;
+.checkDiv {
+	margin-top: 20px;
+	margin-bottom: 20px;
+	height: 20px;
+	width: auto;
+}
+
+.checkText {
+	margin: 5px 0px;
 	padding-top: 0px;
 	padding-left: 0px;
 	width: 400px;
@@ -522,6 +604,7 @@ a.randomGift:hover span
 	padding-bottom: 25px;
 	padding-left: 30px;
 	padding-right: 30px;
+	margin-top: 20px;
 	font-family: Lucida Sans;
 	font-size: 16px;
 	width: 450px;
@@ -544,21 +627,57 @@ a.randomGift:hover span
 	background-color: rgb(50,50,50);
 }
 
+.formErrorMessage, .textareaErrorMessage{
+	font-style: italic;
+	position: relative;
+}
+
+.textareaErrorMessage {
+	left: 30px;
+	top: 10px;
+}
+
+.formErrorMessage {
+	left: 20px;
+	top: -1px;
+}
+
 #phoneNumbers {
 	margin-left: auto;
 	margin-right: auto;
+	margin-top: 40px;
+}
+
+#phoneNumbers{
+	border-radius: 20px;
+	overflow: hidden;
+	border-width: 0;
+}
+
+#phoneNumbers td {
+	padding-left: 30px;
 }
 
 .placeCol {
-	width: 100px;
+	width: 120px;
+	height: 40px;
+	background-color: rgb(89, 0, 0);
+	color: white;
+}
+
+.phoneCol {
+	background-color: #AA0000;
+	color: white;
+	width: 280px;
 }
 
 #contactMapWrapper {
+	box-shadow: 3px -8px 30px -7px rgba(0,0,0,0.75);
 	padding: 0 0;
 	height: 500px;
 	background-color: white;
-	transform: translate(0, -120px);
-	-webkit-transform: translate(0, -120px);
+	transform: translate(0, -100px);
+	-webkit-transform: translate(0, -100px);
 
 }
 
@@ -615,16 +734,91 @@ a.randomGift:hover span
 	left: 5px;
 }
 
-
-
-
-
-
-
 /*Footer Styling*/
 #footer {
+	position: relative;
+	bottom: 0px;
 	padding: 50px calc(50vw - 480px) 50 calc(50vw - 480px);
 	height: 25vh;
 	width: 100vw;
-	background-color: black;	
+	background-color: black;
+	color: white;
+}
+
+#footerContent {
+	box-sizing: border-box;
+	padding: 40px 0px 40px 0px;
+	height: 320px;
+}
+
+#footerContent p {
+	margin: 0px 0px;
+	padding: 0px 0px;
+}
+
+
+.footerLink {
+	text-decoration: none;
+	color: white;
+	transition: color 0.3s;
+}
+
+.footerLink:hover{
+	color: rgb(205, 51, 60);
+}
+
+#footerContent ul{
+	float: left;
+	margin: 0px 40px;
+	padding: 0px 0px;
+	list-style-type: none;
+}
+
+#footerSiteMap {
+	width: 500px;
+	float: left;
+}
+
+#footerFollow {
+	float: left;
+	margin: 0 0;
+	padding: 0 100px 0px 0px;
+
+}
+
+#socialIcons {
+	padding-left: 20px;
+}
+
+.socialIcon {
+	width: 60px;
+	height: 60px;
+	background-color: rgb(201,51,60);
+	text-align: center;
+	float: left;
+	margin: 0 0 8px 8px;
+	border-radius: 2px;
+	transition: background-color 0.2s;
+}
+
+.socialIcon:hover {
+	background-color: #AA0000;
+}
+
+#footer img{
+	display: inline;
+	width: 55px;
+	height: 55px;
+	padding-top: 2.5px;
+}
+
+#footerSmall {
+	text-align: right;
+	font-size: 12px;
+}
+
+#footerStrip {
+	width: 100%;
+	height: 15px;
+	background-color: rgb(205, 51, 60);
 }

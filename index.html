@@ -34,13 +34,13 @@
 		<div id='headerContent'>
 			<a href='#landingDiv' id='linguaFrancaLogo'></a>
 
-			<div id='navLinks' class='noselect'>
+			<nav id='navLinks' class='noselect'>
 				<a href='#lessonsBanner' id='lessonsBannerLink' class='linkText'>Lessons</a>
 				<a href='#eventsBanner' id='eventsBannerLink' class='linkText'>Events</a>
 				<a href='#giftsBanner' id='giftsBannerLink' class='linkText'>Gifts</a>
 				<a href='#aboutBanner' id='aboutBannerLink' class='linkText'>About Us</a>
 				<a href='#contactBanner' id='contactBannerLink' class='linkText'>Contact</a>
-			</div>
+			</nav>
 
 		</div>
 
@@ -54,13 +54,22 @@
 	
 		<!-- Landing Banner !-->
 		<div id='landingDiv' class='parallax'>
-			<h1 class='titleText'>WE ARE LINGUA FRANCA</h1>
-			<h2 class='subTitleText'> We provide a unique learning experience for French at all Levels</h2>
 
-			<div id='landingLearnMore'>
-				<h1 class='subTitleText'>LEARN MORE</h1>
-				<a href='#lessonsBanner'><img id='learnMoreButton' src='images/landing/downButton.png' /></a>
+			<div class='largeHeadingContainer' id='titleContainer'>
+				<div id='titleWrapper'>
+					<span id='weAre'>We Are</span>
+					<h1 class='titleText'>Lingua Franca</h1>
+				</div>
+				<h2 class='subTitleText'> Providing a unique learning experience for French at 	all levels</h2>
 			</div>
+
+			<a href='#lessonsBanner'><div id='landingLearnMore' class='largeHeadingContainer'>
+				<div id='learnMoreWrapper'>
+					<h1 id='learnMoreText' class='subTitleText'>LEARN MORE</h1>
+					<img id='learnMoreButton' src='images/landing/downButton.png' />
+				</div>
+			</div></a>
+
 		</div>
 
 
@@ -523,17 +532,33 @@
 			<div class='contentDiv' id='contactContent'>
 				<h2>Message Us</h2>
 				<p>We'd love to help you find the right solution to your language requirements so please feel free to get in touch with us. If you'd rather talk to us please include your phone number and the best times to call and we'll get back to you as soon as we can.</p>
+
 				<form id='emailForm' action='script/sendEmail.php' method='post'>
 					<div id='formWrapper'>
-					<input type='text' name='senderName' class='formInput' value='Name'><br>
-
-					<input type='text' name='senderEmail' class='formInput' value='Email'><br>
-
-					<input type='text' name='senderSubject' class='formInput' value='Subject'><br>
+						<input type='text' name='senderName' class='formInput' value='Name'>
+						<span class='formErrorMessage' id='nameError'></span>
+						<br>
+	
+						<input type='text' name='senderEmail' class='formInput' value='Email'>
+						<span class='formErrorMessage' id='emailError'></span>
+						<br>
+	
+						<input type='text' name='senderSubject' class='formInput' value='Subject'>
+						<span class='formErrorMessage' id='subjectError'></span>
+						<br>
 					</div>
 
-					<input id='newsCheck' type='checkBox' name='newsletterCheck' class='formInput'><p id='newsCheckText'>Yes, keep me up to date with your courses and events via your periodical newsletters.</p><br>
+					<div class='checkDiv'>
+						<input class='check' type='checkBox' name='newsletterCheck' class='formInput'>
+						<p class='checkText'>Keep me up to date with your courses and events via 	your periodical newsletters.</p>
+					</div>
 
+					<div class='checkDiv'>
+						<input class='check' type='checkBox' name='newsletterCheck' class='formInput'>
+						<p class='checkText'>Send me a copy of this email.</p>
+					</div>
+
+					<span class='textareaErrorMessage' id='messageError'></span>
 					<textarea name='senderMessage' id='messageBox'>Message</textarea><br>
 
 					<button type='submit' form='emailForm' value='SEND'>SEND</button>
@@ -569,7 +594,58 @@
 
 
 		<!-- Footer !-->
-		<div id='footer'></div>
+		<div id='footer'>
+			<div class='contentDiv' id='footerContent'>
+				<div id='footerSiteMap'>
+					<h3>Site Map</h3>
+					<ul>
+						<a href='#landingDiv' class='footerLink'><li>Home</li></a>
+						<a href='#lessonsBanner' class='footerLink'><li>Lessons</li></a>
+						<a href='#eventBanner' class='footerLink'><li>Events</li></a>
+						<a href='#giftsBanner' class='footerLink'><li>Gifts</li></a>
+						<a href='#aboutBanner' class='footerLink'><li>About Us</li></a>
+						<a href='#contactBanner' class='footerLink'><li>Contact</li></a>
+					</ul>
+	
+					<ul>
+						<a href='gifts/index.html' class='footerLink'><li>Gift Shop</li></a>
+						<a href='terms/index.html' class='footerLink'><li>Terms & Conditions</li></a>
+					</ul>
+				</div>
+				<div id='footerFollow'>
+					<h3>Follow Us!</h3>
+					<div id='socialIcons'>
+						<a target='_blank' href='https://www.facebook.com/mylinguafranca'>
+						<div class='socialIcon'>
+							<img src='images/footer/facebook.svg' />
+						</div>
+						</a>
+						
+						<a target='_blank' href='http://websta.me/n/mylinguafranca'>
+						<div class='socialIcon'>
+							<img src='images/footer/instagram.svg' />
+						</div>
+						</a><br>
+	
+						<a target='_blank' href='https://www.youtube.com/user/katrinawaugh'>
+						<div class='socialIcon'>
+							<img src='images/footer/youtube.svg' />
+						</div>
+						</a>
+	
+						<a target='_blank' href='http://www.yelp.com.au/biz/lingua-franca-language-services-newstead'>
+						<div class='socialIcon'>
+							<img src='images/footer/yelp.svg' />
+						</div>
+						</a>
+					</div>
+				</div>
+			</div>
+			<div id='footerSmall'>
+				<p>Copyright © 2015, My Lingua Franca. All rights reserved.</p>
+			</div>
+			<div id='footerStrip'></div>
+		</div>
 
 </body>
 </html>
