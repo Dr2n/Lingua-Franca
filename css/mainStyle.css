@@ -813,6 +813,11 @@ a.randomGift:hover span
 	color: rgb(205, 51, 60);
 }
 
+.footerList{
+	font-size: 90%;
+	margin-left: 5px;
+}
+
 #footerContent ul{
 	float: left;
 	margin: 0px 40px;
