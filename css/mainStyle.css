@@ -146,14 +146,14 @@ textarea {
 #popup{
 	z-index: 1002;
 	position: fixed;
-	top: -100vh;
+	top: -90%;
 	left: 50%;
 	margin-left: calc(-1*960px/2);
-	margin-top: calc(-1*780px/2);
 	width: 960px;
-	height: 780px;
+	height: 90%;
 	background-color: rgb(238, 229, 215);
 	transition: top 0.5s ease-out, left 0.5s ease-out;
+	overflow: scroll;
 }
 
 #screen {
