@@ -389,7 +389,6 @@ function init(){
 				}
 
 				document.getElementById('formImageStatus').style.height = "48px";
-				document.getElementById('formImageStatus').innerHTML = '<img id="loadGIF" src="images/contact/loading.gif" />';
 				setTimeout(function(){
 					document.getElementById('loadGIF').style.opacity = "1";
 				}, 100);
