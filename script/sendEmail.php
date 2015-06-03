@@ -1,11 +1,17 @@
 <?php
-	echo "<h1>Hello World</h1>";
-	echo "Name: " . $_POST["senderName"] . "<br>";
-	echo "Email: " . $_POST["senderEmail"] . "<br>";
-	echo "Subject: " . $_POST["senderSubject"] . "<br>";
-	echo "Messsge: " . $_POST["senderMessage"] . "<br>";
 
-	if(mail('darren.yx.fu@gmail.com', $_POST['senderSubject'], $_POST['senderMessage'], 'From : inbox@linguafranc.dreamhosters.com')){
+	$to = 'darren.yx.fu@gmail.com';
+	$subject = $_POST['senderSubject'];
+	$message = wordwrap($_POST['senderMessage'], 70, '\n..');
+
+	$headers = "From : inbox@linguafranca.dreamhosters.com" . '\n..';
+	$headers .= "Reply-To:" . $_POST['senderEmail'] . '\n..';
+	if ($_POST['CCCheck']){
+		$headers .= 'CC: ' . $_POST['senderEmail'] . '\n..';
+	}
+
+
+	if(mail($to, $subject, $message, $headers)){
 		echo 'MAIL SENT';
 	}else{
 		echo 'FAILURE TO SEND MAIL';
