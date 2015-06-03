@@ -1,6 +1,6 @@
 <?php
 
-	$to = 'darren.yx.fu@gmail.com';
+	$to = 'darrenfu@outlook.com';
 	$subject = $_POST['senderSubject'];
 	$message = wordwrap($_POST['senderMessage'], 70, '\r\n');
 
@@ -13,6 +13,8 @@
 
 	if(mail($to, $subject, $message, $headers)){
 		echo 'MAIL SENT';
+		echo $headers;
+
 	}else{
 		echo 'FAILURE TO SEND MAIL';
 	}
