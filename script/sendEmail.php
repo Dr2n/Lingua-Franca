@@ -5,7 +5,7 @@
 	echo "Subject: " . $_POST["senderSubject"] . "<br>";
 	echo "Messsge: " . $_POST["senderMessage"] . "<br>";
 
-	if(mail('darren.yx.fu@gmail.com', 'Email for testing', 'Record of interview', 'From : Darren <dyxf75@gmail.com>')){
+	if(mail('dfu3@eq.edu.au', $_POST['senderSubject'], $_POST['senderMessage'], 'From : inbox@linguafranc.dreamhosters.com')){
 		echo 'MAIL SENT';
 	}else{
 		echo 'FAILURE TO SEND MAIL';
