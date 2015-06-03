@@ -11,6 +11,7 @@
 		                  /____/         
 
 	  Charlie Hou, Patrick Kim & Darren Fu 2015
+	  		What is the meaning of life?
 ----------------------------------------------------*/
 
 /*Page Wide Styling*/
@@ -25,6 +26,19 @@
     font-weight: normal;
     font-style: normal;
 
+}
+
+.hyperLinkText	{
+	color:#ff000f;
+}
+
+.hyperLinkText:hover	{
+	color:#9d0009;
+     -webkit-transition: all 0.25s linear;
+       -moz-transition: all 0.25s linear;
+        -ms-transition: all 0.25s linear;
+         -o-transition: all 0.25s linear;
+            transition: all 0.25s linear;
 }
 
 .noselect {
@@ -74,7 +88,7 @@ textarea {
 .contentDiv {
 	margin-left: auto;
 	margin-right: auto;
-	padding-top: 70px;
+	padding-top: 30px;
 	padding-bottom: 70px;
 	width: 960px;
 }
@@ -121,8 +135,12 @@ textarea {
 }
 
 .largeButton:hover {
+<<<<<<< HEAD
+	color: rgb(100, 100, 100);
+=======
 	transform: scale(0.98);
 	-webkit-transform: scale(0.98);
+>>>>>>> master
 }
 .parallax {
 	height: 300px;
@@ -501,6 +519,7 @@ header {
 
 #giftsContent {
 	background-color: rgb(238,229,215);
+
 }
 
 #fullShopButton	{
@@ -515,8 +534,10 @@ header {
 a.randomGift {
     display: inline-block;
     background: black;
-    padding: 0;
     position: relative;
+    margin-right:25px;
+    margin-left:25px;
+    margin-bottom:20px;
 }
 
 a.randomGift img {
@@ -530,8 +551,7 @@ a.randomGift img {
 }
 
 a.randomGift:hover img {
-    opacity: 0.75;
-            
+    opacity: 0.6; 
 }
 
 a.randomGift span
@@ -545,6 +565,7 @@ a.randomGift span
         -ms-transition: all 0.125s linear;
          -o-transition: all 0.125s linear;
             transition: all 0.125s linear;
+    text-align:left;
 }
 
 a.randomGift:hover span
@@ -727,6 +748,30 @@ a.randomGift:hover span
 
 }
 
+<<<<<<< HEAD
+/*Gifts Store Page Styling*/
+
+.icon {
+	opacity:1;
+	z-index:999;
+	margin-left:80px;
+	margin-right:80px;
+	transition: all 0.25s;
+}
+
+.icon:hover	{
+	opacity:0.4;
+}
+
+#topbar	{
+	text-align:center;
+	height:80px;
+	background-color:rgb(205,51,60);
+}
+
+#iconContainer	{
+	padding-top:10px;
+=======
 #contactLocations {
 	background-color: rgb(162,178,182);
 	width: 300px;
@@ -778,6 +823,7 @@ a.randomGift:hover span
 	position: relative;
 	top: -5px;
 	left: 5px;
+>>>>>>> master
 }
 
 /*Footer Styling*/
