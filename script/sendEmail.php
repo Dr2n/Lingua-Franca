@@ -4,10 +4,10 @@
 	$subject = $_POST['senderSubject'];
 	$message = wordwrap($_POST['senderMessage'], 70, '\r\n');
 
-	$headers = "From : inbox@linguafranca.dreamhosters.com" . '\r\n';
-	$headers .= "Reply-To:" . $_POST['senderEmail'] . '\r\n';
+	$headers = "From : inbox@linguafranca.dreamhosters.com" . "\r\n";
+	$headers .= "Reply-To:" . $_POST['senderEmail'] . "\r\n";
 	if (isset($_POST['CCCheck'])){
-		$headers .= 'CC: ' . $_POST['senderEmail'] . '\r\n';
+		$headers .= 'CC: ' . $_POST['senderEmail'] . "\r\n";
 	}
 
 
