@@ -140,9 +140,9 @@ textarea {
 	-webkit-transform: scale(0.98);
 }
 .parallax {
-	height: 300px;
+	height: 480px;
 	box-sizing: border-box;
-	padding-top: 40px;
+	padding-top: 160px;
 	background-size: 100vw;
 	text-align: center;
 	background-repeat: no-repeat;
