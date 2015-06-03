@@ -38,6 +38,12 @@ function init(){
 		document.getElementById('messageBox').style.color = 'white';
 	}
 
+	var options = {
+        target:        '#emailForm',
+        beforeSubmit:  	preAJAXSubmit,  // pre-submit callback
+        success:       postAJAXSubmit  // post-submit callback
+    };
+
 	/*Event Listeners*/
 	window.addEventListener("scroll", offsetParallaxBackgrounds, false);
 	window.addEventListener("scroll", highlightCurrentSection, false);
@@ -341,7 +347,17 @@ function init(){
 		    	}, 500);
 		    	return false;
 			});
+
+			$('#emailForm').ajaxForm(formOptions);
 		})
+
+		function preAJAXSubmit(){
+			console.log("about to submit form");
+		}
+
+		function postAJAXSubmit(){
+			console.log("form subject success");
+		}
 
 	/*Lessons Content Updating*/
 	function lessonUpdate(){

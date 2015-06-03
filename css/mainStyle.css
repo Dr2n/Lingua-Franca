@@ -94,6 +94,7 @@ textarea {
 	font-family: 'Sketch Serif';
 	font-weight: normal;
 	text-align: center;
+	cursor: default;
 }
 
 .largeHeadingContainer {
@@ -118,6 +119,7 @@ textarea {
 	font-size: 28px;
 	font-family: Sketch Serif;
 	transition: background-color 0.2s, color 0.2s, transform 0.2s, -webkit-transform 0.2s, width 0.2s, height 0.2s;
+	cursor: pointer;
 }
 
 .largeButton:hover {
@@ -621,6 +623,7 @@ a.randomGift:hover span
 	transform: scale(1.5);
 	margin-left: 20px;
 	margin-top: 10px;
+	cursor: pointer;
 }
 
 .checkDiv {
@@ -667,6 +670,7 @@ a.randomGift:hover span
 	transform: translate(175px, -70%);
 	-webkit-transform: translate(175px, -70%);
 	transition: background-color 0.2s;
+	cursor: pointer;
 }
 
 #emailForm button:hover {
@@ -758,6 +762,7 @@ a.randomGift:hover span
 	padding-left: 60px;
 	line-height: 55px;
 	transition: background-color 0.1s;
+	cursor: pointer;
 }
 
 #contactLocations li:hover {

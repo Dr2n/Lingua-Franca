@@ -26,6 +26,7 @@
 	<script src='script/jquery.js'></script>
 	<script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?"></script>
 	<script src='script/mainScript.js'></script>
+    <script src="http://malsup.github.com/jquery.form.js"></script>
 </head>
 
 <body>
@@ -548,6 +549,7 @@
 		</div>
 		
 		<div id='contactContentWrapper'>
+			<div id='contactContentSecondWrapper'>
 			<div class='contentDiv' id='contactContent'>
 				<h2>Message Us</h2>
 				<p>We'd love to help you find the right solution to your language requirements so please feel free to get in touch with us. If you'd rather talk to us please include your phone number and the best times to call and we'll get back to you as soon as we can.</p>
@@ -580,7 +582,7 @@
 					<span class='textareaErrorMessage' id='messageError'></span>
 					<textarea name='senderMessage' id='messageBox'>Message</textarea><br>
 
-					<button type='submit' form='emailForm' value='SEND'>SEND</button>
+					<button id='mailSendButton' type='submit' form='emailForm' value='SEND'>SEND</button>
 				</form>
 
 				<h2>Phone Us</h2>
@@ -596,18 +598,20 @@
 					</tr>
 				</table>
 			</div>
-				<div id='contactMapWrapper' class='contentDiv'>
-					<div id='contactLocations'>
-						<h2>Locations</h2>
-						<ul class='noselect'>
-							<li id='newstead' class='locationButton'>Newstead</li>
-							<li id='bulimba' class='locationButton'>Bulimba</li>
-							<li id='paddington' class='locationButton'>Paddington <span id='new'>NEW!</span></li>
-						</ul>
-					</div>
-					<div id='contactMapWidget'>
-					</div>
+			<div id='contactMapWrapper' class='contentDiv'>
+				<div id='contactLocations'>
+					<h2>Locations</h2>
+					<ul class='noselect'>
+						<li id='newstead' class='locationButton'>Newstead</li>
+						<li id='bulimba' class='locationButton'>Bulimba</li>
+						<li id='paddington' class='locationButton'>Paddington <span id='new'>NEW!</span></li>
+					</ul>
 				</div>
+
+				<div id='contactMapWidget'>
+				</div>
+
+			</div>
 		</div>
 
 
