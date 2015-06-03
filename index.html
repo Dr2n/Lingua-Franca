@@ -550,67 +550,71 @@
 		
 		<div id='contactContentWrapper'>
 			<div id='contactContentSecondWrapper'>
-			<div class='contentDiv' id='contactContent'>
-				<h2>Message Us</h2>
-				<p>We'd love to help you find the right solution to your language requirements so please feel free to get in touch with us. If you'd rather talk to us please include your phone number and the best times to call and we'll get back to you as soon as we can.</p>
+				<div class='contentDiv' id='contactContent'>
+					<h2>Message Us</h2>
+					<p>We'd love to help you find the right solution to your language requirements so please feel free to get in touch with us. If you'd rather talk to us please include your phone number and the best times to call and we'll get back to you as soon as we can.</p>
 
-				<form id='emailForm' action='script/sendEmail.php' method='post'>
-					<div id='formWrapper'>
-						<input type='text' name='senderName' class='formInput' value='Name'>
-						<span class='formErrorMessage' id='nameError'></span>
-						<br>
-	
-						<input type='text' name='senderEmail' class='formInput' value='Email'>
-						<span class='formErrorMessage' id='emailError'></span>
-						<br>
-	
-						<input type='text' name='senderSubject' class='formInput' value='Subject'>
-						<span class='formErrorMessage' id='subjectError'></span>
-						<br>
-					</div>
+					<form id='emailForm' action='script/sendEmail.php' method='post'>
+						<div id='formWrapper'>
+							<input type='text' name='senderName' class='formInput' value='Name'>
+							<span class='formErrorMessage' id='nameError'></span>
+							<br>
+		
+							<input type='text' name='senderEmail' class='formInput' value='Email'>
+							<span class='formErrorMessage' id='emailError'></span>
+							<br>
+		
+							<input type='text' name='senderSubject' class='formInput' value='Subject'>
+							<span class='formErrorMessage' id='subjectError'></span>
+							<br>
+						</div>
 
-					<div class='checkDiv'>
-						<input class='check' type='checkBox' name='newsletterCheck' class='formInput'>
-						<p class='checkText'>Keep me up to date with your courses and events via 	your periodical newsletters.</p>
-					</div>
 
-					<div class='checkDiv'>
-						<input class='check' type='checkBox' name='newsletterCheck' class='formInput'>
-						<p class='checkText'>Send me a copy of this email.</p>
-					</div>
+						<div class='checkDiv'>
+							<input class='check' type='checkBox' name='newsletterCheck' class='formInput'>
+							<p class='checkText'>Keep me up to date with your courses and events via 	your periodical newsletters.</p>
+						</div>
 
-					<span class='textareaErrorMessage' id='messageError'></span>
-					<textarea name='senderMessage' id='messageBox'>Message</textarea><br>
+						<div class='checkDiv'>
+							<input class='check' type='checkBox' name='CCCheck' class='formInput'>
+							<p class='checkText'>Send me a copy of this email.</p>
+						</div>
 
-					<button id='mailSendButton' type='submit' form='emailForm' value='SEND'>SEND</button>
-				</form>
+						<span class='textareaErrorMessage' id='messageError'></span>
+						<textarea name='senderMessage' id='messageBox'>Message</textarea><br>
 
-				<h2>Phone Us</h2>
-				
-				<table id='phoneNumbers'>
-					<tr>
-						<td class='placeCol'>Work</td>
-						<td class='phoneCol'>(07) 3162 4199</td>
-					</tr>
-					<tr>
-						<td class='placeCol'>Mobile</td>
-						<td class='phoneCol'>0405 381 972</td>
-					</tr>
-				</table>
-			</div>
-			<div id='contactMapWrapper' class='contentDiv'>
-				<div id='contactLocations'>
-					<h2>Locations</h2>
-					<ul class='noselect'>
-						<li id='newstead' class='locationButton'>Newstead</li>
-						<li id='bulimba' class='locationButton'>Bulimba</li>
-						<li id='paddington' class='locationButton'>Paddington <span id='new'>NEW!</span></li>
-					</ul>
+						<button id='mailSendButton' type='submit' form='emailForm' value='SEND'>SEND</button>
+						<span class='formErrorMessage' id='formStatus'></span>
+						<div id='formImageStatus'></div>
+					</form>
+
+					<h2>Phone Us</h2>
+					
+					<table id='phoneNumbers'>
+						<tr>
+							<td class='placeCol'>Work</td>
+							<td class='phoneCol'>(07) 3162 4199</td>
+						</tr>
+						<tr>
+							<td class='placeCol'>Mobile</td>
+							<td class='phoneCol'>0405 381 972</td>
+						</tr>
+					</table>
 				</div>
+				<div id='contactMapWrapper' class='contentDiv'>
+					<div id='contactLocations'>
+						<h2>Locations</h2>
+						<ul class='noselect'>
+							<li id='newstead' class='locationButton'>Newstead</li>
+							<li id='bulimba' class='locationButton'>Bulimba</li>
+							<li id='paddington' class='locationButton'>Paddington <span id='new'>NEW!</span></li>
+						</ul>
+					</div>
 
-				<div id='contactMapWidget'>
+					<div id='contactMapWidget'>
+					</div>
+
 				</div>
-
 			</div>
 		</div>
 
