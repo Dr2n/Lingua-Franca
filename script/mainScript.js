@@ -38,6 +38,11 @@ function init(){
 		document.getElementById('messageBox').style.color = 'white';
 	}
 
+	window.nameFilled = false;
+	window.emailFilled = false;
+	window.subjectFilled = false;
+	window.messageFilled = false;
+
 	/*Event Listeners*/
 	window.addEventListener("scroll", offsetParallaxBackgrounds, false);
 	window.addEventListener("scroll", highlightCurrentSection, false);
@@ -177,11 +182,14 @@ function init(){
 		if (event.target.value != ''){
 			if(event.target.name == 'senderName'){
 				document.getElementById('nameError').innerHTML = '';
+				nameFilled = true;
 			}else if (event.target.name == 'senderSubject'){
 				document.getElementById('subjectError').innerHTML = '';
+				subjectFilled = true;
 			}else if(event.target.name == 'senderEmail'){
 				if (emailTest.test(event.target.value)){
 					document.getElementById('emailError').innerHTML = '';
+					emailFilled = true;
 				}else{
 					document.getElementById('emailError').innerHTML = 'Invalid Email.';
 				}
@@ -203,6 +211,10 @@ function init(){
 			
 		}
 
+		if (nameFilled && emailFilled && subjectFilled && messageFilled){
+			document.getElementById('formStatus').innerHTML = '';
+		}
+
 	}
 
 	function messageBoxIn(event){
@@ -215,11 +227,33 @@ function init(){
 	function messageBoxOut(event){
 		if (event.target.value == ''){
 			event.target.value = 'Message';
-			event.target.style.color = '#FF9EA4'
-			document.getElementById('messageError').innerHTML = 'Enter a message.'
+			event.target.style.color = '#FF9EA4';
+			document.getElementById('messageError').innerHTML = 'Enter a message.';
 		}else{
 			document.getElementById('messageError').innerHTML = '';
+			messageFilled = true;
 		}
+
+		if (nameFilled && emailFilled && subjectFilled && messageFilled){
+			document.getElementById('formStatus').innerHTML = '';
+		}
+
+	}
+
+	function allFilled(){
+		var form = document.getElementById('emailForm');
+		var name = form.senderName.value;
+		var email = form.senderEmail.value;
+		var subject = form.senderSubject.value;
+		var message = form.senderMessage.value;
+		var emailTest = /\S+@\S+\.\S+/;
+
+		if (!emailTest.test(email) || email == '' || name == '' || subject == '' || message == ''){
+			return false;
+		}else{
+			return true;
+		}
+
 	}
 
 	/*Parallax*/
@@ -333,7 +367,7 @@ function init(){
 		document.body.style.overflow = 'visible';
 	}
 
-	/*Smooth Link Scrolling*/
+	/*jQuery*/
 		$(document).ready(function(){
 			$('a').click(function(){
 	    		$('html, body').animate({
@@ -341,7 +375,51 @@ function init(){
 		    	}, 500);
 		    	return false;
 			});
-		})
+
+
+			window.emailSent = false;
+
+			$('#emailForm').submit(function(event){
+				event.preventDefault();
+				if (emailSent){
+					return;
+				}else if (!allFilled()){
+					document.getElementById('formStatus').innerHTML = 'Please fill all required fields';
+					return;
+				}
+
+				document.getElementById('formImageStatus').style.height = "48px";
+				document.getElementById('formImageStatus').innerHTML = '<img id="loadGIF" src="images/contact/loading.gif" />';
+				setTimeout(function(){
+					document.getElementById('loadGIF').style.opacity = "1";
+				}, 100);
+
+				var formData = $(this).serializeArray();
+				$.ajax({
+					url: 'script/sendEmail.php',
+					type: 'POST',
+					data: formData,
+					success: ajaxDone,
+					error: ajaxFailure
+				})
+
+				console.log($(this))
+			});
+		});
+
+		function ajaxDone(argument){
+			console.log(argument);
+			emailSent = true;
+			document.getElementById('loadGIF').style.opacity = 0;
+			setTimeout(function(){
+				document.getElementById('formImageStatus').style.height = "0px";
+				document.getElementById('formStatus').innerHTML = "Your messsage has been sent!"
+			}, 200);
+		}
+
+		function ajaxFailure(){
+			console.log("form subject success");
+		}
 
 	/*Lessons Content Updating*/
 	function lessonUpdate(){

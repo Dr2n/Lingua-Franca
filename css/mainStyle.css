@@ -108,6 +108,7 @@ textarea {
 	font-family: 'Sketch Serif';
 	font-weight: normal;
 	text-align: center;
+	cursor: default;
 }
 
 .largeHeadingContainer {
@@ -132,6 +133,7 @@ textarea {
 	font-size: 28px;
 	font-family: Sketch Serif;
 	transition: background-color 0.2s, color 0.2s, transform 0.2s, -webkit-transform 0.2s, width 0.2s, height 0.2s;
+	cursor: pointer;
 }
 
 .largeButton:hover {
@@ -595,14 +597,21 @@ a.randomGift:hover span
 	background-color: rgb(238,229,215);
 }
 
-#contactContent {
-	z-index: 20;
+#contactContentSecondWrapper {
 	box-shadow: -3px -8px 30px -7px rgba(0,0,0,0.75);
+	width: 960px;
+	margin-left: auto;
+	margin-right: auto;
+	transform: translate(0, -100px);
+	-webkit-transform: translate(0, -100px);
+	border-radius: 15px;
+	overflow: hidden;
+}
+
+#contactContent {
 	color: white;
 	box-sizing: border-box;
 	background-color: rgb(205,51,60);
-	transform: translate(0, -100px);
-	-webkit-transform: translate(0, -100px);
 	padding-left: 100px;
 	padding-right: 100px;
 }
@@ -639,6 +648,7 @@ a.randomGift:hover span
 	transform: scale(1.5);
 	margin-left: 20px;
 	margin-top: 10px;
+	cursor: pointer;
 }
 
 .checkDiv {
@@ -685,6 +695,7 @@ a.randomGift:hover span
 	transform: translate(175px, -70%);
 	-webkit-transform: translate(175px, -70%);
 	transition: background-color 0.2s;
+	cursor: pointer;
 }
 
 #emailForm button:hover {
@@ -706,6 +717,35 @@ a.randomGift:hover span
 	top: -1px;
 }
 
+#formStatus {
+	position: relative;
+	top: 20px;
+}
+
+#formImageStatus {
+	margin-left: auto;
+	margin-right: auto;
+	overflow: hidden;
+	height: 0px;
+	width: 48px;
+	transition: height 0.4s;
+}
+
+#loadGIF {
+	opacity: 0;
+	width: 48px;
+	height: 48px;
+	transition: opacity 0.2s;
+}
+
+#formStatusCheck {
+	margin: 0 0;
+	padding: 0 0;
+	font-size: 36px;
+	color: white;
+	font-weight: bold;
+}
+
 #phoneNumbers {
 	margin-left: auto;
 	margin-right: auto;
@@ -718,13 +758,10 @@ a.randomGift:hover span
 	border-width: 0;
 }
 
-#phoneNumbers td {
-	padding-left: 30px;
-}
-
 .placeCol {
 	width: 120px;
 	height: 40px;
+	padding-left: 30px;
 	background-color: rgb(89, 0, 0);
 	color: white;
 }
@@ -732,16 +769,14 @@ a.randomGift:hover span
 .phoneCol {
 	background-color: #AA0000;
 	color: white;
-	width: 280px;
+	width: 300px;
+	text-align: center;
 }
 
 #contactMapWrapper {
-	box-shadow: 3px -8px 30px -7px rgba(0,0,0,0.75);
 	padding: 0 0;
 	height: 500px;
 	background-color: white;
-	transform: translate(0, -100px);
-	-webkit-transform: translate(0, -100px);
 
 }
 
@@ -800,6 +835,7 @@ a.randomGift:hover span
 	padding-left: 60px;
 	line-height: 55px;
 	transition: background-color 0.1s;
+	cursor: pointer;
 }
 
 #contactLocations li:hover {
@@ -826,7 +862,6 @@ a.randomGift:hover span
 #footer {
 	position: relative;
 	bottom: 0px;
-	padding: 50px calc(50vw - 480px) 50 calc(50vw - 480px);
 	height: 25vh;
 	width: 100vw;
 	background-color: black;
