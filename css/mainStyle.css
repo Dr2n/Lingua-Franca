@@ -135,12 +135,9 @@ textarea {
 }
 
 .largeButton:hover {
-<<<<<<< HEAD
 	color: rgb(100, 100, 100);
-=======
 	transform: scale(0.98);
 	-webkit-transform: scale(0.98);
->>>>>>> master
 }
 .parallax {
 	height: 300px;
