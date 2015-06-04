@@ -369,8 +369,7 @@ header {
 		height: 100px;
 		color: white;
 		float: left;
-		text-align: center;
-		vertical-align: middle;
+
 	}
 
 	#privateSelect{
@@ -407,6 +406,27 @@ header {
 	table p, ul{
 		margin: 0;
 	}
+	.blueEgg{
+		background-color: #AABFC9;
+	}
+	.greyCrack{
+		background-color: #D2CDBD;
+	}
+	.greyChick{
+		background-color: #656666;
+	}
+	.redRooster{
+		background-color: #C01D29;
+	}
+	.pinkDELF{
+		background-color: #FDDCC5;
+	}
+	.redDELF{
+		background-color: #FF908A;
+	}
+	.blueDELF{
+		background-color: #B1D8EC;
+	}
 
 	#egg{
 		background-image: url("../images/lessons/lessonsEgg.png");
@@ -442,22 +462,41 @@ header {
 		color: white;
 
 	}
-	.blueEgg{
-		background-color: #AABFC9;
-	}
-	.greyCrack{
-		background-color: #D2CDBD;
-	}
-	.greyChick{
-		background-color: #656666;
-	}
-	.redRooster{
-		background-color: #C01D29;
+
+	#delfSchedule div{
+		margin: 5px;
+		width: 75px;
+		height: 50px;
+		display: table-cell;
+		vertical-align: middle;
 	}
 
-	#delfSchedule{
-
+	#feesDELF{
+		text-align: left;
 	}
+	.titleDELF{
+		width: 30px;
+		background-color: #81C1B8;
+	}
+	#titleDELFDark{
+		width: 30px;
+		background-color: #71A8A1;
+	}
+	.titleDELF div{
+		white-space: nowrap;
+		transform: rotate(-90deg);
+		-moz-transform: rotate(-90deg);
+		-webkit-transform: rotate(-90deg);
+	}
+	.priceDELF{
+		font-size: 80%;
+		color: #656565;
+	}
+	.subpriceDELF{
+		font-size: 50%;
+		color: #656565;
+	}
+
 
 /*Events Styling*/
 #eventsBanner {
