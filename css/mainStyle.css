@@ -528,8 +528,9 @@ header {
 }
 
 #fullShopButton	{
-	color: rgb(255, 252, 239);
-	background-color: rgb(162, 178, 182);
+	color: rgb(94, 94, 94);
+	background-color: rgb(238, 228, 215);
+
 }
 
 #imageContainer	{
