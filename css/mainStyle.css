@@ -575,12 +575,25 @@ header {
 }
 
 #fullShopButton	{
-	color: rgb(255, 252, 239);
-	background-color: rgb(162, 178, 182);
+	color: rgb(94, 94, 94);
+	background-color: rgb(238, 228, 215);
+
 }
 
 #imageContainer	{
 	text-align:center;
+}
+
+#polaroid	{
+	position:fixed;
+	left: -50px;
+	top:470px;
+	transform: scale(0.6);
+	transition: all 0.3s;
+}
+
+#polaroid:hover	{
+	transform: scale(0.65);
 }
 
 a.randomGift {
@@ -913,8 +926,8 @@ a.randomGift:hover span
 }
 
 .backgroundCard	{
-	border-radius:10px;
-	background-color: rgb(238,229,215);
+	border-radius:1px;
+	background-color: rgb(249,250,245);
 	width:314px;
 	height:310px;
 	transition: box-shadow 0.4s, height 0.3s;
@@ -1101,4 +1114,8 @@ a.randomGift:hover span
 .fadeInUp { 
     -webkit-animation-name: fadeInUp; 
     animation-name: fadeInUp; 
+}
+
+.animated 		{
+	height:427px;
 }
