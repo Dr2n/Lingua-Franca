@@ -95,14 +95,6 @@
 
 		<div id='lessonsContent'>
 			<div class='contentDiv'>
-
-				<select id="lessonSelect">
-					<option value="initial" selected="selected" disabled="disabled">Pick a lesson type</option>
-					<option value="private">Private Lessons</option>
-					<option value="group">Group Lessons</option>
-					<option value="delf">DELF Lessons</option>
-				</select>
-
 				<!--Private Content-->
 				<div id="private" class="subContent">
 					<h2>How they work</h2>
@@ -113,20 +105,20 @@
 					<h2>Fees</h2>
 					<table id="privateFees">
 						<tr>
-							<td><strong>#Students</strong></td>
-							<td><strong>Price</strong></td>
+							<th>#Students</th>
+							<th>Price</th>
 						</tr>
 						<tr>
-							<td>1</td>
-							<td>$80/hr</td>
+							<td id="privateAlternate">1</td>
+							<td id="privateAlternate">$80/hr</td>
 						</tr>
 						<tr>
 							<td>2</td>
 							<td>$115/hr</td>
 						</tr>
 						<tr>
-							<td>3</td>
-							<td>$155/hr</td>
+							<td id="privateAlternate">3</td>
+							<td id="privateAlternate">$155/hr</td>
 						</tr>
 						<tr>
 							<td>4</td>
@@ -158,21 +150,21 @@
 					<h3>Consolidation - 10 weeks 1hr/wk</h3>
 					<p>Whether you feel you’d like to ‘put the brakes on’ your learning for a little while or whether you’d like to reinforce what you’ve learned while continuing on with your Key Courses, our new Monday night Consolidation Courses could be just what you’re looking for.These courses run throughout the year in ten-week blocks and cost $399. The first time you sign up, you’ll receive a workbook which is yours to keep. This workbook is designed to encourage you to speak.</p>
 					<h2>What's my level?</h2>
-					<table>
+					<table id="groupLevel">
 						<tr>
-							<td>egg</td>
-							<td>crac</td>
-							<td>chic</td>
-							<td>roos</td>
+							<th id="egg"></td>
+							<th id="crack"></td>
+							<th id="chick"></td>
+							<th id="rooster"></td>
 						</tr>
 						<tr>
-							<th>Absolute Beginners</th>
-							<th>Beginners</th>
-							<th>Intermediate</th>
-							<th>Advanced</th>
+							<td class="blueEgg"><strong>Absolute Beginners</strong></td>
+							<td class="greyCrack"><strong>Beginners</strong></td>
+							<td class="greyChick"><strong>Intermediate</strong></td>
+							<td class="redRooster"><strong>Advanced</strong></td>
 						</tr>
 						<tr>
-							<td>
+							<td class="blueEgg">
 								<p>For you if you have done:</p>
 								<ul>
 									<li>no French before at all</li>
@@ -180,7 +172,7 @@
 									<li>some French but wants to start afresh</li>
 								</ul>
 							</td>
-							<td>
+							<td class="greyCrack">
 								<p>For you if you have done:</p>
 								<ul>
 									<li>a moderate amount of French in the past</li>
@@ -188,7 +180,7 @@
 									<li>and intensive course in the past</li>
 								</ul>
 							</td>
-							<td>
+							<td class="greyChick">
 								<p>For you if you have done:</p>
 								<ul>
 									<li>quite a lot of French recently</li>
@@ -196,27 +188,26 @@
 									<li>some French at Uni but it was a long time ago...</li>
 								</ul>
 							</td>
-							<td>
+							<td class="redRooster">
 								<p>For you if you have done:</p>
 								<ul>
 									<li>have had a prolonged exposure to French</li>
 									<li>feel comfortable speaking exclusively in French</li>
-									<li></li>
 								</ul>
 							</td>
 						</tr>
 						<tr>
-							<td>
-								<div><p>more details</p></div>
+							<td class="blueEgg">
+								<p>more details</p>
 							</td>
-							<td>
-								<div><p>more details</p></div>
+							<td class="greyCrack">
+								<p>more details</p>
 							</td>
-							<td>
-								<div><p>more details</p></div>
+							<td class="greyChick">
+								<p>more details</p>
 							</td>
-							<td>
-								<div><p>more details</p></div>
+							<td class="redRooster">
+								<p>more details</p>
 							</td>
 						</tr>
 					</table>
@@ -227,7 +218,7 @@
 					<p><strong>Please note:</strong> if you are an Advanced student and you wish to practice your speaking, we also run an Advanced Conversation course at our Newstead office. See schedule for details.</p>
 					<p>If you are still unsure of your level, please <strong><a href="#contactBanner">contact us</a>.</strong> We'd be very happy to help.</p>
 					<h2>Audio support</h2>
-					<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+					<p>[Insert explanation]</p>
 					<h3>Key courses</h3>
 					<a href="https://www.youtube.com/user/katrinawaugh/videos"><p>Absolute Beginner</p></a>
 					<a href="https://www.youtube.com/user/katrinawaugh/videos"><p>Beginner</p></a>
@@ -272,13 +263,13 @@
 						<li>Take advantage of our .Perks. program or</li>
 						<li>Pay upfront for 6 or 12 months to enjoy even greater benefits. </li>
 					</ul>
-					<p>Please be sure to read our <strong><a href="t&c.html">Terms and Conditions</a></strong> before you book a course. <em>Merci</em>.</p>
+					<p>Please be sure to read our <strong><a href="t&c.html">Terms and Conditions</a></strong> before you book a course. <em>Merci</em>.</p><!-- 
 					<p><img src="/storage/Title%20-%20Pay%20individually%20%20French%20lessons%20Brisbane.png?__SQUARESPACE_CACHEVERSION=1371017564672" alt=""></p>
 					<p>These are our standard course fees. </p>
 					<p><img src="/storage/dec-2014/Group%20lessons%20%20Fees%20%20Table%20of%20Fees%20%20French%20lessons%20Brisbane.png?__SQUARESPACE_CACHEVERSION=1418367326086" alt=""><br></p>
 					<p><img src="/storage/Title%20-%20.Perks.%20program%20%20French%20lessons%20Brisbane.png?__SQUARESPACE_CACHEVERSION=1418343264820" alt=""></p>
 					<p> Our .Perks. program allows you to benefit from a 5% reduction each time you satisfy one of the following three criteria. This means you could end up with a saving of 15%, which is a .Perk. in anyone's language.  </p>
-					<p><img src="/storage/The%20.Perks.%20graphic%20%20French%20lessons%20Brisbane.png?__SQUARESPACE_CACHEVERSION=1371023215054" alt="" naptha_cursor="text"></p>
+					<p><img src="/storage/The%20.Perks.%20graphic%20%20French%20lessons%20Brisbane.png?__SQUARESPACE_CACHEVERSION=1371023215054" alt="" naptha_cursor="text"></p> -->
 					<p><strong>.catch the worm. </strong></p>
 					<p>Book and pay before the nominated date to make sure you get exactly the class you want (and at a special price). See below for dates.</p>
 					<p><strong>take 5% off</strong></p>
@@ -288,13 +279,13 @@
 					<p><strong>.teacher's pet.</strong></p>
 					<p>Do you just love your French? Is it your 'thing'? If so, you're probably so keen that you'd even consider signing up for two different classes a week, to really accelerate your French. You're such a <a href="http://www.wordreference.com/fren/chouchou">chouchou</a>, we think you deserve a special price.</p>
 					<p><strong>take 5% off</strong></p>
-					<p><strong><img src="/storage/dec-2014/Group%20lessons%20%20Fees%20%20Table%20Catch%20the%20Worm%20dates%20%20French%20lessons%20Brisbane.png?__SQUARESPACE_CACHEVERSION=1418702803336" alt=""><br></strong></p>
-					<p><img src="/storage/Title-%20pay%20up%20front%20%20French%20lessons%20Brisbane.png?__SQUARESPACE_CACHEVERSION=1418366975161" alt=""></p>
+					<!-- <p><strong><img src="/storage/dec-2014/Group%20lessons%20%20Fees%20%20Table%20Catch%20the%20Worm%20dates%20%20French%20lessons%20Brisbane.png?__SQUARESPACE_CACHEVERSION=1418702803336" alt=""><br></strong></p>
+					<p><img src="/storage/Title-%20pay%20up%20front%20%20French%20lessons%20Brisbane.png?__SQUARESPACE_CACHEVERSION=1418366975161" alt=""></p> -->
 					<p>If you are really committed to learning French, like to be organised and want to reduce the amount of administration in your life, this option could be for you. No invoices, just the satisfaction of knowing your French is taken care of for the next six or twelve months. You just have to turn up.</p>
 					<p>We also know life changes, which is why we offer generous deferral options with our 'pay up front' plan.  You also benefit from a discount of more than 10%.</p>
 					<p>6 months - 10 week deferral option</p>
 					<p>12 months - 12 week deferral option</p>
-					<p><img src="/storage/2015/Fees%20%206%20and%2012%20months%20graphic%20%20French%20lessons%20Brisbane.png?__SQUARESPACE_CACHEVERSION=1431682277854" alt=""></p>
+					<!-- <p><img src="/storage/2015/Fees%20%206%20and%2012%20months%20graphic%20%20French%20lessons%20Brisbane.png?__SQUARESPACE_CACHEVERSION=1431682277854" alt=""></p> -->
 					<p>*Please note:  no other discounts apply. </p>
 				</div>
 

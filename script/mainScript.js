@@ -28,11 +28,7 @@ function init(){
 		links[i].addEventListener("mouseout", linkMouseOut, false);
 	}
 
-	textInitialise();
-	document.getElementById("lessonSelect").value="initial";
-	document.getElementById("termSelect").value="initial";
-	document.getElementById("locationSelect").value="initial";
-
+	lessonInitialise();
 
 	if (document.getElementById('messageBox').value != 'Message'){
 		document.getElementById('messageBox').style.color = 'white';
@@ -42,12 +38,6 @@ function init(){
 	window.emailFilled = false;
 	window.subjectFilled = false;
 	window.messageFilled = false;
-
-	/*Event Listeners*/
-	window.addEventListener("scroll", offsetParallaxBackgrounds, false);
-	window.addEventListener("scroll", highlightCurrentSection, false);
-	document.getElementById('echantillonSignButton').addEventListener("click", togglePopup, false);
-	document.getElementById("lessonSelect").addEventListener("change",lessonUpdate,false);
 	
 	window.contactForms = document.getElementsByClassName('formInput');
 	for (var i = 0; i < contactForms.length; i++){
@@ -72,7 +62,9 @@ function init(){
 	window.addEventListener("scroll", highlightCurrentSection, false);
 	document.getElementById('echantillonSignButton').addEventListener("click", togglePopup, false);
 	document.getElementById('FAQbutton').addEventListener("click", togglePopup, false);
-	document.getElementById("lessonSelect").addEventListener("change",lessonUpdate,false);
+	document.getElementById("privateSelect").addEventListener("click",lessonUpdate,false);
+	document.getElementById("groupSelect").addEventListener("click",lessonUpdate,false);
+	document.getElementById("delfSelect").addEventListener("click",lessonUpdate,false);
 	document.getElementById("termSelect").addEventListener("change",tableUpdate,false);
 	document.getElementById("locationSelect").addEventListener("change",tableUpdate,false);
 	document.getElementById("wtermSelect").addEventListener("change",workUpdate,false);
@@ -421,23 +413,24 @@ function init(){
 		}
 
 	/*Lessons Content Updating*/
-	function lessonUpdate(){
-		if(document.getElementById("lessonSelect").value=="private"){
+	function lessonUpdate(event){
+		var button = event.target.id;
+		if (button == "privateSelect"){
 			zUpdate(1,0,0);
 			opacityUpdate(1,0,0);
 			document.getElementById("lessonsContent").style.height=String(document.getElementById("private").offsetHeight+140)+"px";
-		} else if(document.getElementById("lessonSelect").value=="group"){
+		} else if (button == "groupSelect"){
 			zUpdate(0,1,0);
 			opacityUpdate(0,1,0);
 			document.getElementById("lessonsContent").style.height=String(document.getElementById("group").offsetHeight+140)+"px";
-		} else if(document.getElementById("lessonSelect").value=="delf"){
+		} else if (button == "delfSelect"){
 			zUpdate(0,0,1);
 			opacityUpdate(0,0,1);
 			document.getElementById("lessonsContent").style.height=String(document.getElementById("delf").offsetHeight+140)+"px";
 		}
 	}
 
-	function textInitialise(){
+	function lessonInitialise(){
 		document.getElementById("private").style.opacity="0";
 		document.getElementById("group").style.opacity="0";
 		document.getElementById("delf").style.opacity="0";

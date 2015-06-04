@@ -402,10 +402,57 @@ header {
 	/*Tables*/
 	table{
 		margin: 0px auto;
-		text-align: center
+		text-align: center;
 	}
-	#privateFees{
+	table p, ul{
+		margin: 0;
+	}
 
+	#egg{
+		background-image: url("../images/lessons/lessonsEgg.png");
+	}
+	#crack{
+		background-image: url("../images/lessons/lessonsCrack.png");
+	}
+	#chick{
+		background-image: url("../images/lessons/lessonsChick.png");
+	}
+	#rooster{
+		background-image: url("../images/lessons/lessonsRooster.png");
+	}
+
+	#privateFees{
+		background-color: #AABFC9;
+		width: 150px;
+		border: none;
+	}
+	#privateAlternate{
+		background-color: #FFFCEF;
+	}
+
+	#groupLevel th{
+		height: 186px;
+		background-repeat: no-repeat;
+		background-position: center;
+		color: white;
+	}
+	#groupLevel td{
+		margin: 3px;
+		padding: 2px;
+		color: white;
+
+	}
+	.blueEgg{
+		background-color: #AABFC9;
+	}
+	.greyCrack{
+		background-color: #D2CDBD;
+	}
+	.greyChick{
+		background-color: #656666;
+	}
+	.redRooster{
+		background-color: #C01D29;
 	}
 
 	#delfSchedule{
