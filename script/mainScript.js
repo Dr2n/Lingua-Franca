@@ -255,25 +255,15 @@ function init(){
 
 		for (var i = 0; i < parallaxDivs.length; i++){
 			var viewportPos = parallaxDivs[i].getBoundingClientRect().top;
-			var neededOffset = -350 * (viewportPos/window.innerHeight);
+			var neededOffset = 400 * (viewportPos/window.innerHeight);
 			if(parallaxDivs[i].id =='landingDiv'){
-				neededOffset = -600 * (viewportPos/window.innerHeight);
+				neededOffset = 600 * (viewportPos/window.innerHeight);
 			}
 
 			parallaxDivs[i].style.backgroundPosition = "0px " + String(neededOffset) + "px";
 		}
 
 	}
-
-	$('body').on('mousewheel', function(event){
-		event.preventDefault();
-
-		var wheelDelta = event.wheelDelta;
-
-		var currentScrollPosition = window.pageYOffset;
-		window.scrollTo(0, currentScrollPosition - wheelDelta);
-	})
-
 
 	/*Navbar highlighting*/
 	function linkMouseOver(event){
