@@ -251,7 +251,6 @@ function init(){
 	/*Parallax*/
 
 	function offsetParallaxBackgrounds(){
-		console.log('focusout');
 		var parallaxDivs = document.getElementsByClassName('parallax');
 
 		for (var i = 0; i < parallaxDivs.length; i++){
@@ -265,6 +264,15 @@ function init(){
 		}
 
 	}
+
+	$('body').on('mousewheel', function(event){
+		event.preventDefault();
+
+		var wheelDelta = event.wheelDelta;
+
+		var currentScrollPosition = window.pageYOffset;
+		window.scrollTo(0, currentScrollPosition - wheelDelta);
+	})
 
 
 	/*Navbar highlighting*/
@@ -297,7 +305,8 @@ function init(){
 			links[i].style.color = 'white';
 		}
 
-		document.getElementById(closestSection[0] + "Link").style.color = '#ff000f';
+		var sectionLink = document.getElementById(closestSection[0] + "Link");
+		if (sectionLink) sectionLink.style.color = '#ff000f';
 	}
 
 
