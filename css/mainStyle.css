@@ -288,7 +288,7 @@ header {
 	width: 100%;
 	background-image: url('../images/landing/landingBackground.jpg');
 	background-repeat: no-repeat;
-	background-size: 100vw;
+	background-size: cover;
 	padding-top: 18vh;
 	text-align: center;
 }
@@ -965,6 +965,16 @@ a.randomGift:hover span
 	width: 660px;
 	height: 500px;
 	float: left;
+}
+
+.mapInfo {
+	padding: 5px 15px 20px 15px;
+}
+
+.mapInfo p{
+	margin-left: 30px;
+	margin-bottom: 0px;
+	margin-top: 0px;
 }
 
 #new {
