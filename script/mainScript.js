@@ -70,30 +70,33 @@ function init(){
 	document.getElementById('messageBox').addEventListener('blur', messageBoxOut, false);
 
 	/*Random Gift Shop Images*/
-	var images = [
-		["raffia.png", 'Wide-brimmed raffia hat'], 
-		["purplebracelet.png", 'Reversible purple magnetic bracelet'],
-		["necklaces.png", 'Lightweight citrus bead necklaces'],
-		["soap.png", '<i>Savon de Marseille</i> soap cubes'], 
-		["truvs.png", "Trucs de Fille - <i>Girl stuff</i> pencil case"], 
+	var gifts = [
+		["giftShop/", "images/giftShop/raffia.png", "Wide-brimmed Raffia Hat", "Raffia bends, unlike wicker which <br> tends to break easily.", "$116.10"], 
+		["giftShop/", "images/giftShop/necklaces.png", "Colourful bead necklaces", "Handmade from citrus beads, various colours.", "$35 x1/$58.50 x2"],
+		["giftShop/", "images/giftShop/cloche.png", "Cloche Raffia hat with black band", "Raffia bends, unlike wicker which <br> tends to break easily.", "$116.10"],
 	];
 
 	var usedImages = [];
 
-	var imageWrapper = document.getElementById('imageContainer');
+	window.backgroundCards = document.getElementsByClassName('backgroundCard');
 
-	for (var i = 0; i < 3; i++){
+	for (var i = 0; i < backgroundCards.length; i++){
 		
-		var randomNumber = parseInt(Math.random() * images.length);
+		var randomNumber = parseInt(Math.random() * backgroundCards.length);
 		
 		while(usedImages.indexOf(randomNumber) != -1){
-			randomNumber = parseInt(Math.random() * images.length);	
+			randomNumber = parseInt(Math.random() * backgroundCards.length);
 		}
+
+		var giftChosen = gifts[randomNumber];
+		var nodes = backgroundCards[i].children;
 
 		usedImages.push(randomNumber);
 
-		var pictureHTML = '<a href="http://google.com" class="randomGift" id="hat"><img src="images/giftShop/' + images[randomNumber][0] + '"><span>' + images[randomNumber][1] + '</span></a>';
-		imageWrapper.innerHTML += pictureHTML;
+		backgroundCards[i].children[0].href  = giftChosen[0];
+		backgroundCards[i].children[0].children[0].src = giftChosen[1];
+		backgroundCards[i].children[1].children[0].innerHTML = giftChosen[2] + "<br><i>" + giftChosen[3] + "</i><br><b>" + giftChosen[4] + "</b>";
+		backgroundCards[i].children[1].children[1].href = giftChosen[0];
 		
 	}
 }
@@ -254,25 +257,15 @@ function init(){
 
 		for (var i = 0; i < parallaxDivs.length; i++){
 			var viewportPos = parallaxDivs[i].getBoundingClientRect().top;
-			var neededOffset = -350 * (viewportPos/window.innerHeight);
+			var neededOffset = 400 * (viewportPos/window.innerHeight);
 			if(parallaxDivs[i].id =='landingDiv'){
-				neededOffset = -600 * (viewportPos/window.innerHeight);
+				neededOffset = 600 * (viewportPos/window.innerHeight);
 			}
 
 			parallaxDivs[i].style.backgroundPosition = "0px " + String(neededOffset) + "px";
 		}
 
 	}
-
-	$('body').on('mousewheel', function(event){
-		event.preventDefault();
-
-		var wheelDelta = event.wheelDelta;
-
-		var currentScrollPosition = window.pageYOffset;
-		window.scrollTo(0, currentScrollPosition - wheelDelta);
-	})
-
 
 	/*Navbar highlighting*/
 	function linkMouseOver(event){
