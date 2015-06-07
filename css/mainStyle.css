@@ -41,7 +41,7 @@
             transition: all 0.25s linear;
 }
 
-.noselect, .noselect * {
+.noselect {
 	-webkit-user-select: none;  /* Chrome all / Safari all */
 	-moz-user-select: none;     /* Firefox all */
 	-ms-user-select: none;      /* IE 10+ */
