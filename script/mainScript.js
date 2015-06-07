@@ -71,30 +71,33 @@ function init(){
 	document.getElementById("wlocationSelect").addEventListener("change",workUpdate,false);
 
 	/*Random Gift Shop Images*/
-	var images = [
-		["raffia.png", 'Wide-brimmed raffia hat'], 
-		["purplebracelet.png", 'Reversible purple magnetic bracelet'],
-		["necklaces.png", 'Lightweight citrus bead necklaces'],
-		["soap.png", '<i>Savon de Marseille</i> soap cubes'], 
-		["truvs.png", "Trucs de Fille - <i>Girl stuff</i> pencil case"], 
+	var gifts = [
+		["/giftShop/index.html", "images/giftShop/raffia.png", "Wide-brimmed Raffia Hat", "Raffia bends, unlike wicker which <br> tends to break easily.", "$116.10"], 
+		["/giftShop/index.html", "images/giftShop/necklaces.png", "Colourful bead necklaces", "Handmade from citrus beads, various colours.", "$35 x1/$58.50 x2"],
+		["/giftShop/index.html", "images/giftShop/cloche.png", "Cloche Raffia hat with black band", "Raffia bends, unlike wicker which <br> tends to break easily.", "$116.10"],
 	];
 
 	var usedImages = [];
 
-	var imageWrapper = document.getElementById('imageContainer');
+	window.backgroundCards = document.getElementsByClassName('backgroundCard');
 
-	for (var i = 0; i < 3; i++){
+	for (var i = 0; i < backgroundCards.length; i++){
 		
-		var randomNumber = parseInt(Math.random() * images.length);
+		var randomNumber = parseInt(Math.random() * backgroundCards.length);
 		
 		while(usedImages.indexOf(randomNumber) != -1){
-			randomNumber = parseInt(Math.random() * images.length);	
+			randomNumber = parseInt(Math.random() * backgroundCards.length);
 		}
+
+		var giftChosen = gifts[randomNumber];
+		var nodes = backgroundCards[i].children;
 
 		usedImages.push(randomNumber);
 
-		var pictureHTML = '<a href="http://google.com" class="randomGift" id="hat"><img src="images/giftShop/' + images[randomNumber][0] + '"><span>' + images[randomNumber][1] + '</span></a>';
-		imageWrapper.innerHTML += pictureHTML;
+		backgroundCards[i].children[0].href  = giftChosen[0];
+		backgroundCards[i].children[0].children[0].src = giftChosen[1];
+		backgroundCards[i].children[1].children[0].innerHTML = giftChosen[2] + "<br><i>" + giftChosen[3] + "</i><br><b>" + giftChosen[4] + "</b>";
+		backgroundCards[i].children[2].href = giftChosen[0];
 		
 	}
 }
