@@ -49,6 +49,14 @@
 	user-select: none; 
 }
 
+.pointerCursor, .pointerCursor * {
+	cursor: pointer;
+}
+
+.defaultCursor, .deaultCursor * {
+	cursor: default;
+}
+
 body::-webkit-scrollbar { width: 0 !important }
 
 body {
@@ -115,7 +123,6 @@ textarea {
 	font-family: 'Sketch Serif';
 	font-weight: normal;
 	text-align: center;
-	cursor: default;
 }
 
 .largeHeadingContainer {
@@ -140,7 +147,6 @@ textarea {
 	font-size: 28px;
 	font-family: Sketch Serif;
 	transition: background-color 0.2s, color 0.2s, transform 0.2s, -webkit-transform 0.2s, width 0.2s, height 0.2s;
-	cursor: pointer;
 }
 
 .largeButton:hover {
@@ -556,6 +562,12 @@ header {
 	padding-left: 50px;
 	padding-right: 50px;
 	margin-top: 0px;
+	transition: transform 0.15s, -webkit-transform 0.3s;
+}
+
+.seasonHeadingContainer:hover {
+	transform: scale(0.97);
+	-webkit-transform: scale(0.97);
 }
 
 .seasonHeadingContainerRight {
@@ -705,13 +717,14 @@ a.randomGift:hover span
 }
 
 #contactContentSecondWrapper {
-	box-shadow: -3px -8px 30px -7px rgba(0,0,0,0.75);
+	box-shadow: 0px 0px 40px -7px rgba(0,0,0,0.75);
 	width: 960px;
 	margin-left: auto;
 	margin-right: auto;
 	transform: translate(0, -100px);
 	-webkit-transform: translate(0, -100px);
-	border-radius: 15px;
+	border-top-left-radius: 15px;
+	border-top-right-radius: 15px;
 	overflow: hidden;
 }
 
@@ -755,7 +768,6 @@ a.randomGift:hover span
 	transform: scale(1.5);
 	margin-left: 20px;
 	margin-top: 10px;
-	cursor: pointer;
 }
 
 .checkDiv {
@@ -802,7 +814,6 @@ a.randomGift:hover span
 	transform: translate(175px, -70%);
 	-webkit-transform: translate(175px, -70%);
 	transition: background-color 0.2s;
-	cursor: pointer;
 }
 
 #emailForm button:hover {
@@ -942,7 +953,6 @@ a.randomGift:hover span
 	padding-left: 60px;
 	line-height: 55px;
 	transition: background-color 0.1s;
-	cursor: pointer;
 }
 
 #contactLocations li:hover {
