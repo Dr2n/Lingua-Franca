@@ -333,11 +333,11 @@ header {
 }
 
 /*Lessons Styling*/
-#lessonsBanner {
+#lessonsBanner{
 	background-image: url('../images/lessons/lessonsBackground.jpg');
 }
 
-#lessonsContent {
+#lessonsContent{
 	background-color: rgb(238, 229, 215);
 	position: relative;
 	height: 0;
@@ -347,13 +347,13 @@ header {
 	-moz-transition: height ease 1s;
 }
 
-#lessonsEchantillon {
+#lessonsEchantillon{
 	background-color: rgb(162, 178, 182);
 	color: white;
 	min-height: 20vh;
 }
 
-#echantillonSignButton {
+#echantillonSignButton{
 	background-color: #62899C;
 	color: #FFF;
 }
@@ -370,34 +370,40 @@ header {
 		height: 100px;
 		color: white;
 		float: left;
+		display: table;
 	}
 
-	#privateSelect{
+	#privateDiv{
 		background-color: #62899C;
 	}
 
-	#groupSelect{
+	#groupDiv{
 		background-color: #CD333C;
 		width: 34%;
 	}
 
-	#delfSelect{
+	#delfDiv{
 		background-color: #81C1B8;
 	}
 
 	.innerText{
 		text-align: center;
 		vertical-align: middle;
+		display: table-cell;
+		-webkit-touch-callout: none;
+		-webkit-user-select: none;
+		-moz-user-select: none;
+		user-select: none;
 	}
 
-.subContent{
-	position: absolute;
-	opacity:0;
-	width: 960px;
-	transition: opacity ease 1s;
-	-webkit-transition: opacity ease 1s;
-	-moz-transition: opacity ease 1s;
-}
+	.subContent{
+		position: absolute;
+		opacity:0;
+		width: 960px;
+		transition: opacity ease 1s;
+		-webkit-transition: opacity ease 1s;
+		-moz-transition: opacity ease 1s;
+	}
 
 	/*Tables*/
 	table{

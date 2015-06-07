@@ -49,9 +49,6 @@ function init(){
 		}
 	}
 
-	document.getElementById('messageBox').addEventListener('focus', messageBoxIn, false);
-	document.getElementById('messageBox').addEventListener('blur', messageBoxOut, false);
-
 	var locationButtons = document.getElementsByClassName('locationButton');
 	for (var i = 0; i < locationButtons.length; i++){
 		locationButtons[i].addEventListener('click', locationClickHandler, false);
@@ -69,6 +66,8 @@ function init(){
 	document.getElementById("locationSelect").addEventListener("change",tableUpdate,false);
 	document.getElementById("wtermSelect").addEventListener("change",workUpdate,false);
 	document.getElementById("wlocationSelect").addEventListener("change",workUpdate,false);
+	document.getElementById('messageBox').addEventListener('focus', messageBoxIn, false);
+	document.getElementById('messageBox').addEventListener('blur', messageBoxOut, false);
 
 	/*Random Gift Shop Images*/
 	var images = [
@@ -424,6 +423,7 @@ function init(){
 	/*Lessons Content Updating*/
 	function lessonUpdate(event){
 		var button = event.target.id;
+		console.log(button)
 		if (button == "privateSelect"){
 			zUpdate(1,0,0);
 			opacityUpdate(1,0,0);
