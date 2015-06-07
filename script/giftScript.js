@@ -37,12 +37,14 @@ function init(){
 	/*Parallax*/
 
 	function offsetParallaxBackgrounds(){
-		console.log('focusout');
 		var parallaxDivs = document.getElementsByClassName('parallax');
 
 		for (var i = 0; i < parallaxDivs.length; i++){
 			var viewportPos = parallaxDivs[i].getBoundingClientRect().top;
-			var neededOffset = -350 * (viewportPos/window.innerHeight);
+			var neededOffset = 400 * (viewportPos/window.innerHeight);
+			if(parallaxDivs[i].id =='landingDiv'){
+				neededOffset = 600 * (viewportPos/window.innerHeight);
+			}
 
 			parallaxDivs[i].style.backgroundPosition = "0px " + String(neededOffset) + "px";
 		}
