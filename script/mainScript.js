@@ -72,9 +72,9 @@ function init(){
 
 	/*Random Gift Shop Images*/
 	var gifts = [
-		["/giftShop/index.html", "images/giftShop/raffia.png", "Wide-brimmed Raffia Hat", "Raffia bends, unlike wicker which <br> tends to break easily.", "$116.10"], 
-		["/giftShop/index.html", "images/giftShop/necklaces.png", "Colourful bead necklaces", "Handmade from citrus beads, various colours.", "$35 x1/$58.50 x2"],
-		["/giftShop/index.html", "images/giftShop/cloche.png", "Cloche Raffia hat with black band", "Raffia bends, unlike wicker which <br> tends to break easily.", "$116.10"],
+		["giftShop/", "images/giftShop/raffia.png", "Wide-brimmed Raffia Hat", "Raffia bends, unlike wicker which <br> tends to break easily.", "$116.10"], 
+		["giftShop/", "images/giftShop/necklaces.png", "Colourful bead necklaces", "Handmade from citrus beads, various colours.", "$35 x1/$58.50 x2"],
+		["giftShop/", "images/giftShop/cloche.png", "Cloche Raffia hat with black band", "Raffia bends, unlike wicker which <br> tends to break easily.", "$116.10"],
 	];
 
 	var usedImages = [];
@@ -97,7 +97,7 @@ function init(){
 		backgroundCards[i].children[0].href  = giftChosen[0];
 		backgroundCards[i].children[0].children[0].src = giftChosen[1];
 		backgroundCards[i].children[1].children[0].innerHTML = giftChosen[2] + "<br><i>" + giftChosen[3] + "</i><br><b>" + giftChosen[4] + "</b>";
-		backgroundCards[i].children[2].href = giftChosen[0];
+		backgroundCards[i].children[1].children[1].href = giftChosen[0];
 		
 	}
 }
