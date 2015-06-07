@@ -1,6 +1,6 @@
 <?php
 
-	$to = 'darrenfu@outlook.com';
+	$to = 'darren.yx.fu@gmail.com';
 	$subject = $_POST['senderSubject'];
 	$message = wordwrap($_POST['senderMessage'], 70, '\r\n');
 
@@ -46,7 +46,7 @@
 
 	$headers = "From : <Lingua Franca Site> inbox@linguafranca.dreamhosters.com" . "\r\n";
 	$headers .= "Reply-To: " . $_POST['senderName'] . ' <'. $_POST['senderEmail'] . '>' . "\r\n";
-	$headers .= "Content-type: text/html\r\n"; 
+	$headers .= "Content-type: text/html" . "\r\n"; 
 
 	if (isset($_POST['CCCheck'])){
 		$headers .= 'CC: ' . $_POST['senderEmail'] . "\r\n";
