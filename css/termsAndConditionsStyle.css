@@ -49,14 +49,15 @@
 	user-select: none; 
 }
 
-body::-webkit-scrollbar { width: 0 !important }
+::-webkit-scrollbar {
+	width: 0 !important 
+}
 
 body {
 	margin: 0px;
 	padding: 0px;
 	font-family: Lucida Sans, sans-serif;
 	-ms-overflow-style: none;
-	overflow-x: hidden;
 	background-color: black;
 }
 
@@ -91,6 +92,10 @@ textarea {
 	padding-top: 30px;
 	padding-bottom: 70px;
 	width: 960px;
+}
+
+.sectionDiv {
+	min-width: 960px;
 }
 
 #content {
@@ -143,9 +148,11 @@ textarea {
 	height: 480px;
 	box-sizing: border-box;
 	padding-top: 160px;
-	background-size: 100vw;
+	background-size: cover;
 	text-align: center;
 	background-repeat: no-repeat;
+	background-attachment: fixed;
+	min-width: 960px;
 	-webkit-user-select: none;  /* Chrome all / Safari all */
 	-moz-user-select: none;     /* Firefox all */
 	-ms-user-select: none;      /* IE 10+ */
@@ -828,7 +835,7 @@ a.randomGift:hover span
 	bottom: 0px;
 	padding: 50px calc(50vw - 480px) 50 calc(50vw - 480px);
 	height: 25vh;
-	width: 100vw;
+	width: 100%;
 	background-color: black;
 	color: white;
 }
@@ -915,6 +922,7 @@ a.randomGift:hover span
 	width: 100%;
 	height: 15px;
 	background-color: rgb(205, 51, 60);
+	min-width: 960px;
 }
 
 /*Terms and Conditions page styling*/

@@ -107,7 +107,7 @@ function init(){
 	/*Mapping*/
 	function initMap(event){
 		window.positions = {
-			start: new google.maps.LatLng(-27.4635818844069, 153.0309306163025),
+			start: new google.maps.LatLng(-27.447165217038364, 153.03745374862672),
 			newstead: new google.maps.LatLng(-27.45211, 153.04417),
 			bulimba:  new google.maps.LatLng(-27.45109, 153.05620),
 			paddington: new google.maps.LatLng(-27.45914, 153.00061)
@@ -116,8 +116,7 @@ function init(){
 		var mapOptions = {
 			zoom: 13,
 			center: positions.start,
-			styles: [{"featureType":"administrative","elementType":"labels.text.fill","stylers":[{"color":"#444444"}]},{"featureType":"landscape","elementType":"all","stylers":[{"color":"#f2f2f2"}]},{"featureType":"poi","elementType":"all","stylers":[{"visibility":"off"}]},{"featureType":"road","elementType":"all","stylers":[{"saturation":-100},{"lightness":45}]},{"featureType":"road.highway","elementType":"all","stylers":[{"visibility":"simplified"}]},{"featureType":"road.arterial","elementType":"labels.icon","stylers":[{"visibility":"off"}]},{"featureType":"transit","elementType":"all","stylers":[{"visibility":"off"}]},{"featureType":"water","elementType":"all","stylers":[{"color":"#46bcec"},{"visibility":"on"}]}]
-		
+			styles: [{"featureType":"administrative","elementType":"labels.text.fill","stylers":[{"color":"#444444"}]},{"featureType":"landscape","elementType":"all","stylers":[{"color":"#f2f2f2"}]},{"featureType":"poi","elementType":"all","stylers":[{"visibility":"off"}]},{"featureType":"road","elementType":"all","stylers":[{"saturation":-100},{"lightness":45}]},{"featureType":"road.highway","elementType":"all","stylers":[{"visibility":"simplified"}]},{"featureType":"road.arterial","elementType":"labels.icon","stylers":[{"visibility":"off"}]},{"featureType":"transit","elementType":"all","stylers":[{"visibility":"off"}]},{"featureType":"water","elementType":"all","stylers":[{"color":"#46bcec"},{"visibility":"on"}]}]		
 		}
 
 		window.map = new google.maps.Map(document.getElementById('contactMapWidget'), mapOptions);
@@ -134,29 +133,79 @@ function init(){
 			title: 'Lingua Franca Bulimba'
 		})
 
-		window.paddingtonAddress = new google.maps.Marker({
+		window.paddingtonMarker = new google.maps.Marker({
 			position: positions.paddington,
 			map: map,
 			title: 'Lingua Franca Paddington'
 		});
 
+		window.markers = {
+			newstead: newsteadMarker,
+			bulimba: bulimbaMarker,
+			paddington: paddingtonMarker
+		}
+
 		map.setOptions({scrollwheel: false});
+
 		document.getElementById('contactMapWidget').addEventListener('click', enableMapScrolling, false);
-		document.getElementById('contactMapWidget').addEventListener('mouseout', disableMapScrolling, false);
+		window.addEventListener('scroll', disableMapScrolling, false);
+
+		window.infoWindowLocation = 'newstead';
+
+		window.markerContents = {
+			newstead: "<div class='mapInfo'><h1 id='firstHeading' class='firstHeading'>Lingua Franca Newstead</h1><div id='bodyContent'><p>22 Masters St.</p><p>Newstead</p><p>Queensland 4106</p></div></div>",
+			bulimba: "<div class='mapInfo'><h1 id='firstHeading' class='firstHeading'>Lingua Franca Bulimba</h1><div id='bodyContent'><p>Side Street Vintage</p><p>Unit 5 85 Riding Rd</p><p>Hawthorne</p><p>Queensland 4171</p></div></div>",
+			paddington: "<div class='mapInfo'><h1 id='firstHeading' class='firstHeading'>Lingua Franca Paddington</h1><div id='bodyContent'><p>Francesca's Flowers</p><p>46 Latrobe Terrace</p><p>Paddington</p><p>Queensland 4064</p></div></div>"
+		}
+
+		window.infoWindow = new google.maps.InfoWindow({
+			content: markerContents[infoWindowLocation]
+		});
+
+		infoWindow.open(map, newsteadMarker);
+		
+		google.maps.event.addListener(newsteadMarker, 'click', markerClickHandler);
+		google.maps.event.addListener(bulimbaMarker, 'click', markerClickHandler);
+		google.maps.event.addListener(paddingtonMarker, 'click', markerClickHandler);
+
+	}
+
+	function markerClickHandler(clickedPlace){
+
+		if(this.hasOwnProperty('title')){
+			var title = this.title.split(" ");
+			var clickedPlace = title[title.length-1].toLowerCase();
+		}
+
+		map.panTo(positions[clickedPlace]);
+
+		if (clickedPlace != infoWindowLocation){
+			console.log(clickedPlace);
+			infoWindowLocation = clickedPlace;
+			infoWindow.close();
+			infoWindow.setContent(markerContents[clickedPlace]);
+			infoWindow.open(map, markers[clickedPlace]);
+		}
+		
 	}
 
 	function disableMapScrolling (event){
-		window.map.setOptions({scrollwheel: false});
+		if (document.getElementById('contactMapWrapper').getBoundingClientRect().top < 0 || document.getElementById('contactMapWrapper').getBoundingClientRect().top > window.innerHeight){
+			window.map.setOptions({scrollwheel: false});
+		}
 	}
 
 	function enableMapScrolling(event){
-		console.log('enable map scrolling');
 		window.map.setOptions({scrollwheel: true});
 	}
 
 	function locationClickHandler(event){
-		map.panTo(positions[String(event.target.id)]);
-		map.setZoom(18);
+		markerClickHandler(event.target.id);
+	}
+
+	function restoreMap(){
+		map.panTo(positions.start);
+		map.setZoom(13);
 	}
 
 	/*Forms Handling*/
@@ -347,7 +396,9 @@ function init(){
 		
 		popup.style.top = '-90%';
 		screen.style.backgroundColor = 'rgba(0,0,0,0)'
-		screen.style.display = 'none';
+		setTimeout(function(){
+			screen.style.display = 'none';	
+		}, 400);
 
 		enableScrolling();
 	}

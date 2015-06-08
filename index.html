@@ -23,9 +23,8 @@
 	<title>Lingua Franca Brisbane</title>
 	
 	<link rel="stylesheet" type="text/css" href="css/mainStyle.css">
-
 	<script src='script/jquery.js'></script>
-	<script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?"></script>
+	<script src="https://maps.googleapis.com/maps/api/js?v=3.exp"></script>
 	<script src='script/mainScript.js'></script>
     <script src="script/form.js"></script>
 </head>
@@ -94,7 +93,7 @@
 			</div>
 		</div>
 
-		<div id='lessonsContent'>
+		<div id='lessonsContent' class='sectionDiv'>
 			<div class='contentDiv'>
 				<!--Private Content-->
 				<div id="private" class="subContent">
@@ -264,7 +263,7 @@
 						<li>Take advantage of our .Perks. program or</li>
 						<li>Pay upfront for 6 or 12 months to enjoy even greater benefits. </li>
 					</ul>
-					<p>Please be sure to read our <strong><a href="t&c.html">Terms and Conditions</a></strong> before you book a course. <em>Merci</em>.</p><!-- 
+					<p>Please be sure to read our <strong><a href="/t&c/">Terms and Conditions</a></strong> before you book a course. <em>Merci</em>.</p><!-- 
 					<p><img src="/storage/Title%20-%20Pay%20individually%20%20French%20lessons%20Brisbane.png?__SQUARESPACE_CACHEVERSION=1371017564672" alt=""></p>
 					<p>These are our standard course fees. </p>
 					<p><img src="/storage/dec-2014/Group%20lessons%20%20Fees%20%20Table%20of%20Fees%20%20French%20lessons%20Brisbane.png?__SQUARESPACE_CACHEVERSION=1418367326086" alt=""><br></p>
@@ -409,12 +408,12 @@
 							<td class="subpriceDELF">starts mid-June</td>
 						</tr>
 					</table>
-					<p>Please be sure to read our <strong><a href="t&c.html">Terms and Conditions</a></strong> for group lessons before you book a course. <em>Merci.</em></p>
+					<p>Please be sure to read our <strong><a href="/t&c/">Terms and Conditions</a></strong> for group lessons before you book a course. <em>Merci.</em></p>
 				</div>
 			</div>
 		</div>
 
-		<div id='lessonsEchantillon'>
+		<div id='lessonsEchantillon' class='sectionDiv'>
 			<div id='echantillonContent' class='contentDiv'>
 				<h1>Unsure? Try an  &#232;chantillon!</h1>
 
@@ -432,7 +431,7 @@
 			</div>
 		</div>
 
-		<div id='eventsIntro' titleText>
+		<div id='eventsIntro'  class='sectionDiv'>
 			<div class='contentDiv'>
 				<p>Often with a love of the French language comes a love of French culture and an interest in the way the French-speaking world does things differently to us.</p> 
 
@@ -442,7 +441,7 @@
 			</div>
 		</div>
 
-		<div class='eventSeason' id='eventsAutumn'>
+		<div class='eventSeason sectionDiv' id='eventsAutumn'>
 			<div class='contentDiv seasonSectionWrap'>
 
 				<img src='images/events/autumn.png' class='eventSeasonImage' id='eventAutumnImage'/>
@@ -459,7 +458,7 @@
 			</div>
 		</div>
 
-		<div class='eventSeason' id='eventsWinter'>
+		<div class='eventSeason sectionDiv' id='eventsWinter'>
 			<div class='contentDiv seasonSectionWrap'>
 
 				<img src='images/events/winter.png' class='right' id='eventWinterImage'/>
@@ -475,7 +474,7 @@
 			</div>
 		</div>
 
-		<div class='eventSeason' id='eventsSpring'>
+		<div class='eventSeason sectionDiv' id='eventsSpring'>
 			<div class='contentDiv seasonSectionWrap'>
 
 				<img src='images/events/spring.png' id='eventSpringImage'/>
@@ -491,7 +490,7 @@
 			</div>
 		</div>
 
-		<div class='eventSeason' id='eventsSummer'>
+		<div class='eventSeason sectionDiv' id='eventsSummer'>
 			<div class='contentDiv seasonSectionWrap'>
 
 				<img src='images/events/summer.png' class='right' id='eventSummerImage'/>
@@ -515,7 +514,7 @@
 			</div>
 		</div>
 
-		<div id='giftsContent'><div class='contentDivLOL'>
+		<div id='giftsContent' class='sectionDiv'><div class='contentDivLOL'>
 			<p>Our <i>petite boutique</i> has a carefully-selected range of French gifts. Below is just a few of our items in store.</p>
 				
 			<!-- TEMPORARY AESTHETIC NON RANDOMISED (YET) POLAROID SNAPS -->
@@ -577,7 +576,7 @@
 
 			</div>
 
-			<a href='gifts.html'><input type='button' class='largeButton pointerCursor' value='VISIT THE FULL STORE!' id='fullShopButton'></a>			
+			<a href='giftShop/'><input type='button' class='largeButton pointerCursor' value='VISIT THE FULL STORE!' id='fullShopButton'></a>			
 			
 		</div>
 
@@ -588,7 +587,7 @@
 			</div>
 		</div>
 
-		<div id='aboutContent'>
+		<div id='aboutContent' class='sectionDiv'>
 			<div class='contentDiv'>
 			</div>
 		</div>
@@ -601,7 +600,7 @@
 			</div>
 		</div>
 		
-		<div id='contactContentWrapper'>
+		<div id='contactContentWrapper' class='sectionDiv'>
 			<div id='contactContentSecondWrapper'>
 				<div class='contentDiv' id='contactContent'>
 					<h2>Message Us</h2>
@@ -660,9 +659,9 @@
 					<div id='contactLocations'>
 						<h2>Locations</h2>
 						<ul class='noselect pointerCursor'>
+							<li id='paddington' class='locationButton'>Paddington <span id='new'>NEW!</span></li>
 							<li id='newstead' class='locationButton'>Newstead</li>
 							<li id='bulimba' class='locationButton'>Bulimba</li>
-							<li id='paddington' class='locationButton'>Paddington <span id='new'>NEW!</span></li>
 						</ul>
 					</div>
 
@@ -690,8 +689,8 @@
 					</ul>
 	
 					<ul>
-						<a href='gifts/' class='footerLink'><li>Gift Shop</li></a>
-						<a href='t&c/' class='footerLink'><li>Terms & Conditions</li></a>
+						<a href='/giftShop/' class='footerLink'><li>Gift Shop</li></a>
+						<a href='/t&c/' class='footerLink'><li>Terms & Conditions</li></a>
 					</ul>
 				</div>
 				<div id='footerFollow'>
