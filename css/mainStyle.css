@@ -193,6 +193,11 @@ textarea {
 	overflow: scroll;
 }
 
+#popupInternal{
+	width: 920px;
+	margin: 0px 20px 0px;
+}
+
 #screen {
 	position: fixed;
 	top: 0px;
@@ -359,30 +364,37 @@ header {
 	-moz-transition: height ease 1s;
 }
 
-#lessonsEchantillon{
-	background-color: rgb(162, 178, 182);
-	color: white;
-	min-height: 20vh;
-}
+	/*Buttons Tab*/
+	#tabsWrapper{
+		min-width: 960px;
+		height: 100px;
+		font-size: 200%;
+		position: relative;
+	}
 
-#echantillonSignButton{
-	background-color: #62899C;
-	color: #FFF;
-}
+	#halves{
+		width: 100%;
+		height: 100px;
+		z-index: -10;
+		position: absolute;
+	}
 
-#tabsWrapper{
-	min-width: 960px;
-	height: 100px;
-	font-size: 200%;
-}
+	#buttons{
+		min-width: 960px;
+		height: 100px;
+	}
 
-	/*Tabs*/
 	.lessonSelect{
 		width: 33%;
 		height: 100px;
 		color: white;
 		float: left;
-		display: table;
+	}
+
+	.lessonHalf{
+		width: 50%;
+		height: 100px;
+		float: left;
 	}
 
 	#privateDiv{
@@ -399,13 +411,23 @@ header {
 	}
 
 	.innerText{
+		-webkit-transition: 0.5s ease;
+		transition: 0.5s ease;
 		text-align: center;
 		vertical-align: middle;
-		display: table-cell;
+		width: 250px;
+		margin: auto;
+		margin-top: 32px;
 		-webkit-touch-callout: none;
 		-webkit-user-select: none;
 		-moz-user-select: none;
 		user-select: none;
+	}
+
+	.innerText:hover {
+		-webkit-transition: 0.5s ease !important;
+		transition: 0.5s ease !important;
+		border-bottom: 3px solid white !important;
 	}
 
 	.subContent{
@@ -421,6 +443,8 @@ header {
 	table{
 		margin: 0px auto;
 		text-align: center;
+		border-collapse: collapse;
+		border-spacing: 0;
 	}
 	table p, ul{
 		margin: 0;
@@ -516,6 +540,17 @@ header {
 		color: #656565;
 	}
 
+/*Enchantillon*/
+#lessonsEchantillon{
+	background-color: rgb(162, 178, 182);
+	color: white;
+	min-height: 20vh;
+}
+
+#echantillonSignButton{
+	background-color: #62899C;
+	color: #FFF;
+}
 
 /*Events Styling*/
 #eventsBanner {
