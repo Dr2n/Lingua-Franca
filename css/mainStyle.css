@@ -57,14 +57,11 @@
 	cursor: default;
 }
 
-body::-webkit-scrollbar { width: 0 !important }
-
 body {
 	margin: 0px;
 	padding: 0px;
 	font-family: Lucida Sans, sans-serif;
-	-ms-overflow-style: none;
-	overflow-x: hidden;
+	-ms-overflow-style: -ms-autohiding-scrollbar ;
 	background-color: black;
 }
 
@@ -108,10 +105,14 @@ textarea {
 	width: 980px;
 }
 
+.sectionDiv {
+	min-width: 960px;
+}
+
 #content {
 	position: absolute;
 	top: 100vh;
-	width: 100vw;
+	width: 960px;
 }
 
 .titleText {
@@ -155,6 +156,7 @@ textarea {
 	-webkit-transform: scale(0.98);
 }
 .parallax {
+	min-width: 960px;
 	height: 300px;
 	box-sizing: border-box;
 	padding-top: 40px;
@@ -1066,7 +1068,7 @@ a.randomGift:hover span
 	position: relative;
 	bottom: 0px;
 	height: 25vh;
-	width: 100vw;
+	width: 100%;
 	background-color: black;
 	color: white;
 }
@@ -1075,6 +1077,7 @@ a.randomGift:hover span
 	box-sizing: border-box;
 	padding: 40px 0px 40px 0px;
 	height: 320px;
+	background-color: black;
 }
 
 #footerContent p {
@@ -1153,6 +1156,7 @@ a.randomGift:hover span
 	width: 100%;
 	height: 15px;
 	background-color: rgb(205, 51, 60);
+	min-width: 960px;
 }
 
 /*MINT CSS ANIMATION TBH*/
