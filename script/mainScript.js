@@ -28,7 +28,7 @@ function init(){
 		links[i].addEventListener("mouseout", linkMouseOut, false);
 	}
 
-	lessonInitialise();
+	lessonsInitialise();
 
 	if (document.getElementById('messageBox').value != 'Message'){
 		document.getElementById('messageBox').style.color = 'white';
@@ -414,6 +414,13 @@ function init(){
 		}
 
 	/*Lessons Content Updating*/
+	function lessonsInitialise(){
+		/*Opacity Styling*/
+		document.getElementById("private").style.opacity="0";
+		document.getElementById("group").style.opacity="0";
+		document.getElementById("delf").style.opacity="0";
+	}
+
 	function lessonUpdate(event){
 		var button = event.target.id;
 		console.log(button)
@@ -430,12 +437,6 @@ function init(){
 			opacityUpdate(0,0,1);
 			document.getElementById("lessonsContent").style.height=String(document.getElementById("delf").offsetHeight+140)+"px";
 		}
-	}
-
-	function lessonInitialise(){
-		document.getElementById("private").style.opacity="0";
-		document.getElementById("group").style.opacity="0";
-		document.getElementById("delf").style.opacity="0";
 	}
 
 	function zUpdate(x,y,z){

@@ -459,7 +459,7 @@ header {
 		width: 150px;
 		border: none;
 	}
-	#privateAlternate{
+	.privateAlternate{
 		background-color: #FFFCEF;
 	}
 
