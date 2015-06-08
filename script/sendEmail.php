@@ -15,7 +15,7 @@
 				. 'margin-top: 0px; margin-bottom: 0px">'. "\r\n" 
 				. '<table style="width: 100%; border-spacing: 0px;" border="0">'. "\r\n" 
 				. '<tr style="width: 960px; height: 60px; background-color: black;">'. "\r\n" 
-				. '<td colspan="3"><img src="http://www.linguafranca.dreamhosters.com/images/linguaFrancaLogo.png" style="padding-left: 40px;" width="122" height="45" alt="Lingua Franca Logo"/></td>'. "\r\n" .
+				. '<td colspan="3"><img src="http://www.linguafranca.dreamhosters.com/images/linguaFrancaLogo.png" style="padding-left: 40px;" width="122" height="45" alt="Lingua Franca Logo"/></td>'. "\r\n"
 				. '</tr>'
 				. '<tr>'
 				. '<td colspan="3" height="60" style="background-color: beige;"></td>'
@@ -23,7 +23,7 @@
 				. '<tr style="background-color: beige;">'. "\r\n" 
 				. '<td width="100"></td>'. "\r\n" 
 				. '<td style="font-family: Lucida Sans; padding-left: 40px; padding-top: 40px; padding-right: 40px; padding-bottom: 100px; color: #FFFFFF;" bgcolor="#CD333C">'. "\r\n" 
-				. '<h1 style="font-family: Lucida Sans; color: #FFFFFF">New Message</h1>'. "\r\n" .
+				. '<h1 style="font-family: Lucida Sans; color: #FFFFFF">New Message</h1>'. "\r\n" 
 				. '<p style="font-size: 16px; font-family: Lucida Sans; color: #FFFFFF"><b>From: </b>' . $_POST['senderName'] . ' (' . $_POST['senderEmail'] . ')'. '</p>'. "\r\n" 
 				. '<p style="font-size: 16px; font-family: Lucida Sans; color: #FFFFFF"><b>Time: </b>' . date("H:i D jS M") . '</p>'. "\r\n" 
 				. '<p style="font-size: 16px; font-family: Lucida Sans; color: #FFFFFF"><b>Subject:</b> ' . $_POST['senderSubject'] . '</p>'. "\r\n" 
