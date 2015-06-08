@@ -2,7 +2,7 @@
 
 	$to = 'darren.yx.fu@gmail.com';
 	$subject = $_POST['senderSubject'];
-	$message = wordwrap($_POST['senderMessage'], 70, '\r\n');
+	$message = $_POST['senderMessage'];
 
 	$messageHTML = '<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">'
 				. '<html xmlns="http://www.w3.org/1999/xhtml">'
@@ -24,11 +24,11 @@
 				. '<td width="100"></td>'
 				. '<td style="font-family: Lucida Sans; padding-left: 40px; padding-top: 40px; padding-right: 40px; padding-bottom: 100px; color: #FFFFFF;" bgcolor="#CD333C">'
 				. '<h1 style="font-family: Lucida Sans; color: #FFFFFF">New Message</h1>'
-				. '<p style="font-family: Lucida Sans; color: #FFFFFF"><b>From: </b>' . $_POST['senderName'] . ' (' . $_POST['senderEmail'] . ')'. '</p>'
-				. '<p style="font-family: Lucida Sans; color: #FFFFFF"><b>Time:</b> 15:15pm Tuesday 8th June</p>'
-				. '<p style="font-family: Lucida Sans; color: #FFFFFF"><b>Subject:</b> ' . $_POST['senderSubject'] . '</p>'
+				. '<p style="font-size: 14px; font-family: Lucida Sans; color: #FFFFFF"><b>From: </b>' . $_POST['senderName'] . ' (' . $_POST['senderEmail'] . ')'. '</p>'
+				. '<p style="font-size: 14px; font-family: Lucida Sans; color: #FFFFFF"><b>Time:</b> 15:15pm Tuesday 8th June</p>'
+				. '<p style="font-size: 14px; font-family: Lucida Sans; color: #FFFFFF"><b>Subject:</b> ' . $_POST['senderSubject'] . '</p>'
 				. '<p><b>Message:</b></p>'
-				. '<p>' . $message . '</p>'
+				. '<p style="font-size: 14px; font-family: Lucida Sans; color: #FFFFFF">' . $message . '</p>'
 				. '</td>'
 				. '<td width="100"></td>'
 				. '</tr>'
