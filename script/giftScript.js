@@ -96,31 +96,3 @@ function init(){
 			});
 			
 		})
-
-$(function () { 
- 
-
-	var scroll_timer;
-	var displayed = false;
-	var $polaroid = $('#polaroid, #cameraFlash, #backToTopText');
-	var $window = $(window);
-	var top = $(document.body).children(0).position().top;
- 
-
-	$window.scroll(function () {
-		window.clearTimeout(scroll_timer);
-		scroll_timer = window.setTimeout(function () { 
-			if($window.scrollTop() <= top) 
-			{
-				displayed = false;
-				$polaroid.fadeOut(10);
-			}
-			else if(displayed == false) 
-			{
-				displayed = true;
-				$polaroid.stop(true, true).show().click(function () { $polaroid.fadeOut(10); });
-			}
-		}, 10);
-	});
-});
-
