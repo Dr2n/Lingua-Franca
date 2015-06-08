@@ -12,7 +12,7 @@
 				. '<meta name="viewport" content="width=device-width, initial-scale=1.0"/>'
 				. '</head>'. "\r\n" 
 				. '<body style="padding-left: 0px; padding-right: 0px; padding-top: 0px; padding-bottom: 0px; margin-left: 0px; margin-right: 0px;' 
-				. 'margin-top: 0px; margin-bottom: 0px">'. "\r\n" .
+				. 'margin-top: 0px; margin-bottom: 0px">'. "\r\n" 
 				. '<table style="width: 100%; border-spacing: 0px;" border="0">'. "\r\n" 
 				. '<tr style="width: 960px; height: 60px; background-color: black;">'. "\r\n" 
 				. '<td colspan="3"><img src="http://www.linguafranca.dreamhosters.com/images/linguaFrancaLogo.png" style="padding-left: 40px;" width="122" height="45" alt="Lingua Franca Logo"/></td>'. "\r\n" .
