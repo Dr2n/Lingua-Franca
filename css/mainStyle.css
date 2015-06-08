@@ -510,6 +510,10 @@ header {
 		text-align: left;
 	}
 
+	.imageButton{
+		width: 100px;
+	}
+
 	#delfSchedule div{
 		margin: 5px;
 		width: 75px;
@@ -521,26 +525,32 @@ header {
 	#feesDELF{
 		text-align: left;
 	}
-	.titleDELF{
-		width: 30px;
+	.titleDELF, .titleDELF div{
+		width: 50px;
 		background-color: #81C1B8;
 	}
-	#titleDELFDark{
-		width: 30px;
+	#titleDELFDark, #titleDELFDark div{
 		background-color: #71A8A1;
 	}
-	.titleDELF div{
+	.titleDELF p, #titleDELFDark p{
 		white-space: nowrap;
 		transform: rotate(-90deg);
 		-moz-transform: rotate(-90deg);
 		-webkit-transform: rotate(-90deg);
+		width: 60px;
+		padding-right: 50px;
+		padding-bottom: 60px;
+	}
+	#separator{
+		oadding-right: 50px;
 	}
 	.priceDELF{
 		font-size: 80%;
 		color: #656565;
+		padding-right: 20px;
 	}
 	.subpriceDELF{
-		font-size: 50%;
+		font-size: 60%;
 		color: #656565;
 	}
 
