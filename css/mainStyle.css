@@ -679,7 +679,10 @@ header {
 	left: -50px;
 	top:470px;
 	transform: scale(0.6);
-	transition: all 0.3s;
+	transition: all 0.2s;
+	display: block;
+	display: none;
+	z-index:1;
 }
 
 #polaroid:hover	{
@@ -688,11 +691,12 @@ header {
 
 #cameraFlash	{
 	opacity:0;
-	transition:all 0.2s;
+	transition: all 0.1s cubic-bezier(1, 0, 1, 1);
 	position:fixed;
 	left: 140px;
 	top:555px;
 	pointer-events: none;
+	z-index:2;
 }
 
 #polaroid:hover + #cameraFlash	{
@@ -713,6 +717,10 @@ header {
 
 #polaroid:hover ~ #backToTopText {
 	opacity:1;
+}
+
+a #polaroid:focus	{
+	transform:scale(0.1);
 }
 
 a.randomGift {
@@ -1127,6 +1135,21 @@ a.randomGift:hover span
 	transition: all 0.7s;
 }
 
+.backgroundCard:hover .buyButton	{
+	opacity: 1;
+	-webkit-opacity:1;
+	-moz-opacity:1;
+	transition-delay:0s;
+	transition: all 0.7s;
+}
+
+.backgroundCardBook:hover .buyButton	{
+	opacity: 1;
+	-webkit-opacity:1;
+	-moz-opacity:1;
+	transition-delay:0s;
+	transition: all 0.7s;
+}
 
 
 .buyButton	{
@@ -1143,6 +1166,7 @@ a.randomGift:hover span
 	font-weight: bold;
 	background-color: rgba(205, 51, 60, 1);
 	transition: background-color 0.1s, color 0.1s, transform 0.2s, -webkit-transform 0.2s, width 0.2s, height 0.2s;
+	opacity:0;
 }
 
 .buyButton:hover	{
