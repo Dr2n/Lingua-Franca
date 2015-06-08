@@ -11,7 +11,7 @@
 		                  /____/         
 
 	  Charlie Hou, Patrick Kim & Darren Fu 2015
-	  		What is the meaning of life?
+	  		We're single, able and willing.
 ----------------------------------------------------*/
 
 /*Page Wide Styling*/
@@ -107,7 +107,7 @@ textarea {
 	padding-top: 30px;
 	padding-bottom: 70px;
 	width: 980px;
-	height:4280px;
+	min-height:420px;
 }
 
 .contentDivLOLOL {
@@ -390,6 +390,7 @@ header {
 		width: 33%;
 		height: 100px;
 		color: white;
+		float:left;
 	}
 
 	#privateDiv{
