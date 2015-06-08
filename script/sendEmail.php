@@ -25,7 +25,7 @@
 				. '<td style="font-family: Lucida Sans; padding-left: 40px; padding-top: 40px; padding-right: 40px; padding-bottom: 100px; color: #FFFFFF;" bgcolor="#CD333C">'. "\r\n" .
 				. '<h1 style="font-family: Lucida Sans; color: #FFFFFF">New Message</h1>'. "\r\n" .
 				. '<p style="font-size: 16px; font-family: Lucida Sans; color: #FFFFFF"><b>From: </b>' . $_POST['senderName'] . ' (' . $_POST['senderEmail'] . ')'. '</p>'. "\r\n" .
-				. '<p style="font-size: 16px; font-family: Lucida Sans; color: #FFFFFF"><b>Time:</b> 15:15pm Tuesday 8th June</p>'. "\r\n" .
+				. '<p style="font-size: 16px; font-family: Lucida Sans; color: #FFFFFF"><b>Time: </b>' . date("H:i D jS M") . '</p>'. "\r\n" .
 				. '<p style="font-size: 16px; font-family: Lucida Sans; color: #FFFFFF"><b>Subject:</b> ' . $_POST['senderSubject'] . '</p>'. "\r\n" .
 				. '<p style="font-size: 16px; font-family: Lucida Sans; color: #FFFFFF"><b>Message:</b></p>'. "\r\n" .
 				. '<p style="font-size: 16px; font-family: Lucida Sans; color: #FFFFFF">' . $message . '</p>'. "\r\n" .
