@@ -20,6 +20,8 @@ google.maps.event.addDomListener(window, 'load', initMap);
 function init(){
 
 	/*Variables & Initialisation*/
+	document.body.innerHTML += 	"<script src='script/jquery.js'></script><script src='https://maps.googleapis.com/maps/api/js?v=3.exp'></script>";
+	
 	window.popupOpen = false;
 	window.links = document.getElementsByClassName('linkText');
 	
@@ -71,9 +73,9 @@ function init(){
 
 	/*Random Gift Shop Images*/
 	var gifts = [
-		["giftShop/", "images/giftShop/raffia.png", "Wide-brimmed Raffia Hat", "Raffia bends, unlike wicker which <br> tends to break easily.", "$116.10"], 
-		["giftShop/", "images/giftShop/necklaces.png", "Colourful bead necklaces", "Handmade from citrus beads, various colours.", "$35 x1/$58.50 x2"],
-		["giftShop/", "images/giftShop/cloche.png", "Cloche Raffia hat with black band", "Raffia bends, unlike wicker which <br> tends to break easily.", "$116.10"],
+		["giftShop/", "images/giftShop/raffia.jpg", "Wide-brimmed Raffia Hat", "Raffia bends, unlike wicker which <br> tends to break easily.", "$116.10"], 
+		["giftShop/", "images/giftShop/necklaces.jpg", "Colourful bead necklaces", "Handmade from citrus beads, various colours.", "$35 x1/$58.50 x2"],
+		["giftShop/", "images/giftShop/cloche.jpg", "Cloche Raffia hat with black band", "Raffia bends, unlike wicker which <br> tends to break easily.", "$116.10"],
 	];
 
 	var usedImages = [];
