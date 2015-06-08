@@ -701,7 +701,7 @@ header {
 #polaroid	{
 	position:fixed;
 	left: -50px;
-	top:470px;
+	top:445px;
 	transform: scale(0.6);
 	transition: all 0.2s;
 	display: block;
@@ -1206,6 +1206,36 @@ a.randomGift:hover span
 .cardContent > div	{
 	float: left;
 }
+
+#cart	{
+	visibility:hidden;
+	position:fixed;
+	margin-left: calc(50vw + 330px);
+	margin-top: calc(50vh - 490px);
+	transition: all 0.2s;
+}
+
+#cart:hover	{
+	transform: scale(1.2);
+}
+
+#threeNew	{
+	opacity:0;
+	transition: all 0.2s;
+	margin-left: calc(50vw + 345px);
+	margin-top: calc(50vh - 430px);
+	position:fixed;
+	color:white;
+	font-weight:bold;
+	font-size:1.4em;
+	pointer-events:none;
+}
+
+#cart:hover ~ #threeNew	{
+	opacity:1;
+}
+
+
 /*Footer Styling*/
 #footer {
 	position: relative;
