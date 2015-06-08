@@ -20,8 +20,9 @@ google.maps.event.addDomListener(window, 'load', initMap);
 function init(){
 
 	/*Variables & Initialisation*/
-	document.body.innerHTML += 	"<script src='script/jquery.js'></script><script src='https://maps.googleapis.com/maps/api/js?v=3.exp'></script>";
-	
+	document.body.innerHTML += "<script src='script/jquery.js'></script><script src='https://maps.googleapis.com/maps/api/js?v=3.exp'></script>";
+	document.body.innerHTML += "<link rel='stylesheet' type='text/css' href='css/afterFold.css'>";
+
 	window.popupOpen = false;
 	window.links = document.getElementsByClassName('linkText');
 	
