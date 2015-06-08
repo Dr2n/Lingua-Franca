@@ -107,6 +107,15 @@ textarea {
 	padding-top: 30px;
 	padding-bottom: 70px;
 	width: 980px;
+	height:4280px;
+}
+
+.contentDivLOLOL {
+	margin-left: auto;
+	margin-right: auto;
+	padding-top: 30px;
+	padding-bottom: 70px;
+	width: 980px;
 }
 
 .sectionDiv {
@@ -389,12 +398,33 @@ header {
 		height: 100px;
 		color: white;
 		float: left;
+<<<<<<< HEAD
 	}
 
 	.lessonHalf{
 		width: 50%;
 		height: 100px;
 		float: left;
+=======
+		display: table;
+		transition: all 0.25s;
+		-webkit-transition: all 0.25s;
+		-moz-transition: all 0.25s;
+	}
+
+	.lessonSelect:hover	{
+		opacity:0.8;
+	}
+
+	.downArr	{
+		visibility: hidden;
+		text-align:center;
+		font-size:0.6em;
+	}
+
+	.lessonSelect:hover .downArr	{
+		visibility: visible;
+>>>>>>> origin/master
 	}
 
 	#privateDiv{
@@ -434,9 +464,9 @@ header {
 		position: absolute;
 		opacity:0;
 		width: 960px;
-		transition: opacity ease 1s;
-		-webkit-transition: opacity ease 1s;
-		-moz-transition: opacity ease 1s;
+		transition: opacity ease 0.5s;
+		-webkit-transition: opacity ease 0.5s;
+		-moz-transition: opacity ease 0.5s;
 	}
 
 	/*Tables*/
@@ -688,11 +718,48 @@ header {
 	left: -50px;
 	top:470px;
 	transform: scale(0.6);
-	transition: all 0.3s;
+	transition: all 0.2s;
+	display: block;
+	display: none;
+	z-index:1;
 }
 
 #polaroid:hover	{
 	transform: scale(0.65);
+}
+
+#cameraFlash	{
+	opacity:0;
+	transition: all 0.1s cubic-bezier(1, 0, 1, 1);
+	position:fixed;
+	left: 140px;
+	top:555px;
+	pointer-events: none;
+	z-index:2;
+}
+
+#polaroid:hover + #cameraFlash	{
+	opacity:1;
+}
+
+#backToTopText	{
+	font-family: Sketch Serif;
+	position: fixed;
+	color: white;
+	pointer-events: none;
+	opacity:0;
+	font-size:2em;
+	left:110px;
+	top:810px;
+	transition: all 0.2s;
+}
+
+#polaroid:hover ~ #backToTopText {
+	opacity:1;
+}
+
+a #polaroid:focus	{
+	transform:scale(0.1);
 }
 
 a.randomGift {
@@ -1046,6 +1113,33 @@ a.randomGift:hover span
 	margin: 5px;
 }
 
+.backgroundCardBook	{
+	position: relative;
+	border-radius:1px;
+	background-color: rgb(249,250,245);
+	width:314px;
+	height:380px;
+	overflow: hidden;
+	transition: box-shadow 0.4s, height 0.3s;
+	-moz-transition: box-shadow 0.4s, height 0.3s;
+	-webkit-transition: box-shadow 0.4s, height 0.3s;
+	float:left;
+	margin: 5px;
+}
+
+.backgroundCardBook:hover	{
+	position: relative;
+	border-radius:1px;
+	background-color: rgb(249,250,245);
+	width:314px;
+	height:520px;
+	overflow: hidden;
+	transition: box-shadow 0.4s, height 0.3s;
+	-moz-transition: box-shadow 0.4s, height 0.3s;
+	-webkit-transition: box-shadow 0.4s, height 0.3s;
+	float:left;
+	margin: 5px;
+}
 .backgroundCard:hover	{		
 	height: 430px;
 	-webkit-height: 400px;
@@ -1072,6 +1166,30 @@ a.randomGift:hover span
 	transition: all 0.7s;
 }
 
+.backgroundCardBook:hover > .cardContent	{
+	opacity: 1;
+	-webkit-opacity:1;
+	-moz-opacity:1;
+	transition-delay:0s;
+	transition: all 0.7s;
+}
+
+.backgroundCard:hover .buyButton	{
+	opacity: 1;
+	-webkit-opacity:1;
+	-moz-opacity:1;
+	transition-delay:0s;
+	transition: all 0.7s;
+}
+
+.backgroundCardBook:hover .buyButton	{
+	opacity: 1;
+	-webkit-opacity:1;
+	-moz-opacity:1;
+	transition-delay:0s;
+	transition: all 0.7s;
+}
+
 
 .buyButton	{
 	position: absolute;
@@ -1086,7 +1204,8 @@ a.randomGift:hover span
 	font-family: Sketch Serif;
 	font-weight: bold;
 	background-color: rgba(205, 51, 60, 1);
-	transition: background-color 0.2s, color 0.2s, transform 0.2s, -webkit-transform 0.2s, width 0.2s, height 0.2s;
+	transition: background-color 0.1s, color 0.1s, transform 0.2s, -webkit-transform 0.2s, width 0.2s, height 0.2s;
+	opacity:0;
 }
 
 .buyButton:hover	{
@@ -1205,6 +1324,13 @@ a.randomGift:hover span
     -webkit-animation-fill-mode: both; 
     animation-fill-mode: both; 
 	height:440px;
+} 
+.animatedBook { 
+    -webkit-animation-duration: 1s; 
+    animation-duration: 1s; 
+    -webkit-animation-fill-mode: both; 
+    animation-fill-mode: both; 
+	height:540px;
 } 
 
 @-webkit-keyframes fadeInUp { 
