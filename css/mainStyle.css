@@ -372,15 +372,8 @@ header {
 		position: relative;
 	}
 
-	#halves{
-		width: 100%;
-		height: 100px;
-		z-index: -10;
-		position: absolute;
-	}
-
 	#buttons{
-		min-width: 960px;
+		width: 100%;
 		height: 100px;
 	}
 
@@ -388,12 +381,6 @@ header {
 		width: 33%;
 		height: 100px;
 		color: white;
-		float: left;
-	}
-
-	.lessonHalf{
-		width: 50%;
-		height: 100px;
 		float: left;
 	}
 
@@ -415,9 +402,11 @@ header {
 		transition: 0.5s ease;
 		text-align: center;
 		vertical-align: middle;
+
 		width: 250px;
 		margin: auto;
 		margin-top: 32px;
+
 		-webkit-touch-callout: none;
 		-webkit-user-select: none;
 		-moz-user-select: none;
@@ -425,9 +414,9 @@ header {
 	}
 
 	.innerText:hover {
-		-webkit-transition: 0.5s ease !important;
-		transition: 0.5s ease !important;
-		border-bottom: 3px solid white !important;
+		-webkit-transition: 0.5s ease	!important;
+		transition: 0.5s ease			!important;
+		border-bottom: 3px solid white	!important;
 	}
 
 	.subContent{
@@ -444,7 +433,9 @@ header {
 		margin: 0px auto;
 		text-align: center;
 		border-collapse: collapse;
+		border-style: hidden;
 		border-spacing: 0;
+		background-repeat: no-repeat;
 	}
 	table p, ul{
 		margin: 0;
@@ -486,13 +477,16 @@ header {
 
 	#privateFees{
 		background-color: #AABFC9;
-		width: 150px;
+		width: 200px;
 		border: none;
 	}
 	.privateAlternate{
 		background-color: #FFFCEF;
 	}
 
+	#groupLevel #egg{
+		height: 100px
+	}
 	#groupLevel th{
 		height: 186px;
 		background-repeat: no-repeat;
@@ -500,10 +494,12 @@ header {
 		color: white;
 	}
 	#groupLevel td{
-		margin: 3px;
-		padding: 2px;
+		padding: 0px 5px 0px;
 		color: white;
-
+		border: 2px solid rgb(238, 229, 215);
+	}
+	.lefttext{
+		text-align: left;
 	}
 
 	#delfSchedule div{

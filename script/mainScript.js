@@ -60,8 +60,11 @@ function init(){
 	document.getElementById('echantillonSignButton').addEventListener("click", togglePopup, false);
 	document.getElementById('FAQButton').addEventListener("click", togglePopup, false);
 	document.getElementById("privateSelect").addEventListener("click",lessonUpdate,false);
+	document.getElementById("privateDiv").addEventListener("click",lessonUpdate,false);
 	document.getElementById("groupSelect").addEventListener("click",lessonUpdate,false);
+	document.getElementById("groupDiv").addEventListener("click",lessonUpdate,false);
 	document.getElementById("delfSelect").addEventListener("click",lessonUpdate,false);
+	document.getElementById("delfDiv").addEventListener("click",lessonUpdate,false);
 	document.getElementById("termSelect").addEventListener("change",tableUpdate,false);
 	document.getElementById("locationSelect").addEventListener("change",tableUpdate,false);
 	document.getElementById("wtermSelect").addEventListener("change",workUpdate,false);
@@ -478,22 +481,22 @@ function init(){
 
 	function lessonUpdate(event){
 		var button = event.target.id;
-
+		console.log(button);
 		document.getElementById("privateSelect").style.borderBottom="none";
 		document.getElementById("groupSelect").style.borderBottom="none";
 		document.getElementById("delfSelect").style.borderBottom="none";
 
-		if (button == "privateSelect"){
+		if (button == "privateSelect" || button == "privateDiv"){
 			zUpdate(1,0,0);
 			opacityUpdate(1,0,0);
 			document.getElementById("lessonsContent").style.height=String(document.getElementById("private").offsetHeight+140)+"px";
 			document.getElementById("privateSelect").style.borderBottom="3px solid white";
-		} else if (button == "groupSelect"){
+		} else if (button == "groupSelect" || button == "groupDiv"){
 			zUpdate(0,1,0);
 			opacityUpdate(0,1,0);
 			document.getElementById("lessonsContent").style.height=String(document.getElementById("group").offsetHeight+140)+"px";
 			document.getElementById("groupSelect").style.borderBottom="3px solid white";
-		} else if (button == "delfSelect"){
+		} else if (button == "delfSelect" || button == "delfDiv"){
 			zUpdate(0,0,1);
 			opacityUpdate(0,0,1);
 			document.getElementById("lessonsContent").style.height=String(document.getElementById("delf").offsetHeight+140)+"px";
