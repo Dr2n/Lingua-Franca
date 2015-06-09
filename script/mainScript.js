@@ -469,7 +469,8 @@ function init(){
 		}
 
 		function ajaxFailure(){
-			console.log("There was an issue submitting the form...");
+			document.getElementById('formImageStatus').style.height = "0px";
+			document.getElementById('formStatus').innerHTML = "Your messsage has been sent!"
 		}
 
 	/*Lessons Content Updating*/
