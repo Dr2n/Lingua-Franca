@@ -909,10 +909,51 @@ a.randomGift:hover span
 }
 
 #aboutContent {
-	background-color: rgb(94, 94, 94);
+	background-color: rgb(90, 90, 90);
+	color: white;
 }
 
+.aboutP {
+	margin-left: 0px;
+	margin-right: 0px;
+}
 
+.aboutHeading {
+	font-size: 36px;
+	line-height: 60px;
+	font-family: 'Sketch Serif';
+	font-weight: normal;
+	margin-top: 0px;
+}
+
+.aboutHeadingContainer {
+	width: 400px;
+	height: 60px;
+	border-radius: 10px;
+	padding-left: 50px;
+	padding-right: 50px;
+	margin-top: 0px;
+	transition: transform 0.15s, -webkit-transform 0.3s;
+}
+
+#katrinaSection {
+	background-color: rgb(170,170,170);
+	height:300px;
+}
+
+#wordFromKatrina {
+	background-color: rgb(205,51,60);
+	text-align: left;
+}
+
+#tutorHeadingContainer {
+	background-color: rgb(205,51,60);
+	text-align: left;
+}
+
+#tutorSection	{
+	background-color: rgb(140,140,140);;
+}
 /*Contact Styling*/
 #contactBanner {
 	background-image: url('../images/contact/contactBackground.jpg');

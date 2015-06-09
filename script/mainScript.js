@@ -508,7 +508,7 @@ function init(){
 
 		function ajaxFailure(){
 			document.getElementById('formImageStatus').style.height = "0px";
-			document.getElementById('formStatus').innerHTML = "Your messsage has been sent!"
+			document.getElementById('formStatus').innerHTML = "Sorry, there was an error sending you message."
 		}
 
 	/*Lessons Content Updating*/
