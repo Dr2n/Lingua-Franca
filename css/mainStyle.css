@@ -77,6 +77,7 @@ a {
 
 p {
 	margin: 25px 100px 25px 100px;
+	font-family: 'Lucida Sans Unicode';
 }
 
 ul {
@@ -413,7 +414,7 @@ header {
 
 		width: 250px;
 		margin: auto;
-		margin-top: 32px;
+		margin-top: 28px;
 
 		-webkit-touch-callout: none;
 		-webkit-user-select: none;
@@ -436,6 +437,12 @@ header {
 		-moz-transition: opacity ease 1s;
 	}
 
+	.centreImg{
+		display: block;
+		margin-left: auto;
+		margin-right: auto;
+	}
+
 	/*Tables*/
 	table{
 		margin: 0px auto;
@@ -448,17 +455,32 @@ header {
 	table p, ul{
 		margin: 0;
 	}
+
+		/*Colours*/
 	.blueEgg{
 		background-color: #AABFC9;
 	}
 	.greyCrack{
 		background-color: #D2CDBD;
+		color: #656666;
 	}
 	.greyChick{
 		background-color: #656666;
 	}
 	.redRooster{
 		background-color: #C01D29;
+	}
+	.yellowGroup{
+		background-color: #F3B71B;
+	}
+	.pinkGroup{
+		background-color: #E1A4A0;
+	}
+	.redGroup{
+		background-color: #E88066;
+	}
+	.blueGroup{
+		background-color: #1695B0;
 	}
 	.pinkDELF{
 		background-color: #FDDCC5;
@@ -470,19 +492,43 @@ header {
 		background-color: #B1D8EC;
 	}
 
-	#egg{
+		/*Dashed Borders*/
+	.yellowDash{
+		border: 3px dashed #F3B71B;
+		color: #F3B71B;
+	}
+	.blueDash{
+		border: 3px dashed #AABFC9;
+		color: #AABFC9;
+	}
+	.greyDash{
+		border: 3px dashed #D2CDBD;
+		color: #656666;
+	}
+	.greyCDash{
+		border: 3px dashed #656666;
+		color: #656666;
+	}
+	.redDash{
+		border: 3px dashed #C01D29;
+		color: #C01D29;
+	}
+
+		/*Image Background*/
+	.egg{
 		background-image: url("../images/lessons/lessonsEgg.png");
 	}
-	#crack{
+	.crack{
 		background-image: url("../images/lessons/lessonsCrack.png");
 	}
-	#chick{
+	.chick{
 		background-image: url("../images/lessons/lessonsChick.png");
 	}
-	#rooster{
+	.rooster{
 		background-image: url("../images/lessons/lessonsRooster.png");
 	}
 
+		/*Private*/
 	#privateFees{
 		background-color: #AABFC9;
 		width: 200px;
@@ -492,28 +538,90 @@ header {
 		background-color: #FFFCEF;
 	}
 
-	#groupLevel #egg{
-		height: 100px
+		/*Private*/
+	#groupLevel{
+		font-size: 80%;
+		color: white;
 	}
 	#groupLevel th{
-		height: 186px;
+		height: 147px;
+		width: 235px;
 		background-repeat: no-repeat;
 		background-position: center;
-		color: white;
+		background-size: auto 160px;
 	}
 	#groupLevel td{
-		padding: 0px 5px 0px;
-		color: white;
+		padding: 5px;
+		width: 223px;
 		border: 2px solid rgb(238, 229, 215);
 	}
 	.lefttext{
 		text-align: left;
+	}
+	.detailsButton{
+		width: 225px;
+		height: 15px;
+		background-color: white;
+		color: #CD333C;
+	}
+	.levelsImage{
+		width: 600px;
+		margin: 10px 160px 0px;
 	}
 
 	.imageButton{
 		width: 100px;
 	}
 
+	#tableArea{
+		height: 0;
+		overflow: hidden;
+		transition: height ease 1s;
+		-webkit-transition: height ease 1s;
+		-moz-transition: height ease 1s;
+	}
+	.timetable{
+		color: white;
+		font-size: 90%;
+		text-align:left;
+		border-collapse: separate;
+		border-spacing: 0px 5px;
+	}
+	.timetable .egg, .crack, .chick, .rooster{
+		text-align:center !important;
+		width: 30px !important;
+		padding: 10px !important; 
+		background-repeat: no-repeat;
+		background-position: center;
+		background-size: auto 80px;
+	}
+	.timetable td{
+		max-width: 250px;
+		height: 60px;
+		padding-left: 5px;
+	}
+
+	#workArea{
+		height: 0;
+		overflow: hidden;
+		transition: height ease 1s;
+		-webkit-transition: height ease 1s;
+		-moz-transition: height ease 1s;
+	}
+	.workshop{
+		color: white;
+		font-size: 90%;
+		text-align:left;
+		border-collapse: separate;
+		border-spacing: 0px 5px;
+	}
+	.workshop td{
+		max-width: 400px;
+		height: 60px;
+		padding-left: 5px;
+	}
+
+		/*DELF*/
 	#delfSchedule div{
 		margin: 5px;
 		width: 75px;
@@ -542,7 +650,7 @@ header {
 		padding-bottom: 60px;
 	}
 	#separator{
-		oadding-right: 50px;
+		padding-right: 50px;
 	}
 	.priceDELF{
 		font-size: 80%;
