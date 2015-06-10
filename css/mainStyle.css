@@ -938,7 +938,7 @@ a.randomGift:hover span
 
 #katrinaSection {
 	background-color: rgb(170,170,170);
-	height:300px;
+	height:380px;
 }
 
 #wordFromKatrina {
@@ -952,7 +952,8 @@ a.randomGift:hover span
 }
 
 #tutorSection	{
-	background-color: rgb(140,140,140);;
+	background-color: rgb(140,140,140);
+	height: 265px;
 }
 /*Contact Styling*/
 #contactBanner {
