@@ -15,6 +15,7 @@
 ----------------------------------------------------*/
 
 /*Page Wide Styling*/
+
 @font-face {
     font-family: 'Sketch Serif';
     src: url('../fonts/Sketch/sketchserif-webfont.eot');
@@ -27,7 +28,6 @@
     font-style: normal;
 
 }
-
 .hyperLinkText	{
 	color:#ff000f;
 }
@@ -47,14 +47,6 @@
 	-ms-user-select: none;      /* IE 10+ */
 	-o-user-select: none;
 	user-select: none; 
-}
-
-.pointerCursor, .pointerCursor * {
-	cursor: pointer;
-}
-
-.defaultCursor, .deaultCursor * {
-	cursor: default;
 }
 
 ::-webkit-scrollbar {
@@ -97,16 +89,9 @@ textarea {
 .contentDiv {
 	margin-left: auto;
 	margin-right: auto;
-	padding-top: 70px;
-	padding-bottom: 70px;
-	width: 960px;
-}
-.contentDivLOL {
-	margin-left: auto;
-	margin-right: auto;
 	padding-top: 30px;
 	padding-bottom: 70px;
-	width: 980px;
+	width: 960px;
 }
 
 .sectionDiv {
@@ -116,7 +101,7 @@ textarea {
 #content {
 	position: absolute;
 	top: 100vh;
-	width: 960px;
+	width: 100vw;
 }
 
 .titleText {
@@ -160,14 +145,14 @@ textarea {
 	-webkit-transform: scale(0.98);
 }
 .parallax {
-	min-width: 960px;
-	height: 300px;
+	height: 480px;
 	box-sizing: border-box;
-	padding-top: 40px;
+	padding-top: 160px;
 	background-size: cover;
 	text-align: center;
 	background-repeat: no-repeat;
 	background-attachment: fixed;
+	min-width: 960px;
 	-webkit-user-select: none;  /* Chrome all / Safari all */
 	-moz-user-select: none;     /* Firefox all */
 	-ms-user-select: none;      /* IE 10+ */
@@ -294,7 +279,7 @@ header {
 	width: 100%;
 	background-image: url('../images/landing/landingBackground.jpg');
 	background-repeat: no-repeat;
-	background-size: cover;
+	background-size: 100vw;
 	padding-top: 18vh;
 	text-align: center;
 }
@@ -345,35 +330,35 @@ header {
 }
 
 /*Lessons Styling*/
-#lessonsBanner{
+#lessonsBanner {
 	background-image: url('../images/lessons/lessonsBackground.jpg');
 }
 
-#lessonsContent{
+#lessonsContent {
 	background-color: rgb(238, 229, 215);
 	position: relative;
-	height: 0;
+	height: 160px;
 	overflow: hidden;
 	transition: height ease 1s;
 	-webkit-transition: height ease 1s;
 	-moz-transition: height ease 1s;
 }
 
-#lessonsEchantillon{
+#lessonsEchantillon {
 	background-color: rgb(162, 178, 182);
 	color: white;
 	min-height: 20vh;
 }
 
-#echantillonSignButton{
+#echantillonSignButton {
 	background-color: #62899C;
 	color: #FFF;
 }
 
 #tabsWrapper{
-	min-width: 960px;
+	width: 100%;
 	height: 100px;
-	font-size: 200%;
+
 }
 
 	/*Tabs*/
@@ -382,140 +367,48 @@ header {
 		height: 100px;
 		color: white;
 		float: left;
-		display: table;
+		text-align: center;
+		vertical-align: middle;
 	}
 
-	#privateDiv{
+	#privateSelect{
 		background-color: #62899C;
 	}
 
-	#groupDiv{
+	#groupSelect{
 		background-color: #CD333C;
 		width: 34%;
 	}
 
-	#delfDiv{
+	#delfSelect{
 		background-color: #81C1B8;
 	}
 
 	.innerText{
-		text-align: center;
-		vertical-align: middle;
-		display: table-cell;
-		-webkit-touch-callout: none;
-		-webkit-user-select: none;
-		-moz-user-select: none;
-		user-select: none;
+		margin: 0;
 	}
 
-	.subContent{
-		position: absolute;
-		opacity:0;
-		width: 960px;
-		transition: opacity ease 1s;
-		-webkit-transition: opacity ease 1s;
-		-moz-transition: opacity ease 1s;
-	}
+.subContent{
+	position: absolute;
+	opacity:0;
+	width: 960px;
+	transition: opacity ease 1s;
+	-webkit-transition: opacity ease 1s;
+	-moz-transition: opacity ease 1s;
+}
 
 	/*Tables*/
 	table{
 		margin: 0px auto;
-		text-align: center;
+		text-align: center
 	}
-	table p, ul{
-		margin: 0;
-	}
-	.blueEgg{
-		background-color: #AABFC9;
-	}
-	.greyCrack{
-		background-color: #D2CDBD;
-	}
-	.greyChick{
-		background-color: #656666;
-	}
-	.redRooster{
-		background-color: #C01D29;
-	}
-	.pinkDELF{
-		background-color: #FDDCC5;
-	}
-	.redDELF{
-		background-color: #FF908A;
-	}
-	.blueDELF{
-		background-color: #B1D8EC;
-	}
-
-	#egg{
-		background-image: url("../images/lessons/lessonsEgg.png");
-	}
-	#crack{
-		background-image: url("../images/lessons/lessonsCrack.png");
-	}
-	#chick{
-		background-image: url("../images/lessons/lessonsChick.png");
-	}
-	#rooster{
-		background-image: url("../images/lessons/lessonsRooster.png");
-	}
-
 	#privateFees{
-		background-color: #AABFC9;
-		width: 150px;
-		border: none;
-	}
-	#privateAlternate{
-		background-color: #FFFCEF;
-	}
-
-	#groupLevel th{
-		height: 186px;
-		background-repeat: no-repeat;
-		background-position: center;
-		color: white;
-	}
-	#groupLevel td{
-		margin: 3px;
-		padding: 2px;
-		color: white;
 
 	}
 
-	#delfSchedule div{
-		margin: 5px;
-		width: 75px;
-		height: 50px;
-		display: table-cell;
-		vertical-align: middle;
-	}
+	#delfSchedule{
 
-	#feesDELF{
-		text-align: left;
 	}
-	.titleDELF{
-		width: 30px;
-		background-color: #81C1B8;
-	}
-	#titleDELFDark{
-		width: 30px;
-		background-color: #71A8A1;
-	}
-	.titleDELF div{
-		white-space: nowrap;
-		transform: rotate(-90deg);
-		-moz-transform: rotate(-90deg);
-		-webkit-transform: rotate(-90deg);
-	}
-	.priceDELF{
-		font-size: 80%;
-		color: #656565;
-	}
-	.subpriceDELF{
-		font-size: 50%;
-		color: #656565;
-	}
-
 
 /*Events Styling*/
 #eventsBanner {
@@ -574,12 +467,6 @@ header {
 	padding-left: 50px;
 	padding-right: 50px;
 	margin-top: 0px;
-	transition: transform 0.15s, -webkit-transform 0.3s;
-}
-
-.seasonHeadingContainer:hover {
-	transform: scale(0.97);
-	-webkit-transform: scale(0.97);
 }
 
 .seasonHeadingContainerRight {
@@ -631,33 +518,21 @@ header {
 
 /*Gifts Styling*/
 #giftsBanner {
-	background-image: url('../images/giftShop/giftBackground.jpg');
+	background-image: url('../images/tc/Entry with sign.jpg');
 }
 
 #giftsContent {
-	background-color: rgb(162, 178, 182);
+	background-color: rgb(238,229,215);
+
 }
 
 #fullShopButton	{
-	color: rgb(94, 94, 94);
-	background-color: rgb(238, 228, 215);
-
+	color: rgb(255, 252, 239);
+	background-color: rgb(162, 178, 182);
 }
 
 #imageContainer	{
 	text-align:center;
-}
-
-#polaroid	{
-	position:fixed;
-	left: -50px;
-	top:470px;
-	transform: scale(0.6);
-	transition: all 0.3s;
-}
-
-#polaroid:hover	{
-	transform: scale(0.65);
 }
 
 a.randomGift {
@@ -667,7 +542,6 @@ a.randomGift {
     margin-right:25px;
     margin-left:25px;
     margin-bottom:20px;
-    margin-top:20px;
 }
 
 a.randomGift img {
@@ -728,22 +602,14 @@ a.randomGift:hover span
 	background-color: rgb(238,229,215);
 }
 
-#contactContentSecondWrapper {
-	box-shadow: 0px 0px 40px -7px rgba(0,0,0,0.75);
-	width: 960px;
-	margin-left: auto;
-	margin-right: auto;
-	transform: translate(0, -100px);
-	-webkit-transform: translate(0, -100px);
-	border-top-left-radius: 15px;
-	border-top-right-radius: 15px;
-	overflow: hidden;
-}
-
 #contactContent {
+	z-index: 20;
+	box-shadow: -3px -8px 30px -7px rgba(0,0,0,0.75);
 	color: white;
 	box-sizing: border-box;
 	background-color: rgb(205,51,60);
+	transform: translate(0, -100px);
+	-webkit-transform: translate(0, -100px);
 	padding-left: 100px;
 	padding-right: 100px;
 }
@@ -847,35 +713,6 @@ a.randomGift:hover span
 	top: -1px;
 }
 
-#formStatus {
-	position: relative;
-	top: 20px;
-}
-
-#formImageStatus {
-	margin-left: auto;
-	margin-right: auto;
-	overflow: hidden;
-	height: 0px;
-	width: 48px;
-	transition: height 0.4s;
-}
-
-#loadGIF {
-	opacity: 0;
-	width: 48px;
-	height: 48px;
-	transition: opacity 0.2s;
-}
-
-#formStatusCheck {
-	margin: 0 0;
-	padding: 0 0;
-	font-size: 36px;
-	color: white;
-	font-weight: bold;
-}
-
 #phoneNumbers {
 	margin-left: auto;
 	margin-right: auto;
@@ -888,10 +725,13 @@ a.randomGift:hover span
 	border-width: 0;
 }
 
+#phoneNumbers td {
+	padding-left: 30px;
+}
+
 .placeCol {
 	width: 120px;
 	height: 40px;
-	padding-left: 30px;
 	background-color: rgb(89, 0, 0);
 	color: white;
 }
@@ -899,14 +739,16 @@ a.randomGift:hover span
 .phoneCol {
 	background-color: #AA0000;
 	color: white;
-	width: 300px;
-	text-align: center;
+	width: 280px;
 }
 
 #contactMapWrapper {
+	box-shadow: 3px -8px 30px -7px rgba(0,0,0,0.75);
 	padding: 0 0;
 	height: 500px;
 	background-color: white;
+	transform: translate(0, -100px);
+	-webkit-transform: translate(0, -100px);
 
 }
 
@@ -979,16 +821,6 @@ a.randomGift:hover span
 	float: left;
 }
 
-.mapInfo {
-	padding: 5px 15px 20px 15px;
-}
-
-.mapInfo p{
-	margin-left: 30px;
-	margin-bottom: 0px;
-	margin-top: 0px;
-}
-
 #new {
 	font-size: 11px;
 	color: rgb(162,178,182);
@@ -997,80 +829,11 @@ a.randomGift:hover span
 	left: 5px;
 }
 
-.backgroundCard	{
-	position: relative;
-	border-radius:1px;
-	background-color: rgb(249,250,245);
-	width:314px;
-	height:310px;
-	overflow: hidden;
-	transition: box-shadow 0.4s, height 0.3s;
-	-moz-transition: box-shadow 0.4s, height 0.3s;
-	-webkit-transition: box-shadow 0.4s, height 0.3s;
-	float:left;
-	margin: 5px;
-}
-
-.backgroundCard:hover	{		
-	height: 430px;
-	-webkit-height: 400px;
-	-moz-height: 400px;
-	/*Debating whether to add box shad
-	-webkit-box-shadow: 5px 10px 35px -8px rgba(0,0,0,0.75);
-	-moz-box-shadow: 5px 10px 35px -8px rgba(0,0,0,0.75);
-	box-shadow: 5px 10px 35px -8px rgba(0,0,0,0.75);
-	*/
-}
-
-.cardContent	{
-	opacity: 0;
-	-webkit-opacity:0;
-	-moz-opacity:0;
-
-}
-
-.backgroundCard:hover > .cardContent	{
-	opacity: 1;
-	-webkit-opacity:1;
-	-moz-opacity:1;
-	transition-delay:0s;
-	transition: all 0.7s;
-}
-
-
-.buyButton	{
-	position: absolute;
-	width: 100px;
-	height: 45px;
-	right: 15px;
-	bottom: -30px;
-	border-style: none;
-	border-radius: 12px;
-	transform: translate(0px, -50px);
-	font-size: 28px;
-	font-family: Sketch Serif;
-	font-weight: bold;
-	background-color: rgba(205, 51, 60, 1);
-	transition: background-color 0.2s, color 0.2s, transform 0.2s, -webkit-transform 0.2s, width 0.2s, height 0.2s;
-}
-
-.buyButton:hover	{
-	transform: scale(0.97), translate(0px, -50px);
-
-}
-
-.cardContent {
-	padding-left: 27px;
-	padding-top: -15px;
-}
-
-.cardContent > div	{
-	float: left;
-}
 /*Footer Styling*/
 #footer {
 	position: relative;
 	bottom: 0px;
+	padding: 50px calc(50vw - 480px) 50 calc(50vw - 480px);
 	height: 25vh;
 	width: 100%;
 	background-color: black;
@@ -1081,7 +844,6 @@ a.randomGift:hover span
 	box-sizing: border-box;
 	padding: 40px 0px 40px 0px;
 	height: 320px;
-	background-color: black;
 }
 
 #footerContent p {
@@ -1163,38 +925,7 @@ a.randomGift:hover span
 	min-width: 960px;
 }
 
-/*MINT CSS ANIMATION TBH*/
-.animated { 
-    -webkit-animation-duration: 1s; 
-    animation-duration: 1s; 
-    -webkit-animation-fill-mode: both; 
-    animation-fill-mode: both; 
-	height:440px;
-} 
-
-@-webkit-keyframes fadeInUp { 
-    0% { 
-        opacity: 0; 
-        -webkit-transform: translateY(20px); 
-    } 
-    100% { 
-        opacity: 1; 
-        -webkit-transform: translateY(0); 
-    } 
-} 
-
-@keyframes fadeInUp { 
-    0% { 
-        opacity: 0; 
-        transform: translateY(20px); 
-    } 
-    100% { 
-        opacity: 1; 
-        transform: translateY(0); 
-    } 
-} 
-
-.fadeInUp { 
-    -webkit-animation-name: fadeInUp; 
-    animation-name: fadeInUp; 
+/*Terms and Conditions page styling*/
+.cancellation	{
+	font-weight:bold;
 }

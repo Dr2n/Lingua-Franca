@@ -1,82 +1,732 @@
 <!DOCTYPE html>
+
+<!------------------------------------------------------
+		   ________          ____        ____           
+		  / ____/ /_  ____ _/ __ \____ _/ __ \____ _    
+		 / /   / __ \/ __ `/ /_/ / __ `/ / / / __ `/    
+		/ /___/ / / / /_/ / ____/ /_/ / /_/ / /_/ /     
+		\_______ /_/\__,_/_/_   \__,_/_____/\__,_/      
+		   / __ \___  _____(_)___ _____                 
+		  / / / / _ \/ ___/ / __ `/ __ \                
+		 / /_/ /  __(__  ) / /_/ / / / /                
+		/_____/\___/____/_/\__, /_/ /_/                 
+		                  /____/         
+
+	  Charlie Hou, Patrick Kim & Darren Fu 2015
+------------------------------------------------------>
+
 <meta charset='utf-8'>
 <html>
 <head>
-	<link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
-	<link rel="icon" href="favicon.ico" type="image/x-icon">
-	<title>Lingua Franca</title>
+	<link rel="shortcut icon" href="favicon.png" type="image/x-icon">
+	<link rel="icon" href="favicon.png" type="image/x-icon">
+	<title>Lingua Franca Brisbane</title>
+	
 	<link rel="stylesheet" type="text/css" href="css/mainStyle.css">
+	<script src='script/jquery.js'></script>
+	<script src="https://maps.googleapis.com/maps/api/js?v=3.exp"></script>
 	<script src='script/mainScript.js'></script>
+    <script src="script/form.js"></script>
 </head>
+
 <body>
-	<div id='header'>
-		
+	<!-- Navigation Bar !-->
+	<header>
 		<div id='headerContent'>
-			<a href='#'><img id='linguaFrancaLogo' src='images/linguaFrancaLogo.png'/></a>
-			<div id='links'>
-				<a href='#lessons'><span class='linkText'>Lessons</span></a>
-				<a href='#events'><span class='linkText'>Events</span></a>
-				<a href='#gifts'><span class='linkText'>Gifts</span></a>
-				<a href='#about'><span class='linkText'>About Us</span></a>
-				<a href='#contact'><span class='linkText'>Contact</span></a>
-			</div>
+			<a href='#landingDiv' id='linguaFrancaLogo'></a>
+
+			<nav id='navLinks' class='noselect'>
+				<a href='#lessonsBanner' id='lessonsBannerLink' class='linkText'>Lessons</a>
+				<a href='#eventsBanner' id='eventsBannerLink' class='linkText'>Events</a>
+				<a href='#giftsBanner' id='giftsBannerLink' class='linkText'>Gifts</a>
+				<a href='#aboutBanner' id='aboutBannerLink' class='linkText'>About Us</a>
+				<a href='#contactBanner' id='contactBannerLink' class='linkText'>Contact</a>
+			</nav>
+
 		</div>
 
-	</div>
-	<div id='landingDiv'>
-		<h1 id='titleText'>WE ARE LINGUA FRANCA</h1>
-		<h2 id='subtitleText'> We provide a unique learning experience for French at all Levels</h2>
-
-		<div id='landingDownDiv'>
-			<h1 id='learnMore' class='smallTitleText'>LEARN MORE</h1>
-			<a  href='#lessons'>
-				<img id='learnMoreButton' src='images/landing/downButton.png' />
-			</a>
-		</div>
-
-	</div>
+	</header>
+	
+	<!-- Popup Screen !-->
 	<div id='popup'></div>
 	<div id='screen'></div>
 
-	<div id='content'>
+	<!-- Actual Page Content !-->
+	
+		<!-- Landing Banner !-->
+		<div id='landingDiv' class='parallax'>
 
-		<div id='lessons' class='wrapperDiv'>
-			<div id='lessonsContent' class='contentDiv'>
-				<h1>Our Lessons</h1>
+			<div class='largeHeadingContainer defaultCursor' id='titleContainer'>
+				<div id='titleWrapper'>
+					<span id='weAre'>We Are</span>
+					<h1 class='titleText'>Lingua Franca</h1>
+				</div>
+				<h2 class='subTitleText'> Providing a unique learning experience for French at 	all levels</h2>
+			</div>
+
+			<a href='#lessonsBanner'><div id='landingLearnMore' class='largeHeadingContainer'>
+				<div id='learnMoreWrapper'>
+					<h1 id='learnMoreText' class='subTitleText pointerCusor'>LEARN MORE</h1>
+					<img id='learnMoreButton' src='images/landing/downButton.png' />
+				</div>
+			</div></a>
+
+		</div>
+
+
+		<!-- Lessons !-->
+		<div id='lessonsBanner' class='parallax'>
+			<div class='largeHeadingContainer'>
+				<h1 class='titleText defaultCursor'>Our Lessons</h1>
 			</div>
 		</div>
-		<div id='echantillon' class='wrapperDiv'>
+
+		<div id="tabsWrapper">
+			<div id="privateDiv" class="lessonSelect">
+				<p id="privateSelect" class="innerText">Private Lessons</p>
+			</div>
+			<div id="groupDiv" class="lessonSelect">
+				<p id="groupSelect" class="innerText">Group Lessons</p>
+			</div>
+			<div id="delfDiv" class="lessonSelect">
+				<p id="delfSelect" class="innerText">DELF Lessons</p>
+			</div>
+		</div>
+
+		<div id='lessonsContent' class='sectionDiv'>
+			<div class='contentDiv'>
+				<!--Private Content-->
+				<div id="private" class="subContent">
+					<h2>How they work</h2>
+					<p>If you are really motivated to improve your French quickly, Lingua Franca’s private lessons may be the right choice for you.</p>
+					<p>We hold our private lessons at our offices in Newstead. However, if you'd rather we come to your home or office or even a favourite café or bookstore, contact us and we can try to arrange this. We also offer live one-on-one lessons via Skype<sup>TM</sup> if you do not live in Brisbane or if that option simply suits you better.</p>
+					<p>We are able to tailor lessons according to your requirements and part of our first lesson is devoted to establishing exactly what is it you are looking to achieve. Perhaps you did French at school 150 years ago (as one of our clients put it!) and have lost your confidence, or perhaps you just need a few lessons before a planned trip to a French-speaking country. Perhaps you’re about to take a job overseas or perhaps you have a reason all your own.</p>
+					<p>In fact, there are countless reasons why people choose to learn French. Why don’t you <a href="#contactBanner">contact us</a> to see if we can arrange some lessons to suit your needs?</p>
+					<h2>Fees</h2>
+					<table id="privateFees">
+						<tr>
+							<th>#Students</th>
+							<th>Price</th>
+						</tr>
+						<tr>
+							<td id="privateAlternate">1</td>
+							<td id="privateAlternate">$80/hr</td>
+						</tr>
+						<tr>
+							<td>2</td>
+							<td>$115/hr</td>
+						</tr>
+						<tr>
+							<td id="privateAlternate">3</td>
+							<td id="privateAlternate">$155/hr</td>
+						</tr>
+						<tr>
+							<td>4</td>
+							<td>$185/hr</td>
+						</tr>
+					</table>
+					<p><strong>A 10% discount</strong> is offered to students when they elect to prepay for 10 lessons.</p>
+					<p>Additional students are priced at $45 per student.</p>
+					<p>All prices include GST.</p>
+					<p>A travel fee may apply for off-site lessons. Please <a href="#contactBanner">contact us </a>to discuss.</p>
+					<p>*Please read our <a href="t&c.html">terms and conditions</a> for further information.</p>
+				</div>
+
+				<!--Group Content-->
+				<div id="group" class="subContent">
+					<h2>How they work</h2>
+					<p>Our group lessons take place in Newstead, Paddington and Bulimba.</p>
+					<p>Our Newstead classes are held at our <em>petit nid </em>(little nest) at 22 Masters St. Bulimba classes are at the lovely SideStreet Vintage store on Oxford St and our Paddington home is at Francesca's Flowers on Latrobe Terrace.</p>
+					<p>No matter where you go for your lesson, we aim to create a warm and convivial atmosphere so you are able to learn in an relaxed and enjoyable way. Keeping the classes to a maximum of eight students helps, too.</p>
+					<p><strong>Four different types</strong> of courses are offered, so finding something to suit your needs is easy.</p>
+					<h3>Key Courses - 6 weeks 1hr/wk</h3>
+					<p>These are our foundation courses and are designed to teach you the fundamentals of French. Courses run for six weeeks (an hour a week) and cost $250 (inc. GST). We have four main levels: absolute beginner, beginner, intermediate and advanced, with four different courses in each level available. (1,2,3 and revision).</p>
+					<p>Course fee includes tuition and our purpose-written workbooks which we have developed for our students. Pronunciation support in the form of short videos is included on our website so you are able to practise at home.</p>
+					<h3>Speaking Practice - 4 weeks 1hr/wk</h3>
+					<p>These courses are focused on getting you speaking. We offer classes for all levels of competency. This means that for every Key Course, there is a Speaking Practice Course that will give you the opportunity to put into use what you have just learned. The course are of four weeks' duration and an hour a week and can be combined with a Key Course to give you ten weeks of French. Cost is $170 (inc. GST), or combined with a Key Course the total is $399 (inc.GST). The cost includes tuition as well as innovative in-class support materials designed to increase your confidence.</p>
+					<p>*We also have an Advanced Conversation that runs throughout the year. <a href="#contactBanner">Contact us</a> for more information.</p>
+					<h3>Workshops - 2 weeks 2hrs/wk</h3>
+					<p>These two-week courses focus on a particular topic, such as travel, pronunciation, fashion, food, numbers or culture and give you the chance to hone your skills specifically in these areas. Classes run for two hours a week (a total of four hours) and cost $170 (inc. GST). Cost includes instruction and a purpose-written booklet which is yours to keep.</p>
+					<h3>Consolidation - 10 weeks 1hr/wk</h3>
+					<p>Whether you feel you’d like to ‘put the brakes on’ your learning for a little while or whether you’d like to reinforce what you’ve learned while continuing on with your Key Courses, our new Monday night Consolidation Courses could be just what you’re looking for.These courses run throughout the year in ten-week blocks and cost $399. The first time you sign up, you’ll receive a workbook which is yours to keep. This workbook is designed to encourage you to speak.</p>
+					<h2>What's my level?</h2>
+					<table id="groupLevel">
+						<tr>
+							<th id="egg"></td>
+							<th id="crack"></td>
+							<th id="chick"></td>
+							<th id="rooster"></td>
+						</tr>
+						<tr>
+							<td class="blueEgg"><strong>Absolute Beginners</strong></td>
+							<td class="greyCrack"><strong>Beginners</strong></td>
+							<td class="greyChick"><strong>Intermediate</strong></td>
+							<td class="redRooster"><strong>Advanced</strong></td>
+						</tr>
+						<tr>
+							<td class="blueEgg">
+								<p>For you if you have done:</p>
+								<ul>
+									<li>no French before at all</li>
+									<li>a little French but can't recall most of it</li>
+									<li>some French but wants to start afresh</li>
+								</ul>
+							</td>
+							<td class="greyCrack">
+								<p>For you if you have done:</p>
+								<ul>
+									<li>a moderate amount of French in the past</li>
+									<li>a lot of French but have forgotten a lot, too</li>
+									<li>and intensive course in the past</li>
+								</ul>
+							</td>
+							<td class="greyChick">
+								<p>For you if you have done:</p>
+								<ul>
+									<li>quite a lot of French recently</li>
+									<li>French up to Year 12 at school</li>
+									<li>some French at Uni but it was a long time ago...</li>
+								</ul>
+							</td>
+							<td class="redRooster">
+								<p>For you if you have done:</p>
+								<ul>
+									<li>have had a prolonged exposure to French</li>
+									<li>feel comfortable speaking exclusively in French</li>
+								</ul>
+							</td>
+						</tr>
+						<tr>
+							<td class="blueEgg">
+								<p>more details</p>
+							</td>
+							<td class="greyCrack">
+								<p>more details</p>
+							</td>
+							<td class="greyChick">
+								<p>more details</p>
+							</td>
+							<td class="redRooster">
+								<p>more details</p>
+							</td>
+						</tr>
+					</table>
+					<p><strong>Workshops </strong>are suitable for learners of all levels.</p>
+					<p>Separate <strong>Speaking Practice Courses</strong> are run for Absolute Beginners, Beginners, Intermediate and Advanced learners.</p>
+					<p><strong>Key Courses </strong>are divided into Absolute Beginner, Beginner, Intermediate and Advanced levels with four different courses in each level available (1,2,3 and revision).</p>
+					<p>To see a breakdown of these levels, click on 'more details' above.</p>
+					<p><strong>Please note:</strong> if you are an Advanced student and you wish to practice your speaking, we also run an Advanced Conversation course at our Newstead office. See schedule for details.</p>
+					<p>If you are still unsure of your level, please <strong><a href="#contactBanner">contact us</a>.</strong> We'd be very happy to help.</p>
+					<h2>Audio support</h2>
+					<p>[Insert explanation]</p>
+					<h3>Key courses</h3>
+					<a href="https://www.youtube.com/user/katrinawaugh/videos"><p>Absolute Beginner</p></a>
+					<a href="https://www.youtube.com/user/katrinawaugh/videos"><p>Beginner</p></a>
+					<a href="https://www.youtube.com/user/katrinawaugh/videos"><p>Intermediate</p></a>
+					<a href="https://www.youtube.com/user/katrinawaugh/videos"><p>Advanced</p></a>
+					<a href="https://www.youtube.com/user/katrinawaugh/videos"><p>Workshops</p></a>
+					<h2>Timetables</h2>
+					<div id="tableOptions">
+						<select id="termSelect">
+							<option value="initial" selected="selected" disabled="disabled">Select a term</option>
+							<option value="t1">Term 1</option>
+							<option value="t2">Term 2</option>
+							<option value="t3">Term 3</option>
+							<option value="t4">Term 4</option>
+						</select>
+						<select id="locationSelect">
+							<option value="initial" selected="selected" disabled="disabled">Select a location</option>
+							<option value="newstead">Newstead</option>
+							<option value="bulimba">Bulimba</option>
+							<option value="paddington">Paddington</option>
+						</select>
+					</div>
+					<div id="tableArea"></div>
+					<h2>Workshops</h2>
+					<div id="workOptions">
+						<select id="wtermSelect">
+							<option value="initial" selected="selected" disabled="disabled">Select a holiday</option>
+							<option value="jul">July</option>
+							<option value="sep">September</option>
+						</select>
+						<select id="wlocationSelect">
+							<option value="initial" selected="selected" disabled="disabled">Select a location</option>
+							<option value="newstead">Newstead</option>
+							<option value="bulimba">Bulimba</option>
+						</select>
+					</div>
+					<div id="workArea"></div>
+					<h2>Fees</h2>
+					<p>We offer several <strong>payment</strong> <strong>options</strong>. You are able to:</p>
+					<ul>
+						<li>Pay for each course individually</li>
+						<li>Take advantage of our .Perks. program or</li>
+						<li>Pay upfront for 6 or 12 months to enjoy even greater benefits. </li>
+					</ul>
+					<p>Please be sure to read our <strong><a href="/t&c/">Terms and Conditions</a></strong> before you book a course. <em>Merci</em>.</p><!-- 
+					<p><img src="/storage/Title%20-%20Pay%20individually%20%20French%20lessons%20Brisbane.png?__SQUARESPACE_CACHEVERSION=1371017564672" alt=""></p>
+					<p>These are our standard course fees. </p>
+					<p><img src="/storage/dec-2014/Group%20lessons%20%20Fees%20%20Table%20of%20Fees%20%20French%20lessons%20Brisbane.png?__SQUARESPACE_CACHEVERSION=1418367326086" alt=""><br></p>
+					<p><img src="/storage/Title%20-%20.Perks.%20program%20%20French%20lessons%20Brisbane.png?__SQUARESPACE_CACHEVERSION=1418343264820" alt=""></p>
+					<p> Our .Perks. program allows you to benefit from a 5% reduction each time you satisfy one of the following three criteria. This means you could end up with a saving of 15%, which is a .Perk. in anyone's language.  </p>
+					<p><img src="/storage/The%20.Perks.%20graphic%20%20French%20lessons%20Brisbane.png?__SQUARESPACE_CACHEVERSION=1371023215054" alt="" naptha_cursor="text"></p> -->
+					<p><strong>.catch the worm. </strong></p>
+					<p>Book and pay before the nominated date to make sure you get exactly the class you want (and at a special price). See below for dates.</p>
+					<p><strong>take 5% off</strong></p>
+					<p><strong>.bring a friend.</strong></p>
+					<p>If you are studying with us already and know someone else that'd like to join in, both you and your study-buddy will benefit. Not only will you be able to talk about your French outside of class and help each other with homework, you'll both receive a special rate. Your friend will receive the discount the first time they enrol, and you'll benefit from the lower rate for as long as your friend is enrolled with us as thanks for bringing more people into our 'nest'.</p>
+					<p><strong>take 5% off</strong></p>
+					<p><strong>.teacher's pet.</strong></p>
+					<p>Do you just love your French? Is it your 'thing'? If so, you're probably so keen that you'd even consider signing up for two different classes a week, to really accelerate your French. You're such a <a href="http://www.wordreference.com/fren/chouchou">chouchou</a>, we think you deserve a special price.</p>
+					<p><strong>take 5% off</strong></p>
+					<!-- <p><strong><img src="/storage/dec-2014/Group%20lessons%20%20Fees%20%20Table%20Catch%20the%20Worm%20dates%20%20French%20lessons%20Brisbane.png?__SQUARESPACE_CACHEVERSION=1418702803336" alt=""><br></strong></p>
+					<p><img src="/storage/Title-%20pay%20up%20front%20%20French%20lessons%20Brisbane.png?__SQUARESPACE_CACHEVERSION=1418366975161" alt=""></p> -->
+					<p>If you are really committed to learning French, like to be organised and want to reduce the amount of administration in your life, this option could be for you. No invoices, just the satisfaction of knowing your French is taken care of for the next six or twelve months. You just have to turn up.</p>
+					<p>We also know life changes, which is why we offer generous deferral options with our 'pay up front' plan.  You also benefit from a discount of more than 10%.</p>
+					<p>6 months - 10 week deferral option</p>
+					<p>12 months - 12 week deferral option</p>
+					<!-- <p><img src="/storage/2015/Fees%20%206%20and%2012%20months%20graphic%20%20French%20lessons%20Brisbane.png?__SQUARESPACE_CACHEVERSION=1431682277854" alt=""></p> -->
+					<p>*Please note:  no other discounts apply. </p>
+				</div>
+
+				<!--DELF Content-->
+				<div id="delf" class="subContent">
+					<ul>
+						<li>Do you like a challenge?</li>
+						<li>Do you feel your French has come to a bit of a standstill?</li>
+						<li>Do you particularly want to improve your spoken French?</li>
+					</ul>
+					<p>Then joining a DELF training program may be just the ticket for you.</p>
+					<p>For more detailed information on the DELF, please refer to our <a href="#FAQbutton" id="FAQbutton">FAQs page.</a></p>
+					<h2>What is the DELF?</h2>
+					<p>DELF stands for <em>Diplôme d’Études en Langue Française</em> and by training for and passing an exam, you will receive an internationally recognised certificate proving your level of French proficiency. This looks great on a CV, can help you get into a French university and is an achievement in and of itself.</p>
+					<h2>What's my level?</h2>
+					<p><strong>A1:</strong> elementary level (approx. 1 year of French)</p>
+					<p><strong>A2:</strong> elementary level (approx. 2 years of French)</p>
+					<p><strong>B1:</strong> independent level (approx. 3 years of French)</p>
+					<p><strong>B2:</strong> independent level (approx. 4 years of French)</p>
+					<h2>Our track record</h2>
+					<p>Our brave students have achieved have an average score of 90.72% between them.</p>
+					<p>While delighted with their results of course, all agree that the major benefit in preparing for and sitting the exam was the <strong>extreme improvement they saw in their French, particularly their confidence when speaking. </strong></p>
+					<h2>Proposed Schedule</h2>
+					<table id="delfSchedule">
+						<tr>
+							<td></td>
+							<td><div class="greyCrack">TUES</div></td>
+							<td><div class="greyCrack">WED</div></td>
+							<td><div class="greyCrack">THURS</div></td>
+							<td><div class="greyCrack">FRI</div></td>
+						</tr>
+						<tr>
+							<td><div class="greyCrack">7:00AM - 8:00AM</div></td>
+							<td><div class="pinkDELF">A1</div></td>
+							<td><div class="redDELF">A2</div></td>
+							<td></td>
+							<td class="redDELF">A2</td>
+						</tr>
+						<tr>
+							<td><div class="greyCrack">9:00AM - 10:00AM</div></td>
+							<td></td>
+							<td></td>
+							<td><div class="redDELF">A2</div></td>
+							<td></td>
+						</tr>
+						<tr>
+							<td><div class="greyCrack">10:00AM - 11:00AM</div></td>
+							<td><div class="blueDELF">B1</div></td>
+							<td></td>
+							<td></td>
+							<td></td>
+						</tr>
+						<tr>
+							<td><div class="greyCrack">2:00PM - 3:00PM</div></td>
+							<td><div class="blueDELF">B1</div></td>
+							<td></td>
+							<td></td>
+							<td></td>
+						</tr>
+						<tr>
+							<td><div class="greyCrack">6:15PM - 7:15PM</div></td>
+							<td></td>
+							<td><div class="blueDELF">B1</div></td>
+							<td></td>
+							<td></td>
+						</tr>
+					</table>
+					<h2>More info?</h2>
+					<p>Signing up for the DELF is certainly a commitment, but probably less than you think.</p>
+					<p>You'll possibly still have some questions, though, so if you're unsure of your level or if you'd like to know class times and days, please <a href="#contactBanner">contact us </a>or call Katrina on 0405 381 972.</p>
+					<p>If you'd like more information about the exam itself, please <a href="http://www.ciep.fr/en/delf-prim-delf-delf-junior-version-dalf-diplome-detudes-langue-francaise-diplome-approfondi-langue" target="_blank">follow this link.</a></p>
+					<h2>Fees</h2>
+					<p>We run DELF preparation classes throughout the year, with two intakes: early February and mid-June.</p>
+					<p>Both intakes prepare students for the November exams. If you enrol in February, you'll have 30 weeks to prepare for the exam. A July enrolment will give you 15 weeks, so you can choose what sort of lead-up you'd like to have to the exam and can work it around your other commitments.</p>
+					<table id="feesDELF">
+						<tr>
+							<td rowspan="11" class="titleDELF"><div>30-week course</div></td>
+							<td>30 wks training (lhr/l wk)</td>
+							<td rowspan="11" class="titleDELF" id="titleDELFDark"><div>15-week course</div></td>
+							<td>15 wks training (1 hr / wk)</td>
+						</tr>
+						<tr>
+							<td>Maximum of 4 students per class</td>
+							<td>Maximum of 4 students per class</td>
+						</tr>
+						<tr>
+							<td>Ofﬁcial training textbook</td>
+							<td>Ofﬁcial training textbook</td>
+						</tr>
+						<tr>
+							<td>Exam registration fee</td>
+							<td>Exam registration fee</td>
+						</tr>
+						<tr>
+							<td>Access to past papers</td>
+							<td>Access to past papers</td>
+						</tr>
+						<tr>
+							<td>Mock exams</td>
+							<td>Mock exams</td>
+						</tr>
+						<tr>
+							<td>Other support material</td>
+							<td>Other support material</td>
+						</tr>
+						<tr>
+							<td>Tutor attendance at exam</td>
+							<td>Tutor attendance at exam</td>
+						</tr>
+						<tr>
+							<td></td>
+							<td></td>
+						</tr>
+						<tr>
+							<td class="priceDELF">*$1950 (all inclusive)</td>
+							<td class="priceDELF">*$1050 (all inclusive)</td>
+						</tr>
+						<tr>
+							<td class="subpriceDELF">starts early February</td>
+							<td class="subpriceDELF">starts mid-June</td>
+						</tr>
+					</table>
+					<p>Please be sure to read our <strong><a href="/t&c/">Terms and Conditions</a></strong> for group lessons before you book a course. <em>Merci.</em></p>
+				</div>
+			</div>
+		</div>
+
+		<div id='lessonsEchantillon' class='sectionDiv'>
 			<div id='echantillonContent' class='contentDiv'>
 				<h1>Unsure? Try an  &#232;chantillon!</h1>
+
 				<p>We often hear from people who have been meaning to start or return to learning French and for one reason or another it hasn't happened. We decided, therefore, to give people the chance to come and try out one of our friendly and relaxed group lessons <em>free of charge</em>. Échantillon is the French word for 'sample' or 'test' and that's exactly what we'd like you to do.</p>
-				<input type='button' class='largeButton' value='SIGN UP NOW!' id='signUpButton' />
-			</div>
-		</div>
-		<div id='events' class='wrapperDiv'>
-			<div id='eventsContent' class='contentDiv'>
-				<h1>Events</h1>
-			</div>
-		</div>
-		<div id='gifts' class='wrapperDiv'>
-			<div id='giftsContent' class='contentDiv'>
-				<h1>Gift Shop</h1>
-				<a href='http://www.google.com'><input type='button' class='largeButton' value='VISIT THE FULL STORE!' id='fullShopButton'></a>
-			</div>
-		</div>
-		<div id='about' class='wrapperDiv'>
-			<div id='aboutContent' class='contentDiv'>
-				<h1>About</h1>
-			</div>
-		</div>
-		<div id='contact' class='wrapperDiv'>
-			<div id='contactContent' class='contentDiv'>
-				<h1>Contact</h1>
+
+				<input type='button' class='largeButton pointerCursor' value='SIGN UP NOW!' id='echantillonSignButton' />
 			</div>
 		</div>
 
-		<div id='footer'></div>
-	</div>
 
+		<!-- Events !-->
+		<div id='eventsBanner' class='parallax'>
+			<div class='largeHeadingContainer'>
+				<h1 class='titleText defaultCursor'>Our Events</h1>
+			</div>
+		</div>
+
+		<div id='eventsIntro'  class='sectionDiv'>
+			<div class='contentDiv'>
+				<p>Often with a love of the French language comes a love of French culture and an interest in the way the French-speaking world does things differently to us.</p> 
+
+				<p>Our seasonal events are designed to bring together like-minded people in a social situation while enjoying the best food, wine, film, fashion (and much more) the French have to offer.</p>
+
+				<p>For all levels and interests - there’s be something for everybody...even a trip to Nouméa in April 2015, too. There will also be a three-day trip to a secret destination for a French Festival in October 2015. Let us know if you'd like to be kept in the loop.</p>
+			</div>
+		</div>
+
+		<div class='eventSeason sectionDiv' id='eventsAutumn'>
+			<div class='contentDiv seasonSectionWrap'>
+
+				<img src='images/events/autumn.png' class='eventSeasonImage' id='eventAutumnImage'/>
+
+				<div class='eventsText'>
+					<div class='seasonHeadingContainer defaultCursor noselect' id='autumnHeadingContainer'>
+						<h2 class='eventSeasonHeading'>Autumn</h2>
+					</div>
+					<p class='eventSeasonP'>
+						Come and join us for a pre-dinner apéro before wandering down to James St for the French Film Festival.
+					</p>
+				</div>
+
+			</div>
+		</div>
+
+		<div class='eventSeason sectionDiv' id='eventsWinter'>
+			<div class='contentDiv seasonSectionWrap'>
+
+				<img src='images/events/winter.png' class='right' id='eventWinterImage'/>
+				<div class='eventsTextRight'>
+					<div class='seasonHeadingContainer seasonHeadingContainerRight defaultCursor noselect' id='winterHeadingContainer'>
+						<h2 class='eventSeasonHeading'>Winter</h2>
+					</div>
+					<p class='eventSeasonP right'>
+						Warm up with a delicious raclette dinner. Melted cheese and good wine: what better?
+					</p>
+				</div>
+
+			</div>
+		</div>
+
+		<div class='eventSeason sectionDiv' id='eventsSpring'>
+			<div class='contentDiv seasonSectionWrap'>
+
+				<img src='images/events/spring.png' id='eventSpringImage'/>
+				<div class='eventsText'>
+					<div class='seasonHeadingContainer defaultCursor noselect' id='springHeadingContainer'>
+						<h2 class='eventSeasonHeading'>Spring</h2>
+					</div>
+					<p class='eventSeasonP'>
+						Come and learn how to make the traditional French version of pizza: la pissaladière.
+					</p>
+				</div>
+
+			</div>
+		</div>
+
+		<div class='eventSeason sectionDiv' id='eventsSummer'>
+			<div class='contentDiv seasonSectionWrap'>
+
+				<img src='images/events/summer.png' class='right' id='eventSummerImage'/>
+				<div class='eventsTextRight'>
+					<div class='seasonHeadingContainer seasonHeadingContainerRight defaultCursor noselect' id='summerHeadingContainer'>
+						<h2 class='eventSeasonHeading'>Summer</h2>
+					</div>
+					<p class='eventSeasonP right'>
+						Un pique-nique under the stars. Beaujolais, anyone?
+					</p>
+				</div>
+
+			</div>
+		</div>
+
+
+		<!-- Gifts !-->
+		<div id='giftsBanner' class='parallax'>
+			<div class='largeHeadingContainer'>
+				<h1 class='titleText defaultCursor'>Gift Shop</h1>
+			</div>
+		</div>
+
+		<div id='giftsContent' class='sectionDiv'><div class='contentDivLOL'>
+			<p>Our <i>petite boutique</i> has a carefully-selected range of French gifts. Below is just a few of our items in store.</p>
+				
+			<!-- TEMPORARY AESTHETIC NON RANDOMISED (YET) POLAROID SNAPS -->
+			<div id="animated-example" class="animated fadeInUp">
+				<!-- Raffia hat !-->
+				<div class="backgroundCard">
+					<a id="Wearables" href="http://google.com" class="randomGift">
+						<img src="images/giftShop/raffia.png" />
+					</a>
+					<div class="cardContent">
+						<div>Wide-brimmed Raffia Hat<br>
+							<i>
+								Not only very stylish, but sun-safe <br>
+								as well.
+								<br>
+								<b>$143.10</b>
+							</i>
+						</div>
+						<a href="google.com"><input type="button" class="pointerCursor buyButton" value="Buy" href="www.google.com" /></a>
+					</div>
+				</div>
+			
+				<!-- Cloche hat !-->
+				<div class="backgroundCard">
+					<a href="http://google.com" class="randomGift">
+						<img src="images/giftShop/cloche.png">
+					</a>
+
+					<div class="cardContent">
+						<div>Cloche Raffia hat with black band<br>
+							<i>
+								Raffia bends, unlike wicker which <br>
+								tends to break easily.<br>
+								<b>$116.10</b>
+							</i>
+						</div>
+
+						<a href="google.com"><input type="button" class="buyButton" value="Buy" href="www.google.com" /></a>
+					</div>
+				</div>
+
+				<!-- Necklace !-->
+				<div class="backgroundCard">
+					<a href="http://google.com" class="randomGift">
+						<img src="images/giftShop/necklaces.png">
+					</a>
+
+					<div class="cardContent">
+						<div>Colourful bead necklaces<br>
+							<i>
+								Handmade from citrus beads, various colours.<br>
+								<b>$35 x1/$58.50 x2</b>
+							</i>
+						</div>			
+					<a href="google.com"><input type="button" class="buyButton" value="Buy" href="www.google.com" /></a>
+					</div>
+
+				</div>
+
+			</div>
+
+			<a href='giftShop/'><input type='button' class='largeButton pointerCursor' value='VISIT THE FULL STORE!' id='fullShopButton'></a>			
+			
+		</div>
+
+		<!-- About !-->
+		<div id='aboutBanner' class='parallax'>
+			<div class='largeHeadingContainer'>
+				<h1 class='titleText defaultCursor'>About</h1>
+			</div>
+		</div>
+
+		<div id='aboutContent' class='sectionDiv'>
+			<div class='contentDiv'>
+			</div>
+		</div>
+
+
+		<!-- Contact !-->
+		<div id='contactBanner' class='parallax'>
+			<div class='largeHeadingContainer'>
+				<h1 class='titleText defaultCursor'>Contact</h1>
+			</div>
+		</div>
+		
+		<div id='contactContentWrapper' class='sectionDiv'>
+			<div id='contactContentSecondWrapper'>
+				<div class='contentDiv' id='contactContent'>
+					<h2>Message Us</h2>
+					<p>We'd love to help you find the right solution to your language requirements so please feel free to get in touch with us. If you'd rather talk to us please include your phone number and the best times to call and we'll get back to you as soon as we can.</p>
+
+					<form id='emailForm' action='script/sendEmail.php' method='post'>
+						<div id='formWrapper'>
+							<input type='text' name='senderName' class='formInput' value='Name'>
+							<span class='formErrorMessage' id='nameError'></span>
+							<br>
+		
+							<input type='text' name='senderEmail' class='formInput' value='Email'>
+							<span class='formErrorMessage' id='emailError'></span>
+							<br>
+		
+							<input type='text' name='senderSubject' class='formInput' value='Subject'>
+							<span class='formErrorMessage' id='subjectError'></span>
+							<br>
+						</div>
+
+
+						<div class='checkDiv'>
+							<input class='check' type='checkBox' name='newsletterCheck' class='formInput'>
+							<p class='checkText'>Keep me up to date with your courses and events via 	your periodical newsletters.</p>
+						</div>
+
+						<div class='checkDiv'>
+							<input class='check' type='checkBox' name='CCCheck' class='formInput'>
+							<p class='checkText'>Send me a copy of this email.</p>
+						</div>
+
+						<span class='textareaErrorMessage' id='messageError'></span>
+						<textarea name='senderMessage' id='messageBox'>Message</textarea><br>
+
+						<button id='mailSendButton' type='submit' form='emailForm' value='SEND'>SEND</button>
+						<span class='formErrorMessage' id='formStatus'></span>
+						<div id='formImageStatus'>
+							<img id="loadGIF" src="images/contact/loading.gif" />
+						</div>
+					</form>
+
+					<h2>Phone Us</h2>
+					
+					<table id='phoneNumbers'>
+						<tr>
+							<td class='placeCol'>Work</td>
+							<td class='phoneCol'>(07) 3162 4199</td>
+						</tr>
+						<tr>
+							<td class='placeCol'>Mobile</td>
+							<td class='phoneCol'>0405 381 972</td>
+						</tr>
+					</table>
+				</div>
+				<div id='contactMapWrapper' class='contentDiv'>
+					<div id='contactLocations'>
+						<h2>Locations</h2>
+						<ul class='noselect pointerCursor'>
+							<li id='paddington' class='locationButton'>Paddington <span id='new'>NEW!</span></li>
+							<li id='newstead' class='locationButton'>Newstead</li>
+							<li id='bulimba' class='locationButton'>Bulimba</li>
+						</ul>
+					</div>
+
+					<div id='contactMapWidget'>
+					</div>
+
+				</div>
+			</div>
+		</div>
+
+
+
+		<!-- Footer !-->
+		<div id='footer'>
+			<div class='contentDiv noselect' id='footerContent'>
+				<div id='footerSiteMap'>
+					<h3 class='defaultCursor'>Site Map</h3>
+					<ul>
+						<a href='#landingDiv' class='footerLink'><li>Home</li></a>
+						<a href='#lessonsBanner' class='footerLink'><li class="footerList">Lessons</li></a>
+						<a href='#eventsBanner' class='footerLink'><li class="footerList">Events</li></a>
+						<a href='#giftsBanner' class='footerLink'><li class="footerList">Gifts</li></a>
+						<a href='#aboutBanner' class='footerLink'><li class="footerList">About Us</li></a>
+						<a href='#contactBanner' class='footerLink'><li class="footerList">Contact</li></a>
+					</ul>
+	
+					<ul>
+						<a href='/giftShop/' class='footerLink'><li>Gift Shop</li></a>
+						<a href='/t&c/' class='footerLink'><li>Terms & Conditions</li></a>
+					</ul>
+				</div>
+				<div id='footerFollow'>
+					<h3 class='defaultCursor'>Follow Us!</h3>
+					<div id='socialIcons'>
+						<a target='_blank' href='https://www.facebook.com/mylinguafranca'>
+						<div class='socialIcon'>
+							<img src='images/footer/facebook.svg' />
+						</div>
+						</a>
+						
+						<a target='_blank' href='http://websta.me/n/mylinguafranca'>
+						<div class='socialIcon'>
+							<img src='images/footer/instagram.svg' />
+						</div>
+						</a><br>
+	
+						<a target='_blank' href='https://www.youtube.com/user/katrinawaugh'>
+						<div class='socialIcon'>
+							<img src='images/footer/youtube.svg' />
+						</div>
+						</a>
+	
+						<a target='_blank' href='http://www.yelp.com.au/biz/lingua-franca-language-services-newstead'>
+						<div class='socialIcon'>
+							<img src='images/footer/yelp.svg' />
+						</div>
+						</a>
+					</div>
+				</div>
+			</div>
+			<div id='footerSmall'>
+				<p class='defaultCursor'>Copyright © 2015, My Lingua Franca. All rights reserved.</p>
+			</div>
+			<div id='footerStrip'></div>
+		</div>
 
 </body>
 </html>
