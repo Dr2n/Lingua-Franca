@@ -1,6 +1,11 @@
 # Lingua-Franca-Redesign-Repo
-Welcome to the Repository of a school assignment project.
+You really believed that this dead project would be revived?
+Pfffftt....
 
-Made by team ChaPaDa - Charlie, Patrick, Darren.
+
+
+
+
+I just want a free shirt.
 
 www.linguafranca.dreamhosters.com
