@@ -28,6 +28,10 @@
 
 }
 
+* {
+	filter: invert(25%);
+}
+
 .hyperLinkText	{
 	color:#ff000f;
 }
